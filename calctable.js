@@ -48,3 +48,5 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 }
 [[/jsxgraph]]
 
+  <div id="spreadsheet{#rqm#}"} dir="ltr" ></div>
+  <div id="myView{#rqm#}"></div>
