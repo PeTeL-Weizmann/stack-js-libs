@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 
 
-
+<p style="display:none;">\(x^2\)</p>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
 
@@ -50,3 +50,4 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 
   <div id="spreadsheet{#rqm#}"} dir="ltr" ></div>
   <div id="myView{#rqm#}"></div>
+                                      
