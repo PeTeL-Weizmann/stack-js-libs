@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
-var allowedit=true;
+var allowedit=false;
 </script>
 
 <p style="display:none;">\(x^2\)</p>
