@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
-  var allowedit=true;
+  var readonly=false;
 </script>
 
 <p style="display:none;">\(x^2\)</p>
@@ -30,14 +30,16 @@ var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
   data:data,
   colHeaders:{#Titles#},
   colWidths: widths,
- editable:function(){ console.log(allowedit);return allowedit},
+ 
             
     columns: [
         { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
         { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
      
-     ]
-            
+     ],
+    updateTable: function (instance, cell, col, row, val, label, cellName) {
+         if readonly {cell.classList.add('readonly')}
+    }         
 });
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
@@ -56,8 +58,8 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
-  console.log(allowedit);
- // allowedit=false;
+ readonly=true;
+ table.update;
  
 }
 [[/jsxgraph]]
