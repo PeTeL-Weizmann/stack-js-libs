@@ -57,7 +57,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
   console.log(allowedit);
-  allowedit=false;
+ // allowedit=false;
  
 }
 [[/jsxgraph]]
