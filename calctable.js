@@ -30,13 +30,14 @@ var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
   data:data,
   colHeaders:{#Titles#},
  colWidths: widths,
+ editable:allowedit,
+              
     columns: [
         { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
         { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
      
      ]
-        editable:allowedit,
-     
+            
 });
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
