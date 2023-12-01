@@ -49,8 +49,7 @@ btn.onclick = function(e){
 };  
 document.getElementById("myView{#rqm#}").appendChild(btn);
 }
-checkAnswer[{#rqm#}] = function(e) { 
-  e.preventDefault(); 
+checkAnswer[{#rqm#}] = function() { 
  console.log("hi");
 // Make all cells read-only
 for (var row = 0; row < table.getRowCount(); row++) {
