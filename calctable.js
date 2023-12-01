@@ -5,7 +5,6 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
-
 </script>
 
 <p style="display:none;">\(x^2\)</p>
@@ -52,7 +51,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 }
 checkAnswer[{#rqm#}] = function() { 
  table.updateSettings({readOnly: true});
- {
+}
 [[/jsxgraph]]
 
   <div id="spreadsheet{#rqm#}"} dir="ltr" ></div>
