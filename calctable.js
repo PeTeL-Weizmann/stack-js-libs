@@ -54,7 +54,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 checkAnswer[rqm] = function() {
   console.log("hi");
   // Get the total number of rows and columns
-  var rowCount = table.getData().length;;
+  var rowCount = table.getData().length;
   var colCount = table.getHeaders().length;
 
   // Iterate through all cells and make them read-only
