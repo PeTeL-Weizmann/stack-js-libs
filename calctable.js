@@ -42,7 +42,7 @@ var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
 });
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
-
+table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
 if ({#hint_enable#}==1){
 var btn = document.createElement("BUTTON");  //<button> element
 var t = document.createTextNode("hint"); // Create a text node
