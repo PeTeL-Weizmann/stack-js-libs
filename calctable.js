@@ -3,11 +3,15 @@
  <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 
+<script type="text/javascript">
+ var checkAnswer=[];
+
+</script>
 
 <p style="display:none;">\(x^2\)</p>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
-
+var readonly=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
@@ -46,6 +50,9 @@ btn.onclick = function(e){
 };  
 document.getElementById("myView{#rqm#}").appendChild(btn);
 }
+checkAnswer[{#rqm#}] = function() { 
+ table.updateSettings({readOnly: true});
+ {
 [[/jsxgraph]]
 
   <div id="spreadsheet{#rqm#}"} dir="ltr" ></div>
