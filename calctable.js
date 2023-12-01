@@ -56,7 +56,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
-  console.log(table);
+  console.log(allowedit);
   allowedit=false;
  
 }
