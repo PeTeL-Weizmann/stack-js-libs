@@ -51,6 +51,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 }
 checkAnswer[{#rqm#}] = function(e) { 
   e.preventDefault(); 
+ console.log("hi");
 // Make all cells read-only
 for (var row = 0; row < table.getRowCount(); row++) {
   for (var col = 0; col < table.getColumnCount(); col++) {
