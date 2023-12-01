@@ -52,7 +52,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
-  console.log("hi");
+  console.log(table);
   // Get the total number of rows and columns
   var rowCount = table.getData().length;
   var colCount = table.getHeaders().length;
