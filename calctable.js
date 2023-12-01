@@ -5,6 +5,7 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
+var allowedit=true;
 </script>
 
 <p style="display:none;">\(x^2\)</p>
@@ -34,6 +35,8 @@ var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
         { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
      
      ]
+        editable:allowedit,
+     
 });
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
@@ -53,16 +56,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
   console.log(table);
-  // Get the total number of rows and columns
-  var rowCount = table.getData().length;
-  var colCount = table.getHeaders().length;
-
-  // Iterate through all cells and make them read-only
-  for (var i = 0; i < rowCount; i++) {
-    for (var j = 0; j < colCount; j++) {
-      table.getCell(i, j).setEditable(false);
-    }
-  }
+  allowedit=false;
 }
 [[/jsxgraph]]
 
