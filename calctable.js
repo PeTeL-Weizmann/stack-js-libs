@@ -5,7 +5,6 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
-  var readonly=false;
 </script>
 
 <p style="display:none;">\(x^2\)</p>
@@ -38,7 +37,7 @@ var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
      
      ],
     updateTable: function (instance, cell, col, row, val, label, cellName) {
-         if readonly {cell.classList.add('readonly')}
+         if (readonly) {cell.classList.add('readonly')}
     }         
 });
 
