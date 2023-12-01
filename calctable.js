@@ -50,8 +50,12 @@ btn.onclick = function(e){
 document.getElementById("myView{#rqm#}").appendChild(btn);
 }
 checkAnswer[{#rqm#}] = function() { 
- table.updateSettings({readOnly: true});
-}
+// Make all cells read-only
+for (var row = 0; row < table.getRowCount(); row++) {
+  for (var col = 0; col < table.getColumnCount(); col++) {
+    table.setReadOnly(row, col, true);
+  }
+}}
 [[/jsxgraph]]
 
   <div id="spreadsheet{#rqm#}"} dir="ltr" ></div>
