@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
-var allowedit=false;
+var allowedit=true;
 </script>
 
 <p style="display:none;">\(x^2\)</p>
@@ -58,6 +58,7 @@ document.getElementById("myView{#rqm#}").appendChild(btn);
 checkAnswer[rqm] = function() {
   console.log(table);
   allowedit=false;
+ 
 }
 [[/jsxgraph]]
 
