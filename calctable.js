@@ -29,9 +29,9 @@ for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
 var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
   data:data,
   colHeaders:{#Titles#},
- colWidths: widths,
- editable:allowedit,
-              
+  colWidths: widths,
+  editable:function(){return allowedit},
+            
     columns: [
         { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
         { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
