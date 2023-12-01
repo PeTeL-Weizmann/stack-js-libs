@@ -5,7 +5,7 @@
 
 <script type="text/javascript">
  var checkAnswer=[];
-var allowedit=true;
+  var allowedit=true;
 </script>
 
 <p style="display:none;">\(x^2\)</p>
@@ -30,7 +30,7 @@ var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
   data:data,
   colHeaders:{#Titles#},
   colWidths: widths,
-//  editable:function(){return allowedit},
+ editable:function(){ console.log(allowedit);return allowedit},
             
     columns: [
         { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
