@@ -13,7 +13,7 @@
 <p style="display:none;">\(x^2\)</p>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
-
+var board = JXG.JSXGraph.initBoard(divid, {});
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id","spreadsheet{#rqm#}");
      tmp= document.getElementById("myView"); tmp.setAttribute("id","myView{#rqm#}");           
 var readonly=false;
