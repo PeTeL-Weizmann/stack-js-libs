@@ -54,6 +54,7 @@ table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData(
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
 
   var showhint=function(){
+   console.log("we are in");
       var btn = document.createElement("BUTTON");  //<button> element
       var t = document.createTextNode("hint"); // Create a text node
       btn.appendChild(t);   
