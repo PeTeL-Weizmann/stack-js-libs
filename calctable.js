@@ -52,17 +52,18 @@ var table=jspreadsheet(document.getElementById(uid_table), {
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
-if ({#hint_enable#}==1){
-var btn = document.createElement("BUTTON");  //<button> element
-var t = document.createTextNode("hint"); // Create a text node
-btn.appendChild(t);   
 
-btn.onclick = function(e){
-    e.preventDefault(); 
-    table.setData({#hintdata#})
-};  
-document.getElementById(uid_hint).appendChild(btn);
-}
+  var showhint=function(){
+      var btn = document.createElement("BUTTON");  //<button> element
+      var t = document.createTextNode("hint"); // Create a text node
+      btn.appendChild(t);   
+      btn.onclick = function(e){
+         e.preventDefault(); 
+         table.setData({#hintdata#})
+      };  
+    document.getElementById(uid_hint).appendChild(btn);
+  }   
+ if ({#hint_enable#}==1) showint();
 
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
