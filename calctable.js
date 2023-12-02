@@ -69,7 +69,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
  readonly=true;
- table.updateSettings();
+ table.insertRow();
 
  
 }
