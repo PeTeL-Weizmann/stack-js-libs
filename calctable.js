@@ -10,6 +10,9 @@
 <p style="display:none;">\(x^2\)</p>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
+
+var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id","spreadsheet{#rqm#}");
+     tmp= document.getElementById("myView"); tmp.setAttribute("id","myView{#rqm#}");           
 var readonly=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
@@ -61,10 +64,9 @@ checkAnswer[rqm] = function() {
  table.update;
  
 }
-var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id","spreadsheet{#rqm#}");
-     tmp= document.getElementById("myView"); tmp.setAttribute("id","myView{#rqm#}");                                
+                     
 [[/jsxgraph]]
 
   <div id="spreadsheet"} dir="ltr" ></div>
-  <div id="myView{#rqm#}"></div>
+  <div id="myView"></div>
                                       
