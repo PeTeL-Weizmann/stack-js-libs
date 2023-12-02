@@ -14,8 +14,11 @@
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
 var board = JXG.JSXGraph.initBoard(divid, {});
-var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id","spreadsheet{#rqm#}");
-     tmp= document.getElementById("myView"); tmp.setAttribute("id","myView{#rqm#}");           
+var uid_table=board.generateId();
+var uid_hint="hint"+board.generateId();
+
+var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
+     tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);           
 var readonly=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
@@ -31,7 +34,7 @@ if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.valu
 var widths=[];
 for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
 
-var table=jspreadsheet(document.getElementById('spreadsheet{#rqm#}'), {
+var table=jspreadsheet(document.getElementById(uid_table), {
   data:data,
   colHeaders:{#Titles#},
   colWidths: widths,
@@ -58,7 +61,7 @@ btn.onclick = function(e){
     e.preventDefault(); 
     table.setData({#hintdata#})
 };  
-document.getElementById("myView{#rqm#}").appendChild(btn);
+document.getElementById(uid_hint).appendChild(btn);
 }
 
  var rqm={#rqm#};
