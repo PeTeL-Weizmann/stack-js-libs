@@ -61,8 +61,10 @@ checkAnswer[rqm] = function() {
  table.update;
  
 }
+var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id","spreadsheet{#rqm#}");
+     tmp= document.getElementById("myView"); tmp.setAttribute("id","myView{#rqm#}");                                
 [[/jsxgraph]]
 
-  <div id="spreadsheet{#rqm#}"} dir="ltr" ></div>
+  <div id="spreadsheet"} dir="ltr" ></div>
   <div id="myView{#rqm#}"></div>
                                       
