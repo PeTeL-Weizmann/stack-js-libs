@@ -3,6 +3,9 @@
  <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 
+ <div id="spreadsheet"} dir="ltr" ></div>
+ <div id="myView"></div>
+                                 
 <script type="text/javascript">
  var checkAnswer=[];
 </script>
@@ -67,6 +70,4 @@ checkAnswer[rqm] = function() {
                      
 [[/jsxgraph]]
 
-  <div id="spreadsheet"} dir="ltr" ></div>
-  <div id="myView"></div>
-                                      
+      
