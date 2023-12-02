@@ -64,7 +64,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
       };  
     document.getElementById(uid_hint).appendChild(btn);
   }   
- if ({#hint_enable#}==1) showint();
+ if ({#hint_enable#}==1) showhint();
 
  var rqm={#rqm#};
 checkAnswer[rqm] = function() {
