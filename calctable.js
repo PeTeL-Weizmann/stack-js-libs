@@ -15,7 +15,7 @@
 <p style="display:none;">\(x^2\)</p>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
-  var sheet = document.createElement('style')
+  var sheet = document.createElement('style');
 sheet.innerHTML = ".jexcel > tbody > tr > td.readonly
 {
     color:rgba(0,0,0)
