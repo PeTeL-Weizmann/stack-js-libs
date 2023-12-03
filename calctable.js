@@ -35,19 +35,7 @@ if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.valu
 
 var widths=[];
 for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
-
-var table=jspreadsheet(document.getElementById(uid_table), {
-  data:data,
-  colHeaders:{#Titles#},
-  colWidths: widths,
- 
-            
-    columns: [
-        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
-        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
-     
-     ],
-         toolbar:[
+var toolbar=[
         {
             type: 'i',
             content: 'undo',
@@ -107,7 +95,20 @@ var table=jspreadsheet(document.getElementById(uid_table), {
             content: 'format_color_fill',
             k: 'background-color'
         },
-    ],
+    ];
+
+var table=jspreadsheet(document.getElementById(uid_table), {
+  data:data,
+  colHeaders:{#Titles#},
+  colWidths: widths,
+ 
+            
+    columns: [
+        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
+        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
+     
+     ],
+         toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
          if (readonly) {cell.classList.add('readonly')}
     }, 
