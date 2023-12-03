@@ -135,6 +135,9 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
 checkAnswer[rqm] = function() {
  readonly=true;
  table.insertRow();
+ const element = document.querySelector('.readonly');
+ element.style.color = rgba(0,0,0);
+});
 
  
 }
