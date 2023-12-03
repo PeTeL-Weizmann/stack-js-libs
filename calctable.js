@@ -62,13 +62,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
                 table.redo();
             }
         },
-        {
-            type: 'i',
-            content: 'save',
-            onclick: function () {
-                table.download();
-            }
-        },
+       
         {
             type: 'select',
             k: 'font-family',
@@ -77,7 +71,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
         {
             type: 'select',
             k: 'font-size',
-            v: ['9px','10px','11px','12px','13px','14px','15px','16px','17px','18px','19px','20px']
+            v: ['9px','10px','11px','12px','13px','14px','15px','16px','17px','18px','19px','20px','21px','22px','23px','24px','25px']
         },
         {
             type: 'i',
@@ -116,7 +110,8 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     ],
     updateTable: function (instance, cell, col, row, val, label, cellName) {
          if (readonly) {cell.classList.add('readonly')}
-    }         
+    }, 
+    columnSorting:false,
 });
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
