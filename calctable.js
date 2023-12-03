@@ -137,7 +137,7 @@ checkAnswer[rqm] = function() {
  table.insertRow();
  const element = document.querySelector('.readonly');
  element.style.color = rgba(0,0,0);
-});
+};
 
  
 }
