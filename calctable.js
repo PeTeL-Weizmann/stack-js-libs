@@ -15,13 +15,10 @@
 <p style="display:none;">\(x^2\)</p>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
-/*  var sheet = document.createElement('style');
-sheet.innerHTML = ".jexcel > tbody > tr > td.readonly
-{
-    color:rgba(0,0,0)
-}";
-document.body.appendChild(sheet);
-*/
+ var someVar = document.querySelectorAll('td.readonly');
+for(var i=0; i<someVar.length; i++){
+someVar[i].style.color = rgba(0,0,0);}
+
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
 var uid_hint="hint"+board.generateId();
@@ -142,9 +139,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
 checkAnswer[rqm] = function() {
  readonly=true;
  table.insertRow();
-var someVar = document.querySelectorAll('td.readonly');
-for(var i=0; i<someVar.length; i++){
-someVar[i].style.color = rgba(0,0,0);}
+
 };
                    
 [[/jsxgraph]]
