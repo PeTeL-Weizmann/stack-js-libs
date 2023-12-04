@@ -18,7 +18,7 @@
  const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
 
 for (const element of jexcelElements) {
-  element.style.color = 'rgba(0, 0, 0)';
+  element.style.color = 'rgb(0, 0, 0)';
 };
 
 var board = JXG.JSXGraph.initBoard(divid, {});
