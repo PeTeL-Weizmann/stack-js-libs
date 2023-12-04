@@ -15,9 +15,11 @@
 <p style="display:none;">\(x^2\)</p>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
- var someVar = document.querySelectorAll('td.readonly');
-for(var i=0; i<someVar.length; i++){
-someVar[i].style.color = rgba(0,0,0);}
+ const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
+
+for (const element of jexcelElements) {
+  element.style.color = 'rgba(0, 0, 0)';
+}
 
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
