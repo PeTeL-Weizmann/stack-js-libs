@@ -142,8 +142,9 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
 checkAnswer[rqm] = function() {
  readonly=true;
  table.insertRow();
- const element = document.querySelector('td.readonly');
- element.style.color = rgba(0,0,0);
+var someVar = document.querySelectorAll('td.readonly');
+for(var i=0; i<someVar.length; i++){
+someVar[i].style.color = rgba(0,0,0);}
 };
                    
 [[/jsxgraph]]
