@@ -123,7 +123,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
-var stayOn;
+var StayOn;
   var showhint=function(){
       StayOn=true;
       var btn = document.createElement("BUTTON");  //<button> element
