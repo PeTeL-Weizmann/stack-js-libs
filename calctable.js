@@ -19,7 +19,7 @@
 
 for (const element of jexcelElements) {
   element.style.color = 'rgba(0, 0, 0)';
-}
+};
 
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
