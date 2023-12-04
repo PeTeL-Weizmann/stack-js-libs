@@ -138,9 +138,10 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
  if ({#hint_enable#}==1) showhint();
 
  var rqm={#rqm#};
-checkAnswer[rqm] = function() {
+checkAnswer[rqm] = function(hint) {
  readonly=true;
  table.insertRow();
+ if (hint) showhint();
 
 };
                    
