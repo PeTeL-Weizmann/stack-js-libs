@@ -6,7 +6,7 @@
  
 
  <div id="spreadsheet"} dir="ltr" ></div>
- <div id="myView"></div>
+ <div id="myView" style="display:none;"></div>
                                  
 <script type="text/javascript">
  var checkAnswer=[];
