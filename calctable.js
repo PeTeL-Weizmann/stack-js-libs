@@ -138,7 +138,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
  var rqm={#rqm#};
   checkAnswer[rqm] = function(hint) {
   table.insertRow();
- if (hint) document.hint_el.style.display = "block";
+ if (hint) hint_el.style.display = "block";
 
 };
                    
