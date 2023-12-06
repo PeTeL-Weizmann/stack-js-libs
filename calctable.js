@@ -135,8 +135,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
        hint_el.appendChild(btn);
      
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
-         console.log( localStorage.getItem("showhint"),{#rqm#},localStorage.getItem("showhint")=={#rqm#} );
-if ( ({#hint_enable#}!=1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "none"};         
+if ( ({#hint_enable#}!=1) || (localStorage.getItem("showhint")!={#rqm#}) ) {hint_el.style.display = "none"};         
  var rqm={#rqm#};
   checkAnswer[rqm] = function(hint) {
   table.insertRow();
