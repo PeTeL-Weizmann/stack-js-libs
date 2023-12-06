@@ -134,11 +134,11 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
      
- if ( ({#hint_enable#}!=1) || (localStorage.getItem("showhint")==uid_hint) ) {hint_el.style.display = "none"};
+ if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
  var rqm={#rqm#};
   checkAnswer[rqm] = function(hint) {
   table.insertRow();
- if (hint) localStorage.setItem("showhint",uid_hint);
+ if (hint) document.hint_el.style.display = "block";
 
 };
                    
