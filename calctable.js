@@ -4,8 +4,8 @@
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
  
-
- <div id="spreadsheet"} dir="ltr" ></div>
+<div style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+ <div id="spreadsheet" dir="ltr" style="display: flex; flex-direction: row; align-items: center; justify-content: center;" ></div>
  <div id="myView" style="display:none;" ></div>
                                  
 <script type="text/javascript">
