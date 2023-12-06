@@ -6,7 +6,7 @@
  
 
  <div id="spreadsheet"} dir="ltr" ></div>
- <div id="myView"></div>
+ <div id="myView" style="display:none;" ></div>
                                  
 <script type="text/javascript">
  var checkAnswer=[];
@@ -135,7 +135,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
        hint_el.appendChild(btn);
      
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
-if ( ({#hint_enable#}!=1) || (localStorage.getItem("showhint")!={#rqm#}) ) {hint_el.style.display = "none"};         
+if ( ({#hint_enable#}=1) || (localStorage.getItem("showhint")={#rqm#}) ) {hint_el.style.display = "block"};         
  var rqm={#rqm#};
   checkAnswer[rqm] = function(hint) {
   table.insertRow();
