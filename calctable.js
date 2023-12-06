@@ -137,7 +137,9 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
 if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
  var rqm={#rqm#};
+  
   checkAnswer[rqm] = function(hint) {
+   readonly=true;
   table.insertRow();
  //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
