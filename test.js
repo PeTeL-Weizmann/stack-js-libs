@@ -1,5 +1,5 @@
-<script src="https://raw.githubusercontent.com/raedshorrosh/calc/main/jspreadsheet.js"></script>
-<link rel="stylesheet" href="https://raw.githubusercontent.com/raedshorrosh/calc/main/jspreadsheet.css" type="text/css" />
+<script src="https://cdn.jsdelivr.net/npm/jspreadsheet-ce/dist/index.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jspreadsheet-ce/dist/jspreadsheet.min.css" type="text/css" />
  <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
