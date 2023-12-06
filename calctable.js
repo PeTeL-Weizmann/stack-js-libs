@@ -135,12 +135,12 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
        hint_el.appendChild(btn);
      
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
-if ( ({#hint_enable#}!=1) || (localStorage.getItem("showhint")==uid_hint) ) {hint_el.style.display = "none"};         
+if ( ({#hint_enable#}!=1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "none"};         
  var rqm={#rqm#};
   checkAnswer[rqm] = function(hint) {
   table.insertRow();
  //if (hint) document.hint_el.style.display = "block";
-    if (hint) localStorage.setItem("showhint",uid_hint);
+    if (hint) localStorage.setItem("showhint",{#rqm#});
 
 };
                    
