@@ -1,4 +1,4 @@
-<script src="https://raw.githubusercontent.com/raedshorrosh/calc/main/index.js"></script>
+<script src="https://raw.githubusercontent.com/raedshorrosh/calc/main/jspreadsheet.js"></script>
 <link rel="stylesheet" href="https://raw.githubusercontent.com/raedshorrosh/calc/main/jspreadsheet.css" type="text/css" />
  <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
