@@ -135,6 +135,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
        hint_el.appendChild(btn);
      
  if ( ({#hint_enable#}!=1) || (localStorage.getItem("showhint")==uid_hint) ) {hint_el.style.display = "none"};
+         conosle.log(localStorage.getItem("showhint"),uid_hint,localStorage.getItem("showhint")==uid_hint);
  var rqm={#rqm#};
   checkAnswer[rqm] = function(hint) {
   table.insertRow();
