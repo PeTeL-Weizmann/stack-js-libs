@@ -16,11 +16,6 @@
 <div style="display:none;">\(x^2\)
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
- const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
-
-for (const element of jexcelElements) {
-  element.style.color = 'rgb(0, 0, 0)';
-};
 
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
@@ -140,10 +135,16 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
  var rqm={#rqm#};
   
   checkAnswer[rqm] = function(hint) {
+     const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
+    for (const element of jexcelElements) {
+       element.style.color = 'rgb(0, 0, 0)';
+    };
    readonly=true;
   table.insertRow();
  //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
+  
+
 
 };
                    
