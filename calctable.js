@@ -16,7 +16,7 @@
 <div style="display:none;">\(x^2\)
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
-
+var last=false;
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
 var uid_hint="hint"+board.generateId();
@@ -136,14 +136,16 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
 if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
  var rqm={#rqm#};
   
-  checkAnswer[rqm] = function(hint) {
+  checkAnswer[rqm] = function(hint,islast) {
      readonly=true;
      table.insertRow();
  //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
+    if (islast) last=true;
+    
   };
 
-try {
+if (last) try {
  tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
 
 var table2=jspreadsheet(document.getElementById(uid_feedback), {
