@@ -3,7 +3,7 @@
  <script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"></script>
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
-
+ <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
  <div style="display:none;">\(x^2\)</div>
    <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
