@@ -143,7 +143,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
      table.deleteRow();
-     location.reload();
+   
   };
 
 if (localStorage.getItem("final")=={#rqm#}) try {
@@ -166,7 +166,8 @@ var table2=jspreadsheet(document.getElementById(uid_feedback), {
     columnSorting:false,
 });
 }        
-  catch(err) {}
+  catch(err) {};
+location.reload();                                      
 [[/jsxgraph]]
      
 </div>
