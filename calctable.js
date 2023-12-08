@@ -143,6 +143,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
      table.deleteRow();
+   location.replace();
    
   };
 
@@ -165,7 +166,7 @@ var table2=jspreadsheet(document.getElementById(uid_feedback), {
     }, 
     columnSorting:false,
 });
- location.reload(); 
+  
 }        
   catch(err) {};
                                      
