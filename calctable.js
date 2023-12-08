@@ -1,5 +1,5 @@
 <script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
-<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+<link rel="stylesheet" href="https://raw.githubusercontent.com/raedshorrosh/calc/main/jexcel.css" type="text/css" />
  <script src="https://jsuites.net/v4/jsuites.js"></script>
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
@@ -117,10 +117,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columnSorting:false,
 });
 
-table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData());
-                                   const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
-                                   for (const element of jexcelElements) {element.style.color = 'rgb(0, 0, 0)';};
-                                  };
+table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData()) };
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
