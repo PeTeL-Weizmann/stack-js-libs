@@ -5,7 +5,8 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
 
  <div style="display: flex; justify-content: center;" width="100%">
-   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
+ <p style="display:none;">\(x^2\)</p>
+   <div id="spreadsheet" dir="ltr" ><p style="display:none;">\(x^2\)</p></div>
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
@@ -170,4 +171,3 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
                                      
 [[/jsxgraph]]
      
-</div>
