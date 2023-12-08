@@ -4,6 +4,13 @@
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
 
+ <script>
+    const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
+    for (const element of jexcelElements) {
+       element.style.color = 'rgb(0, 0, 0)';
+    };
+ </script>
+  
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ></div>
  </div>
@@ -135,18 +142,11 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
  var rqm={#rqm#};
   
   checkAnswer[rqm] = function(hint) {
-     const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
-    for (const element of jexcelElements) {
-       element.style.color = 'rgb(0, 0, 0)';
-    };
-   readonly=true;
-  table.insertRow();
+     readonly=true;
+     table.insertRow();
  //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
-  
-
-
-};
+  };
                    
 [[/jsxgraph]]
      
