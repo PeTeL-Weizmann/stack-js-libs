@@ -139,23 +139,16 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
   checkAnswer[rqm] = function(hint,islast) {
      readonly=true;
      table.insertRow();
- //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
-     table.deleteRow();
-   location.replace();
-   
-  };
-
-if (localStorage.getItem("final")=={#rqm#}) try {
-  tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
-
-var table2=jspreadsheet(document.getElementById(uid_feedback), {
-  data:({#data#}),
-  colHeaders:{#Titles#},
-  colWidths: widths,
+    if (localStorage.getItem("final")=={#rqm#}) try {
+    tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
+    var table2=jspreadsheet(document.getElementById(uid_feedback), {
+     data:({#data#}),
+     colHeaders:{#Titles#},
+     colWidths: widths,
           
-    columns: [
+     columns: [
         { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
         { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
      
@@ -169,6 +162,11 @@ var table2=jspreadsheet(document.getElementById(uid_feedback), {
   
 }        
   catch(err) {};
+     table.deleteRow();
+
+   
+  };
+
                                      
 [[/jsxgraph]]
      
