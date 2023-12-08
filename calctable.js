@@ -5,8 +5,8 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
 
  <div style="display: flex; justify-content: center;" width="100%">
- <p style="display:none;">\(x^2\)</p>
-   <div id="spreadsheet" dir="ltr" ><p style="display:none;">\(x^2\)</p></div>
+ <div style="display:none;">\(x^2\)</div>
+   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
