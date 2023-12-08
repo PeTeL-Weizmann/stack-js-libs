@@ -24,8 +24,7 @@ var uid_feedback="feedback"+board.generateId();
 
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
-     tmp= document.getElementById("feedback");console.log(tmp);
-     tmp.setAttribute("id",uid_feedback);
+     tmp= document.getElementById("feedback"); try {  tmp.setAttribute("id",uid_feedback)};
 
 var readonly=false;
 //hide or show the fields for design
