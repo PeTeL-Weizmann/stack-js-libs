@@ -141,11 +141,11 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
      table.insertRow();
  //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
-    if (islast) last=true;
+    if (islast)  localStorage.setItem("final",{#rqm#}); 
     
   };
 
-if (last) try {
+if (localStorage.getItem("final")=={#rqm#}) ) try {
  tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
 
 var table2=jspreadsheet(document.getElementById(uid_feedback), {
