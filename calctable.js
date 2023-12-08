@@ -145,7 +145,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
     
   };
 
-if (localStorage.getItem("final")=={#rqm#}) ) try {
+if (localStorage.getItem("final")=={#rqm#}) try {
  tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
 
 var table2=jspreadsheet(document.getElementById(uid_feedback), {
