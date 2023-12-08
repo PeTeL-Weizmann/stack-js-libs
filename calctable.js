@@ -20,9 +20,12 @@
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
 var uid_hint="hint"+board.generateId();
+var uid_feedback="feedbcak"+board.generateId();
 
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
-     tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);           
+     tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
+     tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
+
 var readonly=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
@@ -140,7 +143,24 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
  //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
   };
-                   
+
+var table2=jspreadsheet(document.getElementById(uid_feedback), {
+  data:({#data#}),
+  colHeaders:{#Titles#},
+  colWidths: widths,
+          
+    columns: [
+        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
+        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
+     
+     ],
+         toolbar:toolbar,
+    updateTable: function (instance, cell, col, row, val, label, cellName) {
+        cell.classList.add('readonly')
+    }, 
+    columnSorting:false,
+});
+         
 [[/jsxgraph]]
      
 </div>
