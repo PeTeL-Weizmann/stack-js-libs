@@ -24,7 +24,7 @@ var uid_feedback="feedback"+board.generateId();
 
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
-     tmp= document.getElementById("feedback"); try {  tmp.setAttribute("id",uid_feedback)};
+//     tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
 
 var readonly=false;
 //hide or show the fields for design
@@ -143,7 +143,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
  //if (hint) document.hint_el.style.display = "block";
     if (hint) localStorage.setItem("showhint",{#rqm#});
   };
-
+/*
 var table2=jspreadsheet(document.getElementById(uid_feedback), {
   data:({#data#}),
   colHeaders:{#Titles#},
@@ -160,7 +160,7 @@ var table2=jspreadsheet(document.getElementById(uid_feedback), {
     }, 
     columnSorting:false,
 });
-         
+*/         
 [[/jsxgraph]]
      
 </div>
