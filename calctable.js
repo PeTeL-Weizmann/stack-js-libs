@@ -4,13 +4,6 @@
 <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
 
- <script>
-    const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
-    for (const element of jexcelElements) {
-       element.style.color = 'rgb(0, 0, 0)';
-    };
- </script>
-  
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ></div>
  </div>
@@ -124,7 +117,10 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columnSorting:false,
 });
 
-table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData())};
+table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData());
+                                   const jexcelElements = document.querySelectorAll('.jexcel tbody tr td.readonly');
+                                   for (const element of jexcelElements) {element.style.color = 'rgb(0, 0, 0)';};
+                                  };
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
