@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
 
  <div style="display: flex; justify-content: center;" width="100%">
-   <div id="spreadsheet" dir="ltr" ></div>
+   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
@@ -13,7 +13,7 @@
  var checkAnswer=[];
 </script>
 
-<div style="display:none;">\(x^2\)
+<div style="display:none;">\(x^2\)</div>
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
 var last=false;
