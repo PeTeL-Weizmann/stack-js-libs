@@ -64,9 +64,11 @@ for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
   contextMenu: true,
   formulas: {engine: HyperFormula },
    minSpareRows: 1,
-   afterChange:{dataInput.value=JSON.stringify(table.getData());
-	        if (readonly) {table.readOnly=true}
-	        },
+   afterChange:function(){
+	                  {dataInput.value=JSON.stringify(this.getData());
+	                  if (readonly) {this.readOnly=true}
+	                  }
+              	},
   licenseKey: 'non-commercial-and-evaluation'
 });
 
