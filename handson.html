@@ -49,13 +49,18 @@ for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
     ['2020', 20, 11, 14, 13],
     ['2021', 30, 15, 12, 13]
   ],
-  minSpareCols: 1,
-  minSpareRows: 1,
+
   rowHeaders: true,
   colWidths:width,
   colHeaders:   {#Titles#},
   className: 'htCenter',
   contextMenu: true,
+  height: 'auto',
+   columns: [
+        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
+        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
+     
+     ],
   licenseKey: 'non-commercial-and-evaluation'
 });
                                     
