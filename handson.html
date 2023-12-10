@@ -33,8 +33,10 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
  var dataInput = document.getElementById(ans2Ref);
 
 var zData=["","","","","","","","","","","","","","",""];
-var zcolumns: [ { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
-        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}];
+var zcolumns=[
+        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
+        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]},  
+    {},{},{},{},{},{},{},{},{},{},{},{},{},{},{} ];
 
 var data = [zData.slice(0,{#Titles#}.length)];
 zcolumns:[zcolumns.slice(0,{#Titles#}.length)];
