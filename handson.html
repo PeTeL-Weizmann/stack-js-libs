@@ -1,12 +1,50 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.js"></script>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/handsontable/dist/handsontable.full.min.css" />
-<div id="example"></div>
+ <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+ <div style="display:none;">\(x^2\)</div>
+ <div style="display: flex; justify-content: center;" width="100%">
+ <div style="display:none;">\(x^2\)</div>
+   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
+ </div>
+ <div id="myView" style="display:none;" ></div>
+                                 
+<script type="text/javascript">
+ var checkAnswer=[];
+</script>
+
+<div style="display:none;">\(x^2\)</div>
+
+
 
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
-  var container = document.getElementById('example');
+var last=false;
+var board = JXG.JSXGraph.initBoard(divid, {});
+var uid_table=board.generateId();
+var uid_hint="hint"+board.generateId();
+var uid_feedback="feedback"+board.generateId();
+
+var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
+     tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
+
+var readonly=false;
+//hide or show the fields for design
+if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
+
+ var dataInput = document.getElementById(ans2Ref);
+
+var zData=["","","","","","","","","","","","","","",""];
+
+var data = [zData.slice(0,{#Titles#}.length)];
+
+if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
+
+var widths=[];
+for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
+
+ var container = document.getElementById('spreadsheet');
   var hot = new Handsontable(container, {
   data: [
-    ['', 'Tesla', 'Volvo', 'Toyota', 'Ford'],
+   {#Titles#},
     ['2019', 10, 11, 12, 13],
     ['2020', 20, 11, 14, 13],
     ['2021', 30, 15, 12, 13]
