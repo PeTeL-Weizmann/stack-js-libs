@@ -41,7 +41,7 @@ if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.valu
 var widths=[];
 for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
 
- var container = document.getElementById('spreadsheet');
+ var container = document.getElementById(uid_table);
   var hot = new Handsontable(container, {
   data: [
    {#Titles#},
