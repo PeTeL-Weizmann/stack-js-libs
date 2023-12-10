@@ -36,7 +36,7 @@ var zData=["","","","","","","","","","","","","","",""];
 var zcolumns=[{ type: 'dropdown',   source:{#items#}},{ type: 'dropdown',   source:{#units#}}, {},{},{},{},{},{},{},{},{},{},{},{},{},{},{} ];
 
 var data = [zData.slice(0,{#Titles#}.length)];
-var columns=[zcolumns.slice(0,{#Titles#}.length)];
+var columns=zcolumns.slice(0,{#Titles#}.length);
 
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
@@ -46,7 +46,7 @@ for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
  var container = document.getElementById(uid_table);
   var hot = new Handsontable(container, {
   data: data,
-  columns:zcolumns,
+  columns:columns,
   rowHeaders: true,
   colWidths:widths,
   colHeaders:   {#Titles#},
