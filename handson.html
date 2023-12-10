@@ -13,13 +13,16 @@
 </script>
 
 <div style="display:none;">\(x^2\)</div>
-
 <style>
-	.handsontable {
+.handsontable {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Helvetica Neue", Arial, sans-serif;
   font-size: 18px;
   font-weight: normal;
-  color: #373737;
+  color: rgb(0,0,0);
+}
+
+.handsontable .htDimmed {
+ color: rgb(0,0,0);
 }
 </style>
 
@@ -51,7 +54,7 @@ var widths=[];
 for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
 
  var container = document.getElementById(uid_table);
-  var hot = new Handsontable(container, {
+  var table = new Handsontable(container, {
   data: data,
   columns:columns,
   rowHeaders: true,
@@ -61,8 +64,59 @@ for (let i=0;i<{#Titles#}.length;i++){widths[i]=120};
   contextMenu: true,
   formulas: {engine: HyperFormula },
    minSpareRows: 1,
+   afterChange:{dataInput.value=JSON.stringify(table.getData());
+	        if (readonly) {table.readOnly=true}
+	        },
   licenseKey: 'non-commercial-and-evaluation'
 });
+
+
+      var btn = document.createElement("BUTTON");  //<button> element
+      var t = document.createTextNode("hint"); // Create a text node
+      btn.appendChild(t);   
+      btn.onclick = function(e){
+         e.preventDefault(); 
+         table.setData({#hintdata#})
+      };  
+   var hint_el= document.getElementById(uid_hint);
+       hint_el.appendChild(btn);
+     
+ //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
+if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
+ var rqm={#rqm#};
+  
+  checkAnswer[rqm] = function(hint,islast) {
+     readonly=true;
+     table.insertRow();
+    if (hint) localStorage.setItem("showhint",{#rqm#});
+    if (islast)  localStorage.setItem("final",{#rqm#}); 
+    if (localStorage.getItem("final")=={#rqm#}) try {
+    tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
+ /* 
+var table2=jspreadsheet(document.getElementById(uid_feedback), {
+     data:({#data#}),
+     colHeaders:{#Titles#},
+     colWidths: widths,
+          
+     columns: [
+        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
+        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
+     
+     ],
+         toolbar:toolbar,
+    updateTable: function (instance, cell, col, row, val, label, cellName) {
+        cell.classList.add('readonly')
+    }, 
+    columnSorting:false,
+});
+  */
+}        
+  catch(err) {};
+
+
+   
+  };
+	
                                     
 [[/jsxgraph]]
      
