@@ -45,7 +45,7 @@ var zData=["","","","","","","","","","","","","","",""];
 var data = [zData.slice(0,{#Titles#}.length)];
 var style='';
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
-if (styleInput.value!=( styleInputt.value != '')) {style = JSON.parse(styleInputt.value)} else {styleInput.value=JSON.stringify(style)};
+if (styleInput.value!=( styleInput.value != '')) {style = JSON.parse(styleInput.value)} else {styleInput.value=JSON.stringify(style)};
 
 var widths=[180,80];
 for (let i=2;i<{#Titles#}.length;i++){widths[i]=120};
