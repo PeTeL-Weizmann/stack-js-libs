@@ -109,8 +109,8 @@ var table=jspreadsheet(document.getElementById(uid_table), {
  
             
     columns: [
-        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
-        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
+        { type: 'dropdown',   source:{#items#} },
+        { type: 'dropdown',   source:{#units#}  },
      
      ],
          toolbar:toolbar,
