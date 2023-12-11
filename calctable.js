@@ -17,7 +17,7 @@
 <div style="display:none;">\(x^2\)</div>
   <style>
     .jexcel {
-    font-size: 10px;
+    font-size:18px;
 }
  </style>
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
