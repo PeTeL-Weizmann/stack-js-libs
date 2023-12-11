@@ -130,7 +130,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
 });
 
 table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData()); styleInput.value=JSON.stringify(table.getStyle());};
-table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')};table.setStyle(JSON.parse(style);style=styleInput.value)};
+table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')};table.setStyle(JSON.parse(style));style=styleInput.value};
   
       var btn = document.createElement("BUTTON");  //<button> element
       var t = document.createTextNode("hint"); // Create a text node
