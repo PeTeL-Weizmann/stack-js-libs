@@ -43,7 +43,7 @@ var styleInput=document.getElementById(ans3Ref);
 var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
-var:style;
+var style='';
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 if (styleInput.value!=( styleInputt.value != '')) {style = JSON.parse(styleInputt.value)} else {styleInput.value=JSON.stringify(style)};
 
