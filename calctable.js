@@ -16,12 +16,13 @@
  var checkAnswer=[];
 </script>
 
-<div style="display:none;">\(x^2\)</div>
+
   <style>
     .jexcel {
-    font-size:15;
+    font-size:16;
 }
  </style>
+  <div style="display:none;">\(x^2\)
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
 var last=false;
 var board = JXG.JSXGraph.initBoard(divid, {});
@@ -177,3 +178,4 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
                                      
 [[/jsxgraph]]
      
+</div>
