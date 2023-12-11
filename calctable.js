@@ -19,7 +19,7 @@
 <div style="display:none;">\(x^2\)</div>
   <style>
     .jexcel {
-    font-size:16;
+    font-size:15;
 }
  </style>
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
@@ -44,7 +44,7 @@ var data = [zData.slice(0,{#Titles#}.length)];
 
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
-var widths=[150,100];
+var widths=[180,80];
 for (let i=2;i<{#Titles#}.length;i++){widths[i]=120};
 var toolbar=[
         {
@@ -115,8 +115,8 @@ var table=jspreadsheet(document.getElementById(uid_table), {
  
             
     columns: [
-        { type: 'autocomplete',   source:{#items#} },
-        { type: 'autocomplete',   source:{#units#}  },
+        { type: 'dropdown',   source:{#items#} },
+        { type: 'dropdown',   source:{#units#}  },
      
      ],
          toolbar:toolbar,
