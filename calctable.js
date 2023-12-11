@@ -23,7 +23,7 @@
 }
  </style>
   <div style="display:none;">\(x^2\)
- [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
+ [[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
 var last=false;
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
@@ -38,12 +38,14 @@ var readonly=false;
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
  var dataInput = document.getElementById(ans2Ref);
+var styleInput=document.getElementById(ans3Ref);
 
 var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
-
+var:style;
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
+if (styleInput.value!=( styleInputt.value != '')) {style = JSON.parse(styleInputt.value)} else {styleInput.value=JSON.stringify(style)};
 
 var widths=[180,80];
 for (let i=2;i<{#Titles#}.length;i++){widths[i]=120};
@@ -127,8 +129,8 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columnSorting:false,
 });
 
-table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData()) };
-table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
+table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData()); styleInput.value=JSON.stringify(table.getStyle());};
+table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')};table.setStyle(JSON.parse(style);style=styleInput.value)};
   
       var btn = document.createElement("BUTTON");  //<button> element
       var t = document.createTextNode("hint"); // Create a text node
@@ -157,8 +159,8 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
      colWidths: widths,
           
      columns: [
-        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
-        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
+         { type: 'dropdown',   source:{#items#} },
+        { type: 'dropdown',   source:{#units#}  },
      
      ],
          toolbar:toolbar,
