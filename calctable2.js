@@ -117,7 +117,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columns: [
         { type: 'dropdown',   source:{#items#},autocomplete:true },
         { type: 'dropdown',   source:{#units#},autocomplete:true  },
-        { type: 'dropdown',   source:{#eq#},autocomplete:true, multiple:true  },                                      
+        { type: 'dropdown',   source:{#eq#},autocomplete:true, multiple:true,wordWrap:true  },                                      
      
      ],
          toolbar:toolbar,
@@ -160,7 +160,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
      columns: [
          { type: 'dropdown',   source:{#items#},autocomplete:true },
         { type: 'dropdown',   source:{#units#},autocomplete:true  },
-        { type: 'dropdown',   source:{#eq#},autocomplete:true, multiple:true  },  , 
+        { type: 'dropdown',   source:{#eq#},autocomplete:true, multiple:true,wordWrap:true  },  , 
           
      ],
          toolbar:toolbar,
