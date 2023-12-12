@@ -42,7 +42,6 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
-const zeroData=data;
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 var widths=[180,80];
@@ -126,7 +125,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
 });
 table.updateTable= function (instance, cell, col, row, val, label, cellName) {
          dataInput.value=JSON.stringify(this.getData());
-         if (readonly) {cell.classList.add('readonly')}
+         if (readonly) {this.cell.classList.add('readonly')}
     };
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
