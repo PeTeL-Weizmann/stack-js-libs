@@ -122,12 +122,12 @@ var table=jspreadsheet(document.getElementById(uid_table), {
      ],
          toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
+         dataInput.value=JSON.stringify(table.getData());
          if (readonly) {cell.classList.add('readonly')}
     }, 
     columnSorting:false,
 });
 
-table.onafterchanges = function() {dataInput.value=JSON.stringify(table.getData()) };
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
@@ -135,7 +135,6 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
       btn.appendChild(t);   
       btn.onclick = function(e){
          e.preventDefault(); 
-         table.setData(zeroData);
          table.setData({#hintdata#});
        
       };  
