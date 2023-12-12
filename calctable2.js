@@ -124,9 +124,10 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columnSorting:false,
 });
 table.updateTable= function (instance, cell, col, row, val, label, cellName) {
+         console.log('the cell object',cell);
          dataInput.value=JSON.stringify(this.getData());
          if (readonly) {cell.classList.add('readonly')};
- console.log(cell);
+ 
     };
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
