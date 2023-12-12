@@ -115,9 +115,9 @@ var table=jspreadsheet(document.getElementById(uid_table), {
  
             
     columns: [
-        { type: 'dropdown',   source:{#items#},autocomplete:true },
-        { type: 'dropdown',   source:{#units#},autocomplete:true  },
-        { type: 'dropdown',   source:{#eq#},autocomplete:true, multiple:true,wordWrap:true  },                                      
+        { type: 'dropdown',   source:{#items#} },
+        { type: 'dropdown',   source:{#units#}  },
+        { type: 'dropdown',   source:{#eq#} multiple:true,wordWrap:true  },                                      
      
      ],
          toolbar:toolbar,
@@ -158,9 +158,9 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
      colWidths: widths,
           
      columns: [
-         { type: 'dropdown',   source:{#items#},autocomplete:true },
-        { type: 'dropdown',   source:{#units#},autocomplete:true  },
-        { type: 'dropdown',   source:{#eq#},autocomplete:true, multiple:true,wordWrap:true  },  , 
+         { type: 'dropdown',   source:{#items#}},
+        { type: 'dropdown',   source:{#units#} },
+        { type: 'dropdown',   source:{#eq#},multiple:true,wordWrap:true  },  , 
           
      ],
          toolbar:toolbar,
