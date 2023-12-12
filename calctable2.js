@@ -122,13 +122,11 @@ var table=jspreadsheet(document.getElementById(uid_table), {
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
         cell.classList.add('readonly');
-        updateInput;
+        dataInput.value=JSON.stringify(getData());
     },    
          columnSorting:false,
 });
-var updateInput= function () {
-           dataInput.value=JSON.stringify(table.getData());
-          };
+
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
