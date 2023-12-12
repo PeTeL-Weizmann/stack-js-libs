@@ -120,12 +120,12 @@ var table=jspreadsheet(document.getElementById(uid_table), {
      
      ],
          toolbar:toolbar,
-    
+    updateTable: function (instance, cell, col, row, val, label, cellName) {MyupdateTable(instance, cell, col, row, val, label, cellName)},
     columnSorting:false,
 });
-table.updateTable= function (instance, cell, col, row, val, label, cellName) {
+MyupdateTable= function (instance, cell, col, row, val, label, cellName) {
          console.log('the cell object',cell);
-         dataInput.value=JSON.stringify(this.getData());
+         dataInput.value=JSON.stringify(table.getData());
          if (readonly) {cell.classList.add('readonly')};
  
     };
