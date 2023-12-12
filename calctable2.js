@@ -42,7 +42,7 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
-
+const zeroData:data;
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 var widths=[180,80];
@@ -135,8 +135,9 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
       btn.appendChild(t);   
       btn.onclick = function(e){
          e.preventDefault(); 
+         table.setData(zeroData);
          table.setData({#hintdata#});
-         table.refresh();
+       
       };  
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
