@@ -135,7 +135,8 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
       btn.appendChild(t);   
       btn.onclick = function(e){
          e.preventDefault(); 
-         table.setData({#hintdata#})
+         table.setData({#hintdata#});
+         table.refresh();
       };  
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
@@ -157,9 +158,9 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
      colWidths: widths,
           
      columns: [
-        { type: 'dropdown',   source:[  'יחס מולים',  'מסה',  'מסה מולרית',  'מספר אלקטרונים', 'מספר חלקיקים', 'מספר מולים', 'נפח גז', 'נפח מולרי', 'נפח תמיסה', 'ריכוז' ]  },
-        { type: 'dropdown',   source:["gr","gr/mol","kg","kJ","ℓiter","ℓiter/mol","M","ml","mol","mol/ℓiter","atoms","molecules"  ]   },
-     
+         { type: 'dropdown',   source:{#items#} },
+        { type: 'dropdown',   source:{#units#}  },
+          
      ],
          toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
