@@ -122,7 +122,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
         cell.classList.add('readonly');
-        updateInput();
+        updateInput;
     },    
          columnSorting:false,
 });
