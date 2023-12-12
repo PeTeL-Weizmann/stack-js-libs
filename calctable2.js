@@ -117,7 +117,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columns: [
         { type: 'dropdown',   source:{#items#} },
         { type: 'dropdown',   source:{#units#}  },
-        { type: 'dropdown',   source:{#eq#}, multiple:true,wordWrap:true  },                                      
+        { type: 'text',   wordWrap:true  },                                      
      
      ],
          toolbar:toolbar,
@@ -160,7 +160,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
      columns: [
          { type: 'dropdown',   source:{#items#}},
         { type: 'dropdown',   source:{#units#} },
-        { type: 'dropdown',   source:{#eq#},multiple:true,wordWrap:true  }, 
+        { type: 'text',   wordWrap:true  },
           
      ],
          toolbar:toolbar,
