@@ -120,15 +120,15 @@ var table=jspreadsheet(document.getElementById(uid_table), {
      
      ],
          toolbar:toolbar,
-    updateTable: function (instance, cell, col, row, val, label, cellName) {MyupdateTable(instance, cell, col, row, val, label, cellName)},
-    columnSorting:false,
+  updateTable: function (instance, cell, col, row, val, label, cellName) {
+        cell.classList.add('readonly');
+        updateInput();
+    },    
+         columnSorting:false,
 });
-MyupdateTable= function (instance, cell, col, row, val, label, cellName) {
-         console.log('the cell object',cell);
-         dataInput.value=JSON.stringify(table.getData());
-         if (readonly) {cell.classList.add('readonly')};
- 
-    };
+updateInput= function () {
+           dataInput.value=JSON.stringify(table.getData());
+          };
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
