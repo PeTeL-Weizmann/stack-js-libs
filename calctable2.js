@@ -121,13 +121,13 @@ var table=jspreadsheet(document.getElementById(uid_table), {
      
      ],
          toolbar:toolbar,
-    updateTable: function (instance, cell, col, row, val, label, cellName) {
-         dataInput.value=JSON.stringify(this.getData());
-         if (readonly) {cell.classList.add('readonly')}
-    }, 
+    
     columnSorting:false,
 });
-
+table.updateTable= function (instance, cell, col, row, val, label, cellName) {
+         dataInput.value=JSON.stringify(this.getData());
+         if (readonly) {cell.classList.add('readonly')}
+    };
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
