@@ -42,7 +42,7 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
-const zeroData:data;
+const zeroData=data;
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 var widths=[180,80];
