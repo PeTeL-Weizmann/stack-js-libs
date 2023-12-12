@@ -44,8 +44,8 @@ var zData=["","","","","","","","","","","","","","",""];
 var data = [zData.slice(0,{#Titles#}.length)];
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
-var widths=[180,80];
-for (let i=2;i<{#Titles#}.length;i++){widths[i]=120};
+var widths=[180,80,120];
+for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
 var toolbar=[
         {
             type: 'i',
@@ -117,6 +117,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columns: [
         { type: 'dropdown',   source:{#items#} },
         { type: 'dropdown',   source:{#units#}  },
+        { type: 'dropdown',   source:{#eq#}  },                                      
      
      ],
          toolbar:toolbar,
@@ -158,7 +159,8 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
           
      columns: [
          { type: 'dropdown',   source:{#items#} },
-        { type: 'dropdown',   source:{#units#}  },
+         { type: 'dropdown',   source:{#units#}  },
+         { type: 'dropdown',   source:{#eq#}  }, 
           
      ],
          toolbar:toolbar,
