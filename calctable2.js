@@ -44,7 +44,7 @@ var zData=["","","","","","","","","","","","","","",""];
 var data = [zData.slice(0,{#Titles#}.length)];
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
-var widths=[180,80,120];
+var widths=[180,120,120];
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
 var toolbar=[
         {
