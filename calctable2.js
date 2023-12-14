@@ -158,6 +158,12 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
      data:({#data#}),
      colHeaders:{#Titles#},
      colWidths: widths,
+     allowManualInsertColumn:0,             
+     allowInsertColumn:0,
+     allowDeleteColumn:0,
+     allowManualInsertRow:0,             
+     allowInsertRow:0,
+     allowDeleteRow:0,
           
      columns: [
          { type: 'dropdown',   source:{#items#}},
