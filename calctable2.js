@@ -112,7 +112,9 @@ var table=jspreadsheet(document.getElementById(uid_table), {
   data:data,
   colHeaders:{#Titles#},
   colWidths: widths,
- 
+  allowManualInsertColumn:0,             
+  allowInsertColumn:0,
+  allowDeleteColumn:0,
             
     columns: [
         { type: 'dropdown',   source:{#items#} },
