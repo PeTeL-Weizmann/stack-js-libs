@@ -27,10 +27,8 @@
 var last=false;
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
-//var uid_hint="hint"+board.generateId();
-var uid_hint="hint"+uid_table;
-//var uid_feedback="feedback"+board.generateId();
-var uid_feedback="feedback"+uid_table;
+var uid_hint="hint"+board.generateId();
+var uid_feedback="feedback"+board.generateId();
 
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
