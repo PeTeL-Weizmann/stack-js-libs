@@ -7,7 +7,6 @@
 
  <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
- <div style="display:none;">\(x^2\)</div>
    <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
  </div>
  <div id="myView" style="display:none;" ></div>
@@ -154,7 +153,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
     if (localStorage.getItem("final")=={#rqm#}) try {
-     tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);
+     tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
     var table2=jspreadsheet(document.getElementById(uid_feedback), {
      data:({#data#}),
      colHeaders:{#Titles#},
