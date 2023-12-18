@@ -126,18 +126,9 @@ var table=jspreadsheet(document.getElementById(uid_table), {
   updateTable: function (instance, cell, col, row, val, label, cellName) {
        
        //const element = document.getElementById(uid_table);
-   if (document.querySelector('.mod-quiz-review')!== null) {
-  // The test is in review mode
-  // Display reviewed answers and disable input
-  console.log('Test is in review mode');
-  // Modify your specific interactive elements, e.g., disable buttons, hide input fields, etc.
-  if (readonly) cell.classList.add('readonly');                                    
-} else {
-  // The test is not in review mode
-  // Enable interactive elements for answer submission
-  console.log('Test is not in review mode');
-  // Modify your specific interactive elements, e.g., enable buttons, show input fields, etc.
-}                                      
+      var isAttemptMode = window.location.href.indexOf('attempt.php') !== -1;
+   if (isAttemptMode && readonly) cell.classList.add('readonly');                                    
+                                      
         dataInput.value=JSON.stringify(instance.jspreadsheet.getData());
     },    
          columnSorting:false,
