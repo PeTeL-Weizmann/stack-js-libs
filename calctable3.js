@@ -125,8 +125,8 @@ var table=jspreadsheet(document.getElementById(uid_table), {
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
        
-       const element = document.getElementById(uid_table);                                      
-if (element.classList.contains('mod-quiz-review')) {
+       //const element = document.getElementById(uid_table);
+   if (document.querySelector('.mod-quiz-review')!== null) {
   // The test is in review mode
   // Display reviewed answers and disable input
   console.log('Test is in review mode');
