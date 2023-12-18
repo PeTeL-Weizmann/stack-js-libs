@@ -124,10 +124,11 @@ var table=jspreadsheet(document.getElementById(uid_table), {
      ],
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
-       if (readonly) cell.classList.add('readonly');
-        dataInput.value=JSON.stringify(instance.jspreadsheet.getData());
+   var isAttemptMode = window.location.href.indexOf('attempt.php') !== -1;
+   if (isAttemptMode && readonly) cell.classList.add('readonly');                                    
+   dataInput.value=JSON.stringify(instance.jspreadsheet.getData());
     },    
-         columnSorting:false,
+  columnSorting:false,
 });
 
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
