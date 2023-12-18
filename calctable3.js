@@ -124,7 +124,20 @@ var table=jspreadsheet(document.getElementById(uid_table), {
      ],
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
-       if (readonly) cell.classList.add('readonly');
+       
+       const element = document.getElementById(uid_table);                                      
+if (element.classList.contains('mod-quiz-review')) {
+  // The test is in review mode
+  // Display reviewed answers and disable input
+  console.log('Test is in review mode');
+  // Modify your specific interactive elements, e.g., disable buttons, hide input fields, etc.
+  if (readonly) cell.classList.add('readonly');                                    
+} else {
+  // The test is not in review mode
+  // Enable interactive elements for answer submission
+  console.log('Test is not in review mode');
+  // Modify your specific interactive elements, e.g., enable buttons, show input fields, etc.
+}                                      
         dataInput.value=JSON.stringify(instance.jspreadsheet.getData());
     },    
          columnSorting:false,
