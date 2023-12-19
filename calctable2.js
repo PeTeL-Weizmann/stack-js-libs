@@ -20,12 +20,6 @@
     .jexcel {
     font-size:16 px;
 }
-.asciimath {
-      font-size: 16 px; /* Adjust the font size as needed */
-    }
-.mjx-container {
-  font-size: 16 px;
-}
  </style>
 
   
