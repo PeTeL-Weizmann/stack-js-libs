@@ -21,6 +21,13 @@
     font-size:16;
 }
  </style>
+
+  <style>
+    .asciimath {
+      font-size: 16px; /* Adjust the font size as needed */
+    }
+  </style>
+   
   <div style="display:none;">\(x^2\)
  [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
 var last=false;
