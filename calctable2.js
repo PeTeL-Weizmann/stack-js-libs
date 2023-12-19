@@ -18,13 +18,13 @@
 
   <style>
     .jexcel {
-    font-size:16;
+    font-size:16 px;
 }
 .asciimath {
       font-size: 16 px; /* Adjust the font size as needed */
     }
 .mjx-container {
-  font-size: 0.85 em;
+  font-size: 16 px;
 }
  </style>
 
