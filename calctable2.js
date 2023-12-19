@@ -21,8 +21,11 @@
     font-size:16;
 }
 .asciimath {
-      font-size: 16px; /* Adjust the font size as needed */
+      font-size: 16 px; /* Adjust the font size as needed */
     }
+.mjx-container {
+  font-size: 0.85 em;
+}
  </style>
 
   
