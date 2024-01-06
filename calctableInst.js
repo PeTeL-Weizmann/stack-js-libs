@@ -166,8 +166,33 @@ for (let i = 0; i < columnLength-3; i++) {
  
 }
 
+var container = document.createElement('div');
+container.style.position = 'absolute';
+container.style.left = '-9999px';
 
-   
+// Attach the container to the document body
+document.body.appendChild(container);
+
+// Initialize the jspreadsheet table in the container
+var teacherTable = jspreadsheet(container, {
+  data: ({#data#})
+});
+   const studentData = table.getData();
+const teacherData = teacherTable.getData();
+
+for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
+    for (let columnIndex = 3; columnIndex < studentData[rowIndex].length; columnIndex++) {
+        // Evaluate formulas and extract calculated values
+        const studentValue = studentTable.getValue(rowIndex, columnIndex);
+        const teacherValue = teacherTable.getValue(rowIndex, columnIndex);
+
+        // Compare values for grading
+        const grade = studentValue === teacherValue ? "✔️" : "❌";  // Adjust grading logic as needed
+
+        const gradeColumnIndex = columnIndex + 1;  // Account for inserted empty column
+        studentTable.setDataAtCell(rowIndex, gradeColumnIndex, grade);
+    }
+};
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
