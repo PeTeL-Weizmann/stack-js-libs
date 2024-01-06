@@ -151,24 +151,18 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
 if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
  var rqm={#rqm#};
-  
+         
   checkAnswer[rqm] = function(hint,islast) {
      readonly=true;
- // Define the index where you want to start inserting columns (after the 4th column)
-var startingIndex = 4; // 0-based index, so 3 represents the 4th column
 
-// Define the number of columns to insert
-var numberOfColumnsToInsert = 1; // Change this value based on your requirement
+// Get the data as a nested array
+const data = table.getData();
+const columnLength = data[0].length;  // Assuming the first row has all columns
 
-// Get the data from the table
-var tableData = table.getData();
-
-// Get the total number of columns in the first row of the data
-var totalColumns = tableData[0].length;
-
-// Use a loop to insert 1 column after the 4th column for all existing columns
-for (var i = startingIndex + 1; i <= totalColumns; i++) {
-  table.insertColumn(i+1, numberOfColumnsToInsert);
+// Start from the 4th column (index 3) and go until the second-to-last column
+for (let columnIndex = 3; columnIndex < columnLength - 1; columnIndex++) {
+    table.insertColumn(columnIndex + 1);  // Insert after the current column
+    columnIndex++;  // Increment to account for the added column
 }
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
