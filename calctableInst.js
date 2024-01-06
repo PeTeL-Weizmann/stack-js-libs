@@ -154,9 +154,9 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
   
   checkAnswer[rqm] = function(hint,islast) {
      readonly=true;
-   for (let columnIndex = 3; columnIndex < table.columns.length; columnIndex++) {
+   for (let columnIndex = 3; columnIndex < table.options.columns.length; columnIndex++) {
     // Insert a new column before the current column
-    sheet.insertColumn(columnIndex);
+    table.insertColumn(columnIndex);
     columnIndex++; // Increment to account for the added column
 }
      table.insertRow();
