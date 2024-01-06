@@ -158,14 +158,15 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
 // Get the data as a nested array
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
-
+columnIndex=3;
 // Insert columns between existing columns
-for (let columnIndex = 3; columnIndex < columnLength; columnIndex++) {
-    table.insertColumn(1, columnIndex, true);  // Insert 1 empty column before the current column
+for (let i = 3; i < columnLength-3; i++) {
+    table.insertColumn(1, columnIndex, false);  // Insert 1 empty column after the current column
+ columnIndex=columnIndex+2;
+ 
 }
 
-// Insert an empty column after the last column
-table.insertColumn(1);  // Add 1 empty column at the end (default behavior)
+
    
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
