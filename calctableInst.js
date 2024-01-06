@@ -183,14 +183,14 @@ const teacherData = teacherTable.getData();
 for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
     for (let columnIndex = 3; columnIndex < studentData[rowIndex].length; columnIndex++) {
         // Evaluate formulas and extract calculated values
-        const studentValue = studentTable.getValue(rowIndex, columnIndex);
+        const studentValue = table.getValue(rowIndex, columnIndex);
         const teacherValue = teacherTable.getValue(rowIndex, columnIndex);
 
         // Compare values for grading
         const grade = studentValue === teacherValue ? "✔️" : "❌";  // Adjust grading logic as needed
 
         const gradeColumnIndex = columnIndex + 1;  // Account for inserted empty column
-        studentTable.setDataAtCell(rowIndex, gradeColumnIndex, grade);
+        table.setDataAtCell(rowIndex, gradeColumnIndex, grade);
     }
 };
      table.insertRow();
