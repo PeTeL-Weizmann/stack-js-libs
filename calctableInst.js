@@ -155,7 +155,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
   checkAnswer[rqm] = function(hint,islast) {
      readonly=true;
  // Define the index where you want to start inserting columns (after the 4th column)
-var startingIndex = 3; // 0-based index, so 3 represents the 4th column
+var startingIndex = 4; // 0-based index, so 3 represents the 4th column
 
 // Define the number of columns to insert
 var numberOfColumnsToInsert = 1; // Change this value based on your requirement
@@ -168,7 +168,7 @@ var totalColumns = tableData[0].length;
 
 // Use a loop to insert 1 column after the 4th column for all existing columns
 for (var i = startingIndex + 1; i <= totalColumns; i++) {
-  table.insertColumn(i, numberOfColumnsToInsert);
+  table.insertColumn(i+1, numberOfColumnsToInsert);
 }
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
