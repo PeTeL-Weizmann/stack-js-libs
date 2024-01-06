@@ -159,11 +159,14 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
 
-// Start from the 4th column (index 3) and go until the second-to-last column
-for (let columnIndex = 3; columnIndex < columnLength - 1; columnIndex++) {
-    table.insertColumn(columnIndex + 1);  // Insert after the current column
-    columnIndex++;  // Increment to account for the added column
+// Insert columns between existing columns
+for (let columnIndex = 3; columnIndex < columnLength; columnIndex++) {
+    table.insertColumn(1, columnIndex, true);  // Insert 1 empty column before the current column
 }
+
+// Insert an empty column after the last column
+table.insertColumn(1);  // Add 1 empty column at the end (default behavior)
+   
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
