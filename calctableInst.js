@@ -158,7 +158,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
 // Get the data as a nested array
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
-columnIndex=3;
+var columnIndex=3;
 // Insert columns between existing columns
 for (let i = 3; i < columnLength-3; i++) {
     table.insertColumn(1, columnIndex, false);  // Insert 1 empty column after the current column
