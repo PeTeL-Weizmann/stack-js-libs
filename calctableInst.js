@@ -190,7 +190,7 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
         const grade = studentValue === teacherValue ? "✔️" : "❌";  // Adjust grading logic as needed
 
         const gradeColumnIndex = columnIndex + 1;  // Account for inserted empty column
-        table.setDataAtCell(rowIndex, gradeColumnIndex, grade);
+        table.setValue(rowIndex, gradeColumnIndex, grade);
     }
 };
      table.insertRow();
