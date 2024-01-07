@@ -190,8 +190,8 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
         if (studentValue !== undefined || teacherValue !== undefined) {
         //    const grade = studentValue === teacherValue ? "✔️" : "❌";
              const grade = studentValue === teacherValue ? "ok" : "no";
-
             const gradeColumnIndex = studentColumnIndex + 1;  // Adjust the column index for the student table
+            console.log(`Row: ${rowIndex}, Column: ${gradeColumnIndex}, Grade: ${grade}`);
             table.setValue(rowIndex, gradeColumnIndex, grade);
         }
 
