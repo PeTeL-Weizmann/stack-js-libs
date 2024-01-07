@@ -183,11 +183,11 @@ const teacherData = teacherTable.getData();
 for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
     let teacherColumnIndex = 3;  // Starting column index for the teacher
     for (let studentColumnIndex = 3; studentColumnIndex < studentData[rowIndex].length; studentColumnIndex += 2) {
-        const studentCoords = { row: rowIndex, col: studentColumnIndex };
-        const studentValue = table.getValueFromCoords(studentCoords.row, studentCoords.col);
+        const studentCellIdent = jspreadsheet.getColumnName(studentColumnIndex) + (rowIndex + 1);
+        const studentValue = table.getValue(studentCellIdent);
 
-        const teacherCoords = { row: rowIndex, col: teacherColumnIndex };
-        const teacherValue = teacherTable.getValueFromCoords(teacherCoords.row, teacherCoords.col);
+        const teacherCellIdent = jspreadsheet.getColumnName(teacherColumnIndex) + (rowIndex + 1);
+        const teacherValue = teacherTable.getValue(teacherCellIdent);
 
         // Check if either student or teacher cell is not empty
         if (studentValue !== undefined || teacherValue !== undefined) {
@@ -196,15 +196,18 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
             // Adjust the column index for the student table
             const gradeColumnIndex = studentColumnIndex + 1;
 
-            // Set the grade value in the corresponding cell using setValueFromCoords
-            table.setValueFromCoords(rowIndex, gradeColumnIndex, grade, false);
+            // Construct the cell identifier for the next column in the same row
+            const gradeCellIdent = jspreadsheet.getColumnName(gradeColumnIndex) + (rowIndex + 1);
+
+            // Set the grade value in the next column of the same row
+            table.setValue(gradeCellIdent, grade, false);
         }
 
         // Increment teacherColumnIndex by 1
         teacherColumnIndex++;
     }
 };
- 
+
      //readonly=true;
      table.refresh();
      table.insertRow();
