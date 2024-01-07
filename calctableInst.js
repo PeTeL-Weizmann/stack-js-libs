@@ -164,7 +164,7 @@ for (let i = 0; i < columnLength-3; i++) {
  columnIndex=columnIndex+2;
  
 }
-   table.setValue(5,5,'raed');
+   table.setValue(1,4,'raed');
 /*
 var container = document.createElement('div');
 container.style.position = 'absolute';
