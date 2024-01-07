@@ -183,20 +183,20 @@ const teacherData = teacherTable.getData();
 for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
     let teacherColumnIndex = 3;  // Starting column index for the teacher
     for (let studentColumnIndex = 3; studentColumnIndex < studentData[rowIndex].length; studentColumnIndex += 2) {
-        const studentCellIdent = jspreadsheet.getColumnName(studentColumnIndex) + (rowIndex + 1);
+        const studentCellIdent = jspreadsheet.getColumnName(studentColumnIndex) + rowIndex;
         const studentCell = table.getCell(studentCellIdent);
-        const studentValue = studentCell ? studentCell.innerHTML : undefined;
+        const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
 
-        const teacherCellIdent = jspreadsheet.getColumnName(teacherColumnIndex) + (rowIndex + 1);
+        const teacherCellIdent = jspreadsheet.getColumnName(teacherColumnIndex) + rowIndex;
         const teacherCell = teacherTable.getCell(teacherCellIdent);
-        const teacherValue = teacherCell ? teacherCell.innerHTML : undefined;
+        const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
 
-        // Check if both student and teacher cells are not empty
-        if (studentValue !== undefined && teacherValue !== undefined) {
+        // Check if either student or teacher cells are not empty
+        if (studentValue !== '' || teacherValue !== '') {
             const grade = studentValue === teacherValue ? "✔️" : "❌";
 
             // Construct the cell identifier for the next column in the same row
-            const gradeCellIdent = jspreadsheet.getColumnName(studentColumnIndex + 1) + (rowIndex+1);
+            const gradeCellIdent = jspreadsheet.getColumnName(studentColumnIndex + 1) + (rowIndex + 1);
 
             // Set the grade value in the next column of the same row
             table.setValue(gradeCellIdent, grade, false);
