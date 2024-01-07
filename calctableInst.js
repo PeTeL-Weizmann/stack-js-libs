@@ -183,7 +183,7 @@ var teacherTable = jspreadsheet(container, {
    const studentData = table.getData();
 const teacherData = teacherTable.getData();
 
-for (let rowIndex = 0; rowIndex <=  studentData.length+1; rowIndex++) {
+for (let rowIndex = 1; rowIndex <=  studentData.length; rowIndex++) {
     let teacherColumnIndex = 3;  // Starting column index for the teacher
     for (let studentColumnIndex = 3; studentColumnIndex < studentData[rowIndex].length; studentColumnIndex += 2) {
         const studentCellIdent = jspreadsheet.getColumnName(studentColumnIndex) + rowIndex;
