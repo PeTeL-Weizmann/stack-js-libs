@@ -164,8 +164,8 @@ for (let i = 0; i < columnLength-3; i++) {
  columnIndex=columnIndex+2;
  
 }
-   table.setValue(1,4,'raed');
-/*
+ 
+
 var container = document.createElement('div');
 container.style.position = 'absolute';
 container.style.left = '-9999px';
@@ -183,24 +183,28 @@ const teacherData = teacherTable.getData();
 for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
     let teacherColumnIndex = 3;  // Starting column index for the teacher
     for (let studentColumnIndex = 3; studentColumnIndex < studentData[rowIndex].length; studentColumnIndex += 2) {
-        const studentValue = table.getValue(rowIndex, studentColumnIndex);
-        const teacherValue = teacherTable.getValue(rowIndex, teacherColumnIndex);
+        const studentCoords = { row: rowIndex, col: studentColumnIndex };
+        const studentValue = table.getValueFromCoords(studentCoords.row, studentCoords.col);
+
+        const teacherCoords = { row: rowIndex, col: teacherColumnIndex };
+        const teacherValue = teacherTable.getValueFromCoords(teacherCoords.row, teacherCoords.col);
 
         // Check if either student or teacher cell is not empty
         if (studentValue !== undefined || teacherValue !== undefined) {
-        //    const grade = studentValue === teacherValue ? "✔️" : "❌";
-             const grade = studentValue === teacherValue ? "ok" : "no";
-            const gradeColumnIndex = studentColumnIndex + 1;  // Adjust the column index for the student table
-            console.log(`Row: ${rowIndex}, Column: ${gradeColumnIndex}, Grade: ${grade}`);
-            table.setValue(rowIndex, gradeColumnIndex, grade);
-           
+            const grade = studentValue === teacherValue ? "✔️" : "❌";
+
+            // Adjust the column index for the student table
+            const gradeColumnIndex = studentColumnIndex + 1;
+
+            // Set the grade value in the corresponding cell using setValueFromCoords
+            table.setValueFromCoords(rowIndex, gradeColumnIndex, grade, false);
         }
 
         // Increment teacherColumnIndex by 1
         teacherColumnIndex++;
     }
 };
- */
+ 
      //readonly=true;
      table.refresh();
      table.insertRow();
