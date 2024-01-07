@@ -164,7 +164,8 @@ for (let i = 0; i < columnLength-3; i++) {
  columnIndex=columnIndex+2;
  
 }
-
+   table.setValue(5,5,'raed');
+/*
 var container = document.createElement('div');
 container.style.position = 'absolute';
 container.style.left = '-9999px';
@@ -192,15 +193,16 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
             const gradeColumnIndex = studentColumnIndex + 1;  // Adjust the column index for the student table
             console.log(`Row: ${rowIndex}, Column: ${gradeColumnIndex}, Grade: ${grade}`);
             table.setValue(rowIndex, gradeColumnIndex, grade);
-            table.refresh();
+           
         }
 
         // Increment teacherColumnIndex by 1
         teacherColumnIndex++;
     }
 };
-  
+ */
      //readonly=true;
+     table.refresh();
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
