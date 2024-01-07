@@ -116,9 +116,12 @@ var table=jspreadsheet(document.getElementById(uid_table), {
   data:data,
   colHeaders:{#Titles#},
   colWidths: widths,
-  allowManualInsertColumn:1,             
-  allowInsertColumn:1,
+  allowManualInsertColumn:0,             
+  allowInsertColumn:0,
   allowDeleteColumn:0,
+  allowManualInsertRow:0,             
+  allowInsertRow:0,
+  allowDeleteRow:0,              
             
     columns: [
         { type: 'dropdown',   source:{#items#} },
@@ -180,7 +183,7 @@ var teacherTable = jspreadsheet(container, {
    const studentData = table.getData();
 const teacherData = teacherTable.getData();
 
-for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
+for (let rowIndex = 0; rowIndex <=  studentData.length; rowIndex++) {
     let teacherColumnIndex = 3;  // Starting column index for the teacher
     for (let studentColumnIndex = 3; studentColumnIndex < studentData[rowIndex].length; studentColumnIndex += 2) {
         const studentCellIdent = jspreadsheet.getColumnName(studentColumnIndex) + rowIndex;
