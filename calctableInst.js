@@ -153,8 +153,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
  var rqm={#rqm#};
          
   checkAnswer[rqm] = function(hint,islast) {
-     readonly=true;
-
+     
 // Get the data as a nested array
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
@@ -199,6 +198,7 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
         teacherColumnIndex++;
     }
 };
+     readonly=true;
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
