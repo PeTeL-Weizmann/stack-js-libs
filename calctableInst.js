@@ -117,7 +117,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
   colHeaders:{#Titles#},
   colWidths: widths,
   allowManualInsertColumn:0,             
-  allowInsertColumn:0,
+  allowInsertColumn:1,
   allowDeleteColumn:0,
   allowManualInsertRow:0,             
   allowInsertRow:0,
