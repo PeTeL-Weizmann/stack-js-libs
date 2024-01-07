@@ -188,7 +188,8 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
 
         // Check if either student or teacher cell is not empty
         if (studentValue !== undefined || teacherValue !== undefined) {
-            const grade = studentValue === teacherValue ? "✔️" : "❌";
+        //    const grade = studentValue === teacherValue ? "✔️" : "❌";
+             const grade = studentValue === teacherValue ? "ok" : "no";
 
             const gradeColumnIndex = studentColumnIndex + 1;  // Adjust the column index for the student table
             table.setValue(rowIndex, gradeColumnIndex, grade);
