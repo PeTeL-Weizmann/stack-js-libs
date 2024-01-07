@@ -196,7 +196,7 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
             const grade = studentValue === teacherValue ? "✔️" : "❌";
 
             // Construct the cell identifier for the next column in the same row
-            const gradeCellIdent = jspreadsheet.getColumnName(studentColumnIndex + 1) + rowIndex;
+            const gradeCellIdent = jspreadsheet.getColumnName(studentColumnIndex + 1) + (rowIndex+1);
 
             // Set the grade value in the next column of the same row
             table.setValue(gradeCellIdent, grade, false);
