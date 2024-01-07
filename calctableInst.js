@@ -198,7 +198,7 @@ for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
         teacherColumnIndex++;
     }
 };
-     readonly=true;
+     //readonly=true;
      table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
