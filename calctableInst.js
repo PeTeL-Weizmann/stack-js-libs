@@ -181,16 +181,21 @@ var teacherTable = jspreadsheet(container, {
 const teacherData = teacherTable.getData();
 
 for (let rowIndex = 0; rowIndex < studentData.length; rowIndex++) {
-    for (let columnIndex = 3; columnIndex < studentData[rowIndex].length; columnIndex++) {
-        // Evaluate formulas and extract calculated values
-        const studentValue = table.getValue(rowIndex, columnIndex);
-        const teacherValue = teacherTable.getValue(rowIndex, columnIndex);
+    let teacherColumnIndex = 3;  // Starting column index for the teacher
+    for (let studentColumnIndex = 3; studentColumnIndex < studentData[rowIndex].length; studentColumnIndex += 2) {
+        const studentValue = table.getValue(rowIndex, studentColumnIndex);
+        const teacherValue = teacherTable.getValue(rowIndex, teacherColumnIndex);
 
-        // Compare values for grading
-        const grade = studentValue === teacherValue ? "✔️" : "❌";  // Adjust grading logic as needed
+        // Check if either student or teacher cell is not empty
+        if (studentValue !== undefined || teacherValue !== undefined) {
+            const grade = studentValue === teacherValue ? "✔️" : "❌";
 
-        const gradeColumnIndex = columnIndex + 1;  // Account for inserted empty column
-        table.setValue(rowIndex, gradeColumnIndex, grade);
+            const gradeColumnIndex = studentColumnIndex + 1;  // Adjust the column index for the student table
+            table.setValue(rowIndex, gradeColumnIndex, grade);
+        }
+
+        // Increment teacherColumnIndex by 1
+        teacherColumnIndex++;
     }
 };
      table.insertRow();
