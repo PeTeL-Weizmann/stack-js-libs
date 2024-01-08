@@ -46,8 +46,7 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 
 //var data = [zData.slice(0,{#Titles#}.length)];
 var data={#hintdata#};
-        );
-					// Initialize an array to store positions of "?"
+      
 var cellsToGrade = [];
 
 // Iterate through each row in the data
