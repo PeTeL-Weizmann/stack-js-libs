@@ -50,8 +50,8 @@ var data={#hintdata#};
 var cellsToGrade = [];
 
 // Iterate through each row in the data
-for (let rowIndex = 0; rowIndex < table.getData().length; rowIndex++) {
-  const rowData = table.getData()[rowIndex];
+for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
+  const rowData = data[rowIndex];
 
   // Iterate through each element in the row
   for (let colIndex = 0; colIndex < rowData.length; colIndex++) {
