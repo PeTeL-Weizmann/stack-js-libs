@@ -223,9 +223,8 @@ cellsToGrade.forEach(({ row, col }) => {
     }
 });
 
-     //readonly=true;
+     readonly=true;
      table.refresh();
-     table.insertRow();
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
     if (localStorage.getItem("final")=={#rqm#}) try {
@@ -256,7 +255,6 @@ cellsToGrade.forEach(({ row, col }) => {
   
 }        
   catch(err) {};
-     table.deleteRow();
 
    
   };
