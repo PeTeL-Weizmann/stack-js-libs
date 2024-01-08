@@ -62,6 +62,7 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
     }
   }
 };
+console.log(cellsToGrade);
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 var widths=[180,120,120];
