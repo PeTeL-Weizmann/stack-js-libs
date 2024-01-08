@@ -216,7 +216,7 @@ cellsToGrade.forEach(({ row, col }) => {
         const grade = studentValue === teacherValue ? "✔️" : "❌";
 
         // Set the grade value in the grading column of the same row
-        const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + row;
+        const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
         table.setValue(gradeCellIdent, grade, false);
     }
 });
