@@ -213,7 +213,9 @@ cellsToGrade.forEach(({ row, col }) => {
 
     // Check if either student or teacher cells are not empty
     if (studentValue !== '' || teacherValue !== '') {
-        const grade = studentValue === teacherValue ? "✔️" : "❌";
+        const grade =
+  Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
+  Math.abs(parseFloat(teacherValue)) <= 0.03     ? "✔️"  : "❌";
 
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
