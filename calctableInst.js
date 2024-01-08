@@ -202,11 +202,11 @@ const teacherData = teacherTable.getData();
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col }) => {
-    const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + row+1;
+    const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + (row+1);
     const studentCell = table.getCell(studentCellIdent);
     const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
 
-    const teacherCellIdent = jspreadsheet.getColumnName(col) + row+1; // No adjustment needed here
+    const teacherCellIdent = jspreadsheet.getColumnName(col) + (row+1); // No adjustment needed here
     const teacherCell = teacherTable.getCell(teacherCellIdent);
     const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
 
