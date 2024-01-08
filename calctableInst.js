@@ -46,6 +46,23 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 
 //var data = [zData.slice(0,{#Titles#}.length)];
 var data={#hintdata#};
+        );
+					// Initialize an array to store positions of "?"
+var cellsToGrade = [];
+
+// Iterate through each row in the data
+for (let rowIndex = 0; rowIndex < table.getData().length; rowIndex++) {
+  const rowData = table.getData()[rowIndex];
+
+  // Iterate through each element in the row
+  for (let colIndex = 0; colIndex < rowData.length; colIndex++) {
+    // Check if the current element is "?"
+    if (rowData[colIndex] === "?") {
+      // Store the position in the new array
+      cellsToGrade.push({ row: rowIndex, col: colIndex });
+    }
+  }
+};
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 var widths=[180,120,120];
@@ -126,7 +143,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columns: [
         { type: 'dropdown',   source:{#items#} },
         { type: 'dropdown',   source:{#units#}  },
-        { type: 'text',   wordWrap:true  },                                      
+        { type: 'html',   wordWrap:true  },                                      
      
      ],
          toolbar:toolbar,
@@ -183,32 +200,26 @@ var teacherTable = jspreadsheet(container, {
    const studentData = table.getData();
 const teacherData = teacherTable.getData();
 
-for (let rowIndex = 1; rowIndex <=  studentData.length; rowIndex++) {
-    let teacherColumnIndex = 3;  // Starting column index for the teacher
-    for (let studentColumnIndex = 3; studentColumnIndex < studentData[rowIndex].length; studentColumnIndex += 2) {
-        const studentCellIdent = jspreadsheet.getColumnName(studentColumnIndex) + rowIndex;
-        const studentCell = table.getCell(studentCellIdent);
-        const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
 
-        const teacherCellIdent = jspreadsheet.getColumnName(teacherColumnIndex) + rowIndex;
-        const teacherCell = teacherTable.getCell(teacherCellIdent);
-        const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
+// Use stored positions for grading
+cellsToGrade.forEach(({ row, col }) => {
+    const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + row+1;
+    const studentCell = table.getCell(studentCellIdent);
+    const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
 
-        // Check if either student or teacher cells are not empty
-        if (studentValue !== '' || teacherValue !== '') {
-            const grade = studentValue === teacherValue ? "✔️" : "❌";
+    const teacherCellIdent = jspreadsheet.getColumnName(col) + row+1; // No adjustment needed here
+    const teacherCell = teacherTable.getCell(teacherCellIdent);
+    const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
 
-            // Construct the cell identifier for the next column in the same row
-            const gradeCellIdent = jspreadsheet.getColumnName(studentColumnIndex + 1) + rowIndex;
+    // Check if either student or teacher cells are not empty
+    if (studentValue !== '' || teacherValue !== '') {
+        const grade = studentValue === teacherValue ? "✔️" : "❌";
 
-            // Set the grade value in the next column of the same row
-            table.setValue(gradeCellIdent, grade, false);
-        }
-
-        // Increment teacherColumnIndex by 1
-        teacherColumnIndex++;
+        // Set the grade value in the grading column of the same row
+        const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + row;
+        table.setValue(gradeCellIdent, grade, false);
     }
-};
+});
 
      //readonly=true;
      table.refresh();
