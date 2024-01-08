@@ -256,7 +256,7 @@ cellsToGrade.forEach(({ row, col }) => {
   
 }        
   catch(err) {};
-table.deletRow();
+table.deleteRow();
    
   };
 
