@@ -143,7 +143,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columns: [
         { type: 'dropdown',   source:{#items#} },
         { type: 'dropdown',   source:{#units#}  },
-        { type: 'html',   wordWrap:true  },                                      
+        { type: 'text',   wordWrap:true  },                                      
      
      ],
          toolbar:toolbar,
