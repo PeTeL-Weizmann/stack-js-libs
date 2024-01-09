@@ -136,14 +136,14 @@ var table=jspreadsheet(document.getElementById(uid_table), {
   allowManualInsertColumn:0,             
   allowInsertColumn:1,
   allowDeleteColumn:0,
-  allowManualInsertRow:0,             
-  allowInsertRow:0,
-  allowDeleteRow:0,              
+  allowManualInsertRow:{#design#}==1?1:0,             
+  allowInsertRow:{#design#}==1?1:0,
+  allowDeleteRow:{#design#}==1?1:0,              
             
     columns: [
-        { type: 'dropdown',   source:{#items#} },
-        { type: 'dropdown',   source:{#units#}  },
-        { type: 'text',   wordWrap:true  },                                      
+        { type: 'dropdown',   source:{#items#},readOnly:{#design#}==1?0:1,stripHTML:false },
+        { type: 'dropdown',   source:{#units#},readOnly:{#design#}==1?0:1,stripHTML:false  },
+        { type: 'text',   wordWrap:true,readOnly:{#design#}==1?0:1,stripHTML:false},                                      
      
      ],
          toolbar:toolbar,
