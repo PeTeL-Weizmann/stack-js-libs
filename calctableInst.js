@@ -65,8 +65,8 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
 console.log(cellsToGrade);
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
-var widths=[180,120,120];
-for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
+var widths=[160,110,110];
+for (let i=3;i<{#Titles#}.length;i++){widths[i]=110};
 var toolbar=[
         {
             type: 'i',
@@ -199,7 +199,8 @@ var teacherTable = jspreadsheet(container, {
 });
    const studentData = table.getData();
 const teacherData = teacherTable.getData();
-
+const correct="<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>";
+const wronge="<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>";   
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col }) => {
@@ -215,7 +216,7 @@ cellsToGrade.forEach(({ row, col }) => {
     if (studentValue !== '' || teacherValue !== '') {
         const grade =
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
-  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? "✔️"  : "❌";
+  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wronge;
 
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
