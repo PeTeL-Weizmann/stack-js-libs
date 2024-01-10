@@ -199,8 +199,8 @@ var teacherTable = jspreadsheet(container, {
 });
    const studentData = table.getData();
 const teacherData = teacherTable.getData();
-const correct="<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>";
-const wronge="<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>";   
+const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
+const wronge='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col }) => {
