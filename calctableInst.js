@@ -18,7 +18,7 @@
 
   <style>
     .jexcel {
-    font-size:16 px;
+    font-size:14 px;
 }
  </style>
 
@@ -65,8 +65,8 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
 console.log(cellsToGrade);
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
-var widths=[160,110,110];
-for (let i=3;i<{#Titles#}.length;i++){widths[i]=110};
+var widths=[150,100,100];
+for (let i=3;i<{#Titles#}.length;i++){widths[i]=100};
 var toolbar=[
         {
             type: 'i',
@@ -143,7 +143,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
     columns: [
         { type: 'dropdown',   source:{#items#},readOnly:{#design#}==1?0:1,stripHTML:false },
         { type: 'dropdown',   source:{#units#},readOnly:{#design#}==1?0:1,stripHTML:false  },
-        { type: 'text',   wordWrap:true,readOnly:{#design#}==1?0:1,stripHTML:false,align:"left"},                                      
+        { type: 'text',   wordWrap:true,readOnly:{#design#}==1?0:1,stripHTML:false},                                      
      
      ],
          toolbar:toolbar,
@@ -180,7 +180,7 @@ const columnLength = data[0].length;  // Assuming the first row has all columns
 var columnIndex=3;
 // Insert columns between existing columns
 for (let i = 0; i < columnLength-3; i++) {
-    table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:false}]);  // Insert 1 empty column after the current column
+    table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:false,text-align:'left'}]);  // Insert 1 empty column after the current column
  columnIndex=columnIndex+2;
  
 }
