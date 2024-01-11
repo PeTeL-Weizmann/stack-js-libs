@@ -180,7 +180,7 @@ const columnLength = data[0].length;  // Assuming the first row has all columns
 var columnIndex=3;
 // Insert columns between existing columns
 for (let i = 0; i < columnLength-3; i++) {
-    table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:false,text-align:'left'}]);  // Insert 1 empty column after the current column
+    table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:false,textAlign:'left'}]);  // Insert 1 empty column after the current column
  columnIndex=columnIndex+2;
  
 }
