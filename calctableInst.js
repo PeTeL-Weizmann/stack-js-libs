@@ -210,7 +210,7 @@ const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"
 const wronge='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
 
 // Use stored positions for grading
-cellsToGrade.forEach(({ row, col }) => {
+cellsToGrade.forEach(({ row, col,grade }) => {
     const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + (row+1);
     const studentCell = table.getCell(studentCellIdent);
     const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
