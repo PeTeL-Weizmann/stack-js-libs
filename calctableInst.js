@@ -58,13 +58,13 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
     // Check if the current element starts with "?"
     if (rowData[colIndex].startsWith("?")) {
       // Extract the grade value
-      const grade = rowData[colIndex].substring(2);
+      const agrade = rowData[colIndex].substring(2);
 
       // Replace the current element with "?"
       data[rowIndex][colIndex] = "?";
 
       // Store the position and grade in the new array
-      cellsToGrade.push({ row: rowIndex, col: colIndex, grade: grade });
+      cellsToGrade.push({ row: rowIndex, col: colIndex, theGrade: agrade });
     }
   }
 };
