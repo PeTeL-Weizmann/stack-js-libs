@@ -211,8 +211,7 @@ const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col,theGrade }) => {
- console.log({ row, col,theGrade });
-    totalGrades=totalGrades+theGrade;
+    totalGrades=totalGrades+parseFloat(theGrade);
     const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + (row+1);
     const studentCell = table.getCell(studentCellIdent);
     const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
@@ -226,14 +225,15 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
         const mark =
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
   Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
-  if (mark==correct){studentsGrade= studentsGrade+theGrade};
+  if (mark==correct){studentsGrade= studentsGrade+parseFloat(theGrade)};
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
         table.setValue(gradeCellIdent, mark, false);
     }
 });
-studentsGrade= studentsGrade/totalGrades;
-    console.log("the grade is:", studentsGrade,"total grades:",totalGrades);
+   console.log("the grade is:", studentsGrade,"total grades:",totalGrades);
+   studentsGrade= studentsGrade/totalGrades;
+    console.log("normalizes grade is :", studentsGrade);
      readonly=true;
     table.insertRow();
      table.refresh();
