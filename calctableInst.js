@@ -55,7 +55,7 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
 
   // Iterate through each element in the row
   for (let colIndex = 0; colIndex < rowData.length; colIndex++) {
-    // Check if the current element ends with ",grade"
+    // Check if the current element starts with "?"
     if (rowData[colIndex].startsWith("?")) {
       // Extract the grade value
       const grade = rowData[colIndex].substring(2);
@@ -210,8 +210,8 @@ const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"
 const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
 
 // Use stored positions for grading
-cellsToGrade.forEach(({ row, col,grade }) => {
-    totalGrades=totalGrades+grade;
+cellsToGrade.forEach(({ row, col,theGrade }) => {
+    totalGrades=totalGrades+theGrade;
     const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + (row+1);
     const studentCell = table.getCell(studentCellIdent);
     const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
@@ -222,13 +222,13 @@ cellsToGrade.forEach(({ row, col,grade }) => {
 
     // Check if either student or teacher cells are not empty
     if (studentValue !== '' || teacherValue !== '') {
-        const grade =
+        const mark =
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
   Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
-  if (grade==correct){studentsGrade= studentsGrade+grade};
+  if (mark==correct){studentsGrade= studentsGrade+theGrade};
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
-        table.setValue(gradeCellIdent, grade, false);
+        table.setValue(gradeCellIdent, mark, false);
     }
 });
 studentsGrade= studentsGrade/totalGrades;
