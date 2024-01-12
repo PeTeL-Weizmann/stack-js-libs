@@ -232,7 +232,7 @@ cellsToGrade.forEach(({ row, col,grade }) => {
     }
 });
 studentsGrade= studentsGrade/totalGrades;
-   console.log( studentsGrade);
+    console.log("the grade is:" studentsGrade,"total grades:",totalGrades);
      readonly=true;
     table.insertRow();
      table.refresh();
