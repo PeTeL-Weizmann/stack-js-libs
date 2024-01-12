@@ -25,7 +25,7 @@
   
    
   <div style="display:none;">\(x^2\)
- [[jsxgraph input-ref-ans2='ans2Ref' width="0px" height="0px"]]
+ [[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
 var last=false;
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
@@ -55,14 +55,20 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
 
   // Iterate through each element in the row
   for (let colIndex = 0; colIndex < rowData.length; colIndex++) {
-    // Check if the current element is "?"
-    if (rowData[colIndex] === "?") {
-      // Store the position in the new array
-      cellsToGrade.push({ row: rowIndex, col: colIndex });
+    // Check if the current element ends with ",grade"
+    if (rowData[colIndex].startsWith("?")) {
+      // Extract the grade value
+      const grade = rowData[colIndex].substring(2);
+
+      // Replace the current element with "?"
+      data[rowIndex][colIndex] = "?";
+
+      // Store the position and grade in the new array
+      cellsToGrade.push({ row: rowIndex, col: colIndex, grade: grade });
     }
   }
 };
-console.log(cellsToGrade);
+
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 var widths=[150,100,100];
