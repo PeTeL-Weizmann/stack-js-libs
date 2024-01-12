@@ -225,14 +225,14 @@ cellsToGrade.forEach(({ row, col,grade }) => {
         const grade =
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
   Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
-  if (grade==correct){studentsGrad= studentsGrad+grade};
+  if (grade==correct){studentsGrade= studentsGrade+grade};
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
         table.setValue(gradeCellIdent, grade, false);
     }
 });
-studentsGrad= studentsGrad/totalGrades;
-   console.log( studentsGrad);
+studentsGrade= studentsGrade/totalGrades;
+   console.log( studentsGrade);
      readonly=true;
     table.insertRow();
      table.refresh();
