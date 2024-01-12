@@ -68,7 +68,7 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
     }
   }
 };
-
+console.log('cells to garade: ',cellsToGrade);
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 var widths=[150,100,100];
@@ -211,6 +211,7 @@ const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col,theGrade }) => {
+ console.log({ row, col,theGrade });
     totalGrades=totalGrades+theGrade;
     const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + (row+1);
     const studentCell = table.getCell(studentCellIdent);
