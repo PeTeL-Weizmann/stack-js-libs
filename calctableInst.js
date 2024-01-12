@@ -61,7 +61,7 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
       const agrade = rowData[colIndex].substring(2);
 
       // Replace the current element with "?"
-      data[rowIndex][colIndex] = "?";
+      if ({#design#}!==1) { data[rowIndex][colIndex] = "?"};
 
       // Store the position and grade in the new array
       cellsToGrade.push({ row: rowIndex, col: colIndex, theGrade: agrade });
