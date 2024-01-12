@@ -179,7 +179,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
  var rqm={#rqm#};
          
   checkAnswer[rqm] = function(hint,islast) {
-     
+var studentsGrade=0, totalGrades=0; 
 // Get the data as a nested array
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
@@ -207,10 +207,11 @@ var teacherTable = jspreadsheet(container, {
    const studentData = table.getData();
 const teacherData = teacherTable.getData();
 const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
-const wronge='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
+const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col,grade }) => {
+    totalGrades=totalGrades+grade;
     const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + (row+1);
     const studentCell = table.getCell(studentCellIdent);
     const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
@@ -223,14 +224,15 @@ cellsToGrade.forEach(({ row, col,grade }) => {
     if (studentValue !== '' || teacherValue !== '') {
         const grade =
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
-  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wronge;
-
+  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
+  if (grade==correct){studentsGrad= studentsGrad+grade};
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
         table.setValue(gradeCellIdent, grade, false);
     }
 });
-
+studentsGrad= studentsGrad/totalGrades;
+   console.log( studentsGrad);
      readonly=true;
     table.insertRow();
      table.refresh();
