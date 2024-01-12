@@ -41,6 +41,8 @@ var readonly=false;
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
  var dataInput = document.getElementById(ans2Ref);
+ var gradeInput = document.getElementById(ans3Ref);
+
 
 //var zData=["","","","","","","","","","","","","","",""];
 
@@ -70,6 +72,7 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
 };
 console.log('cells to garade: ',cellsToGrade);
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
+
 
 var widths=[150,100,100];
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=100};
@@ -231,9 +234,8 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
         table.setValue(gradeCellIdent, mark, false);
     }
 });
-   console.log("the grade is:", studentsGrade,"total grades:",totalGrades);
    studentsGrade= studentsGrade/totalGrades;
-    console.log("normalizes grade is :", studentsGrade);
+    gradeInput.value=JSON.stringify(studentsGrade);
      readonly=true;
     table.insertRow();
      table.refresh();
