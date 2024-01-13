@@ -235,7 +235,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     }
 });
    studentsGrade= studentsGrade/totalGrades;
-    gradeInput.value=JSON.stringify(studentsGrade);
+    gradeInput.value=studentsGrade;
      readonly=true;
     table.insertRow();
      table.refresh();
