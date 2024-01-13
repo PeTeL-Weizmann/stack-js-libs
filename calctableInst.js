@@ -73,7 +73,6 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
 console.log('cells to garade: ',cellsToGrade);
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
-
 var widths=[150,100,100];
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=100};
 var toolbar=[
@@ -237,6 +236,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
    studentsGrade= studentsGrade/totalGrades;
    const tt=[studentsGrade];
     gradeInput.value=JSON.stringify(tt);
+    gradeInput.dispatchEvent(new Event('change'));
      readonly=true;
     table.insertRow();
      table.refresh();
