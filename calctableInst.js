@@ -237,6 +237,8 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
    const tt=[studentsGrade];
     gradeInput.value=JSON.stringify(tt);
     gradeInput.dispatchEvent(new Event('change'));
+  
+    board.update();
      readonly=true;
     table.insertRow();
      table.refresh();
