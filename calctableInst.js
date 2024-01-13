@@ -273,7 +273,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 }        
   catch(err) {};
 table.deleteRow();
-   
+ return gradeInput;  
   };
 
                                      
