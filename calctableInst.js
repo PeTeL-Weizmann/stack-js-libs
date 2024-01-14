@@ -13,6 +13,7 @@
                                  
 <script type="text/javascript">
  var checkAnswer=[];
+ var prepareGrade=[];
 </script>
 
 
@@ -181,7 +182,47 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
 if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
  var rqm={#rqm#};
          
-  checkAnswer[rqm] = function(hint,islast) {
+prpareGrade[rqm]=function(){
+ var studentsGrade=0, totalGrades=0; 
+ var container = document.createElement('div');
+container.style.position = 'absolute';
+container.style.left = '-9999px';
+
+// Attach the container to the document body
+document.body.appendChild(container);
+
+// Initialize the jspreadsheet table in the container
+var teacherTable = jspreadsheet(container, {
+  data: ({#data#})
+});
+   const studentData = table.getData();
+const teacherData = teacherTable.getData();
+cellsToGrade.forEach(({ row, col,theGrade }) => {
+    totalGrades=totalGrades+parseFloat(theGrade);
+    const studentCellIdent = jspreadsheet.getColumnName(col) + (row+1);
+    const studentCell = table.getCell(studentCellIdent);
+    const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
+
+    const teacherCellIdent = jspreadsheet.getColumnName(col) + (row+1); // No adjustment needed here
+    const teacherCell = teacherTable.getCell(teacherCellIdent);
+    const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
+
+    // Check if either student or teacher cells are not empty
+    if (studentValue !== '' || teacherValue !== '') {
+        const mark =
+  Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
+  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
+  if (mark==correct){studentsGrade= studentsGrade+parseFloat(theGrade)};
+       
+    }
+});
+   studentsGrade= studentsGrade/totalGrades;
+   const tt=[studentsGrade];
+    gradeInput.value=JSON.stringify(tt);
+    gradeInput.dispatchEvent(new Event('change'));
+ 
+};
+checkAnswer[rqm] = function(hint,islast) {
 var studentsGrade=0, totalGrades=0; 
 // Get the data as a nested array
 const data = table.getData();
@@ -286,14 +327,13 @@ if (buttonElement) {
     // Attach an event listener to the button's click event
     buttonElement.addEventListener('click', function (event) {
         // Your custom code to be executed before the default action
-           checkAnswer[{#rqm#}](false,true);
+          prpareGrade[{#rqm#}]();
         // For example, you can log a message
         console.log('Button clicked!');
 
         // Allow the button's default action to proceed
         // (e.g., submitting a form or triggering some other action)
-        event.preventDefault();
-        return true;
+   return true;
     });
 } else {
     console.log('Button not found');
