@@ -318,14 +318,6 @@ table.deleteRow();
    
   };
 
-   
-
-                                   
-[[/jsxgraph]]
- 
-</div>
-
-<script>
  // Find the button element by ID ending with "1_-submit"
 var buttonElement = document.querySelector('[id*="1_-submit"]');
 
@@ -344,6 +336,14 @@ if (buttonElement) {
     });
 } else {
     console.log('Button not found');
-}                  
-</script>
+}   ;               
+   
+
+                                   
+[[/jsxgraph]]
+ 
+</div>
+
+
+
   
