@@ -182,7 +182,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
 if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
  var rqm={#rqm#};
          
-prpareGrade[rqm]=function(){
+prepareGrade[rqm]=function(){
  var studentsGrade=0, totalGrades=0; 
  var container = document.createElement('div');
 container.style.position = 'absolute';
