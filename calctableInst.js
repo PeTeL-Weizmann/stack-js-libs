@@ -22,12 +22,7 @@
 }
  </style>
 
-<script type="text/javascript">
- const button = document.querySelector('button[id$="-1_-submit"]');
- button.addEventListener('click', (event) => {
- checkAnswer[{#rqm#}]();
-});
-</script>
+
    
   <div style="display:none;">\(x^2\)
  [[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
@@ -281,7 +276,12 @@ table.deleteRow();
  return gradeInput;  
   };
 
-                                     
+
+ const button = document.querySelector('button[id$="-1_-submit"]');
+ button.addEventListener('click', (event) => {
+ checkAnswer[{#rqm#}]();
+});
+                                   
 [[/jsxgraph]]
      
 </div>
