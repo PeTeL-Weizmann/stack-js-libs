@@ -278,12 +278,6 @@ table.deleteRow();
   };
 
    
-                   
-
-                                   
-[[/jsxgraph]]
-  
-  <script type="text/javascript">
 // Find the button element by ID ending with "1_-submit"
 var buttonElement = document.querySelector('[id$="1_-submit"]');
 
@@ -298,10 +292,15 @@ if (buttonElement) {
 
         // Allow the button's default action to proceed
         // (e.g., submitting a form or triggering some other action)
+        event.preventDefault();
         return true;
     });
 } else {
     console.log('Button not found');
-}
-</script>    
+}                   
+
+                                   
+[[/jsxgraph]]
+  
+   
 </div>
