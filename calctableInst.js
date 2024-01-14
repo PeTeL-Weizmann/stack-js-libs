@@ -23,6 +23,7 @@
  </style>
 
 
+  
    
   <div style="display:none;">\(x^2\)
  [[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
@@ -276,7 +277,13 @@ table.deleteRow();
  return gradeInput;  
   };
 
+   
+                   
 
+                                   
+[[/jsxgraph]]
+  
+  <script type="text/javascript">
 // Find the button element by ID ending with "1_-submit"
 var buttonElement = document.querySelector('[id$="1_-submit"]');
 
@@ -296,9 +303,5 @@ if (buttonElement) {
 } else {
     console.log('Button not found');
 }
-                        
-
-                                   
-[[/jsxgraph]]
-     
+</script>    
 </div>
