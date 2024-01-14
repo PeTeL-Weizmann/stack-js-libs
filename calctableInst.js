@@ -315,12 +315,12 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 }        
   catch(err) {};
 table.deleteRow();
- return gradeInput;  
+   
   };
 
    
 // Find the button element by ID ending with "1_-submit"
-var buttonElement = document.querySelector('[id$="1_-submit"]');
+var buttonElement = document.querySelector(`[id$="1_-submit"]`);
 
 // Check if the button element is found
 if (buttonElement) {
