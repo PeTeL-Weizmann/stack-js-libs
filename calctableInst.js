@@ -23,27 +23,7 @@
 }
  </style>
   
-<script>
- // Find the button element by ID ending with "1_-submit"
-var buttonElement = document.querySelector('[id*="1_-submit"]');
 
-// Check if the button element is found
-if (buttonElement) {
-    // Attach an event listener to the button's click event
-    buttonElement.addEventListener('click', function (event) {
-        // Your custom code to be executed before the default action
-          prepareGrade[{#rqm#}]();
-        // For example, you can log a message
-        console.log('Button clicked!');
-
-        // Allow the button's default action to proceed
-        // (e.g., submitting a form or triggering some other action)
-   return true;
-    });
-} else {
-    console.log('Button not found');
-}                  
-</script>
   
    
   <div style="display:none;">\(x^2\)
@@ -342,6 +322,28 @@ table.deleteRow();
 
                                    
 [[/jsxgraph]]
-  
-   
+ 
 </div>
+
+<script>
+ // Find the button element by ID ending with "1_-submit"
+var buttonElement = document.querySelector('[id*="1_-submit"]');
+
+// Check if the button element is found
+if (buttonElement) {
+    // Attach an event listener to the button's click event
+    buttonElement.addEventListener('click', function (event) {
+        // Your custom code to be executed before the default action
+          prepareGrade[{#rqm#}]();
+        // For example, you can log a message
+        console.log('Button clicked!');
+
+        // Allow the button's default action to proceed
+        // (e.g., submitting a form or triggering some other action)
+   return true;
+    });
+} else {
+    console.log('Button not found');
+}                  
+</script>
+  
