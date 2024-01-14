@@ -317,31 +317,31 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
    
   };
+// Wrap the code in a window load event to ensure the DOM is fully loaded
+window.onload = function () {
+    // Find the button element by ID ending with "1_-submit"
+    var buttonElement = document.querySelector('[id$="1_-submit"]');
 
- // Find the button element by ID ending with "1_-submit"
-var buttonElement = document.querySelector('[id*="1_-submit"]');
+    // Check if the button element is found
+    if (buttonElement) {
+        // Attach an event listener to the button's click event
+        buttonElement.addEventListener('click', function (event) {
+            // Your custom code to be executed before the default action
+               prepareGrade[{#rqm#}]();
+            // For example, you can log a message
+            console.log('Button clicked!');
 
-// Check if the button element is found
-if (buttonElement) {
-    // Attach an event listener to the button's click event
-    buttonElement.addEventListener('click', function (event) {
-        // Your custom code to be executed before the default action
-          prepareGrade[{#rqm#}]();
-        // For example, you can log a message
-        console.log('Button clicked!');
-
-        // Allow the button's default action to proceed
-        // (e.g., submitting a form or triggering some other action)
-   return true;
-    });
-} else {
-    console.log('Button not found');
-}   ;               
-   
+            // Allow the button's default action to proceed
+            // (e.g., submitting a form or triggering some other action)
+            return true;
+        });
+    } else {
+        console.log('Button not found');
+    }
+};
 
                                    
 [[/jsxgraph]]
- 
 </div>
 
 
