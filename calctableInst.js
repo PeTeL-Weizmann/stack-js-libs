@@ -327,7 +327,7 @@ if (buttonElement) {
     // Attach an event listener to the button's click event
     buttonElement.addEventListener('click', function (event) {
         // Your custom code to be executed before the default action
-          prpareGrade[{#rqm#}]();
+          prepareGrade[{#rqm#}]();
         // For example, you can log a message
         console.log('Button clicked!');
 
