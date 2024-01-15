@@ -168,18 +168,16 @@ var table=jspreadsheet(document.getElementById(uid_table), {
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
-      var t = document.createTextNode("hint"); // Create a text node
+      var t = document.createTextNode("בדיקה"); // Create a text node
       btn.appendChild(t);   
       btn.onclick = function(e){
          e.preventDefault(); 
-         table.setData({#hintdata#});
+         prepareGrade[{#rqm#}]();
        
       };  
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
-     
- //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
-if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
+       hint_el.style.display = "block";         
  var rqm={#rqm#};
          
 prepareGrade[rqm]=function(e){
@@ -323,7 +321,6 @@ table.deleteRow();
 [[/jsxgraph]]
 
 </div>
- <button onclick="prepareGrade[{#rqm#}](e)">-ראיד בדיקה</button>
 
 
   
