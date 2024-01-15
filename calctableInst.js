@@ -328,7 +328,7 @@ window.onload = function () {
     var buttonElement = document.querySelector('[id$="1_-submit"]');
 console.log("is it clicked:",buttonElement);
     // Check if the button element is found
-    if (buttonElement) {
+    if (buttonElement!== null) {
         // Attach an event listener to the button's click event
         buttonElement.addEventListener('click', function (event) {
             // Your custom code to be executed before the default action
