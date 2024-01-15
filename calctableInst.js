@@ -321,26 +321,7 @@ table.deleteRow();
                                    
 [[/jsxgraph]]
 
-  <script type="text/javascript">
-document.addEventListener('DOMContentLoaded', function () {
-    // Add a click event listener to the document
-    document.addEventListener('click', function (event) {
-        // Check if the clicked element has an ID ending with "1_-submit"
-        if (event.target && event.target.id && event.target.id.endsWith("1_-submit")) {
-            // Your custom code to be executed before the default action
-                 prepareGrade[{#rqm#}]();
-
-            // For example, you can log a message
-            console.log('Button clicked!');
-
-            // Allow the button's default action to proceed
-            // (e.g., submitting a form or triggering some other action)
-            return true;
-        }
-    });
-});
-
-</script>
+ <button onclick="prepareGrade[{#rqm#}]()">בדיקה</button>
 
  
 </div>
