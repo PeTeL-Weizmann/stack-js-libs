@@ -317,6 +317,11 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
    
   };
+
+                                   
+[[/jsxgraph]]
+
+  <script type="text/javascript">
 // Wrap the code in a window load event to ensure the DOM is fully loaded
 window.onload = function () {
     // Find the button element by ID ending with "1_-submit"
@@ -340,8 +345,9 @@ console.log("is it clicked:",buttonElement);
     }
 };
 
-                                   
-[[/jsxgraph]]
+</script>
+
+ 
 </div>
 
 
