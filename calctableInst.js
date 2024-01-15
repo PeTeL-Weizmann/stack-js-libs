@@ -321,7 +321,7 @@ table.deleteRow();
 window.onload = function () {
     // Find the button element by ID ending with "1_-submit"
     var buttonElement = document.querySelector('[id$="1_-submit"]');
-
+console.log("is it clicked:",buttonElement);
     // Check if the button element is found
     if (buttonElement) {
         // Attach an event listener to the button's click event
