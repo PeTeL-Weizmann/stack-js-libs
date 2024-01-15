@@ -322,28 +322,23 @@ table.deleteRow();
 [[/jsxgraph]]
 
   <script type="text/javascript">
-// Wrap the code in a window load event to ensure the DOM is fully loaded
-window.onload = function () {
-    // Find the button element by ID ending with "1_-submit"
-    var buttonElement = document.querySelector('[id$="1_-submit"]');
-console.log("is it clicked:",buttonElement);
-    // Check if the button element is found
-    if (buttonElement!== null) {
-        // Attach an event listener to the button's click event
-        buttonElement.addEventListener('click', function (event) {
+document.addEventListener('DOMContentLoaded', function () {
+    // Add a click event listener to the document
+    document.addEventListener('click', function (event) {
+        // Check if the clicked element has an ID ending with "1_-submit"
+        if (event.target && event.target.id && event.target.id.endsWith("1_-submit")) {
             // Your custom code to be executed before the default action
-               prepareGrade[{#rqm#}]();
+                 prepareGrade[{#rqm#}]();
+
             // For example, you can log a message
             console.log('Button clicked!');
 
             // Allow the button's default action to proceed
             // (e.g., submitting a form or triggering some other action)
             return true;
-        });
-    } else {
-        console.log('Button not found');
-    }
-};
+        }
+    });
+});
 
 </script>
 
