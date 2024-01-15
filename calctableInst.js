@@ -321,11 +321,8 @@ table.deleteRow();
                                    
 [[/jsxgraph]]
 
- <button onclick="prepareGrade[{#rqm#}]()">בדיקה</button>
-
- 
 </div>
-
+ <button onclick="prepareGrade[{#rqm#}]()">בדיקה</button>
 
 
   
