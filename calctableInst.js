@@ -218,11 +218,11 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
    const tt=[studentsGrade];
     gradeInput.value=JSON.stringify(tt);
     gradeInput.dispatchEvent(new Event('change'));
- const submitButton = document.querySelector('button[id$="-1_-submit"]');
+ const submitButton = document.querySelector('[id$="-1_-submit"]');
  submitButton.click();
 };
+                  
 checkAnswer[rqm] = function(hint,islast) {
-var studentsGrade=0, totalGrades=0; 
 // Get the data as a nested array
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
@@ -254,7 +254,6 @@ const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col,theGrade }) => {
-    totalGrades=totalGrades+parseFloat(theGrade);
     const studentCellIdent = jspreadsheet.getColumnName(2*col-3) + (row+1);
     const studentCell = table.getCell(studentCellIdent);
     const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
@@ -268,19 +267,13 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
         const mark =
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
   Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
-  if (mark==correct){studentsGrade= studentsGrade+parseFloat(theGrade)};
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
         table.setValue(gradeCellIdent, mark, false);
     }
 });
-   studentsGrade= studentsGrade/totalGrades;
-   const tt=[studentsGrade];
-    gradeInput.value=JSON.stringify(tt);
-    gradeInput.dispatchEvent(new Event('change'));
   
-    board.update();
-     readonly=true;
+    readonly=true;
     table.insertRow();
      table.refresh();
     if (hint) localStorage.setItem("showhint",{#rqm#});
