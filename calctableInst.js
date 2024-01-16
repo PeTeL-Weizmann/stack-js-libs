@@ -211,7 +211,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
   Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
   if (mark==correct){studentsGrade= studentsGrade+parseFloat(theGrade)};
-       
+   console.log(    studentsGrade);
     }
 });
    studentsGrade= studentsGrade/totalGrades;
