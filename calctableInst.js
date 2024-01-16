@@ -209,8 +209,8 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     if (studentValue !== '' || teacherValue !== '') {
         const mark =
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
-  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
-  if (mark==correct){studentsGrade= studentsGrade+parseFloat(theGrade)};
+  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? true: false;
+  if (mark){studentsGrade= studentsGrade+parseFloat(theGrade)};
    console.log(    studentsGrade);
     }
 });
