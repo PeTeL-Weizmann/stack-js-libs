@@ -72,7 +72,6 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
     }
   }
 };
-console.log('cells to garade: ',cellsToGrade);
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 gradeInput.value=JSON.stringify([1]);
 var widths=[150,100,100];
@@ -211,14 +210,13 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
   Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
   Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? true: false;
   if (mark){studentsGrade= studentsGrade+parseFloat(theGrade)};
-   console.log(    studentsGrade);
     }
 });
    studentsGrade= studentsGrade/totalGrades;
    const tt=[studentsGrade];
     gradeInput.value=JSON.stringify(tt);
     gradeInput.dispatchEvent(new Event('change'));
- const submitButton = document.querySelector('[id$="-1_-submit"]');
+ const submitButton = document.querySelector('button:contains("הגשת תשובה")');
  console.log('the buttun is',submitButton);
  submitButton.click();
 };
