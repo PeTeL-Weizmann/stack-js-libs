@@ -218,7 +218,8 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
    const tt=[studentsGrade];
     gradeInput.value=JSON.stringify(tt);
     gradeInput.dispatchEvent(new Event('change'));
- 
+ const submitButton = document.querySelector('button[id$="-1_-submit"]');
+ submitButton.click();
 };
 checkAnswer[rqm] = function(hint,islast) {
 var studentsGrade=0, totalGrades=0; 
