@@ -216,9 +216,21 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
    const tt=[studentsGrade];
     gradeInput.value=JSON.stringify(tt);
     gradeInput.dispatchEvent(new Event('change'));
- const submitButton = document.querySelector('button:contains("הגשת תשובה")');
- console.log('the buttun is',submitButton);
- submitButton.click();
+   
+ document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('button');
+  const matchingButton = Array.from(buttons).find(button => button.textContent === "הגשת תשובה");
+
+  if (matchingButton) {
+    // Do something with the button
+   matchingButton.click();
+    console.log(matchingButton);
+    // Example: matchingButton.click();
+  } else {
+    console.error("Button not found");
+  }
+});
+  
 };
                   
 checkAnswer[rqm] = function(hint,islast) {
