@@ -219,6 +219,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     gradeInput.value=JSON.stringify(tt);
     gradeInput.dispatchEvent(new Event('change'));
  const submitButton = document.querySelector('[id$="-1_-submit"]');
+ console.log('the buttun is',submitButton);
  submitButton.click();
 };
                   
