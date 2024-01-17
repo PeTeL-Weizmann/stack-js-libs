@@ -73,7 +73,7 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
   }
 };
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
-gradeInput.value=JSON.stringify([1]);
+
 var widths=[150,100,100];
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=100};
 var toolbar=[
@@ -167,16 +167,18 @@ var table=jspreadsheet(document.getElementById(uid_table), {
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("BUTTON");  //<button> element
-      var t = document.createTextNode("בדיקה"); // Create a text node
+      var t = document.createTextNode("finish"); // Create a text node
       btn.appendChild(t);   
-      btn.onclick = function(e){
-         e.preventDefault(); 
-         prepareGrade[{#rqm#}]();
-       
-      };  
+      
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
-       hint_el.style.display = "block";         
+       hint_el.style.display = "block";    
+ 
+         btn.onclick = function(e){
+         e.preventDefault(); 
+         prepareGrade[{#rqm#}]();
+   //    hint_el.style.display = "none";
+      };  
  var rqm={#rqm#};
          
 prepareGrade[rqm]=function(){
@@ -217,19 +219,6 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     gradeInput.value=JSON.stringify(tt);
     gradeInput.dispatchEvent(new Event('change'));
    
- document.addEventListener('DOMContentLoaded', () => {
-  const buttons = document.querySelectorAll('button');
-  const matchingButton = Array.from(buttons).find(button => button.textContent === "הגשת תשובה");
-
-  if (matchingButton) {
-    // Do something with the button
-   matchingButton.click();
-    console.log(matchingButton);
-    // Example: matchingButton.click();
-  } else {
-    console.error("Button not found");
-  }
-});
   
 };
                   
