@@ -73,7 +73,7 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
   }
 };
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
-
+gradeInput.value='';
 var widths=[150,100,100];
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=100};
 var toolbar=[
