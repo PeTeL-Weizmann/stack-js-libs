@@ -46,10 +46,9 @@ var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
-
+var nested;
 const nst={#nested#};
-console.log(nst);
-var nested=JSON.parse(nst.replace(/'/g, '"'));
+if (nst=== undefined) nested=[] else  nested=JSON.parse(nst.replace(/'/g, '"'));
 var widths=[180,120,120];
 
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
