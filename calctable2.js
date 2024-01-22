@@ -125,7 +125,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
         { type: 'text',   wordWrap:true  },                                      
      
      ],
-nestedHeaders:JSON.parse({#nested#}),                                     
+//nestedHeaders:JSON.parse({#nested#}),                                     
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
    var isAttemptMode = window.location.href.indexOf('attempt.php') !== -1;
