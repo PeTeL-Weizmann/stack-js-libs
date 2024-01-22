@@ -47,7 +47,10 @@ var zData=["","","","","","","","","","","","","","",""];
 var data = [zData.slice(0,{#Titles#}.length)];
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
+const nst:{#nested#};
+var nested=JSON.parse(nst.replace(/'/g, '"'));
 var widths=[180,120,120];
+
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
 var toolbar=[
         {
@@ -125,7 +128,7 @@ var table=jspreadsheet(document.getElementById(uid_table), {
         { type: 'text',   wordWrap:true  },                                      
      
      ],
-//nestedHeaders:JSON.parse({#nested#}),                                     
+nestedHeaders:nested,                                     
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
    var isAttemptMode = window.location.href.indexOf('attempt.php') !== -1;
