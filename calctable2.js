@@ -180,6 +180,7 @@ if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint
         { type: 'text',   wordWrap:true  },
           
      ],
+     nestedHeaders:nested,
          toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
         cell.classList.add('readonly')
