@@ -48,6 +48,7 @@ var data = [zData.slice(0,{#Titles#}.length)];
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data)};
 
 const nst={#nested#};
+console.log(nst);
 var nested=JSON.parse(nst.replace(/'/g, '"'));
 var widths=[180,120,120];
 
