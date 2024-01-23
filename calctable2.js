@@ -153,7 +153,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
        hint_el.appendChild(btn);
       hint_el.tabindex=-1;
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
-if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
+if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block";hint_el.disabled = false} else {hint_el.disabled =true};         
  var rqm={#rqm#};
   
   checkAnswer[rqm] = function(hint,islast) {
