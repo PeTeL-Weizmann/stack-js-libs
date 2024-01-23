@@ -13,6 +13,10 @@
                                  
 <script type="text/javascript">
  var checkAnswer=[];
+var S=function(value,n){
+     var m=value.toExponential(n);
+  return m;   
+};
 </script>
 
 
@@ -52,10 +56,6 @@ const nst={#nested#};
 if (nst=== undefined) {nested=[]} else  {nested=JSON.parse(nst.replace(/'/g, '"'))};
 var widths=[180,120,120];
 
- var S=function(value,n){
-     var m=value.toExponential(n);
-  return m;
- };
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
 var toolbar=[
         {
