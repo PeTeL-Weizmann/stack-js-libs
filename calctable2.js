@@ -151,9 +151,9 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
       };  
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
-      hint_el.tabindex=-1;
+     btn.disabled=true; 
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
-if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block";hint_el.disabled = false} else {hint_el.disabled =true};         
+if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block";btn.disabled = false}        
  var rqm={#rqm#};
   
   checkAnswer[rqm] = function(hint,islast) {
