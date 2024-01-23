@@ -141,7 +141,7 @@ nestedHeaders:nested,
 
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
-      var btn = document.createElement("BUTTON");  //<button> element
+      var btn = document.createElement("button");  //<button> element
       var t = document.createTextNode("hint"); // Create a text node
       btn.appendChild(t);   
       btn.onclick = function(e){
