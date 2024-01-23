@@ -53,6 +53,10 @@ var data={#hintdata#};
       
 var cellsToGrade = [];
 
+var nested;
+const nst={#nested#};
+if (nst=== undefined) {nested=[]} else  {nested=JSON.parse(nst.replace(/'/g, '"'))};
+
 // Iterate through each row in the data
 for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
   const rowData = data[rowIndex];
@@ -155,6 +159,8 @@ var table=jspreadsheet(document.getElementById(uid_table), {
         { type: 'text',   wordWrap:true,readOnly:{#design#}==1?0:1,stripHTML:false},                                      
      
      ],
+nestedHeaders:nested,                                     
+                 
          toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
    var isAttemptMode = window.location.href.indexOf('attempt.php') !== -1;
@@ -297,6 +303,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
         { type: 'text',   wordWrap:true  },
           
      ],
+     nestedHeaders:nested,                                     
          toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
         cell.classList.add('readonly')
