@@ -52,7 +52,8 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 var data={#hintdata#};
 var S=function(value,n){
      var m=value.toExponential(n);
-  return m;      
+  return m;   
+};
 var cellsToGrade = [];
 
 var nested;
