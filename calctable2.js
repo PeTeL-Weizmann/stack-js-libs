@@ -151,7 +151,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
       };  
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
-     
+       btn.tabindex=-1;
  //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
 if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block"};         
  var rqm={#rqm#};
