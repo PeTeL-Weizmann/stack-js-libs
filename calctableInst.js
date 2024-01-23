@@ -14,6 +14,10 @@
 <script type="text/javascript">
  var checkAnswer=[];
  var prepareGrade=[];
+ var S=function(value,n){
+     var m=value.toExponential(n);
+  return m;   
+};
 </script>
 
 
@@ -50,10 +54,7 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 
 //var data = [zData.slice(0,{#Titles#}.length)];
 var data={#hintdata#};
-var S=function(value,n){
-     var m=value.toExponential(n);
-  return m;   
-};
+
 var cellsToGrade = [];
 
 var nested;
