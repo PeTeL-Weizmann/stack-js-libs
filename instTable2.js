@@ -186,6 +186,7 @@ nestedHeaders:nested,
 });
 
 table.onafterchange = function (instance, cell, x, y, value) {
+ console.log('entered after change ');
   if (readonly) {
     cell.classList.add('readonly');
   }
@@ -208,6 +209,7 @@ table.onafterchange = function (instance, cell, x, y, value) {
  
     
 prepareGrade[rqm]=function(){
+  console.log('entered prepared grade ');
  var studentsGrade=0, totalGrades=0; 
  const studentData = table.getData();
  const teacherData = teacherTable.getData();
