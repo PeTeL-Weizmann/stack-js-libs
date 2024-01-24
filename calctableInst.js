@@ -144,7 +144,46 @@ var toolbar=[
             k: 'background-color'
         },
     ];
+prepareGrade[rqm]=function(){
+ var studentsGrade=0, totalGrades=0; 
+ var container = document.createElement('div');
+container.style.position = 'absolute';
+container.style.left = '-9999px';
 
+// Attach the container to the document body
+document.body.appendChild(container);
+
+// Initialize the jspreadsheet table in the container
+var teacherTable = jspreadsheet(container, {
+  data: ({#data#})
+});
+   const studentData = table.getData();
+const teacherData = teacherTable.getData();
+cellsToGrade.forEach(({ row, col,theGrade }) => {
+    totalGrades=totalGrades+parseFloat(theGrade);
+    const studentCellIdent = jspreadsheet.getColumnName(col) + (row+1);
+    const studentCell = table.getCell(studentCellIdent);
+    const studentValue = studentCell ? studentCell.innerHTML.trim() : '';
+
+    const teacherCellIdent = jspreadsheet.getColumnName(col) + (row+1); // No adjustment needed here
+    const teacherCell = teacherTable.getCell(teacherCellIdent);
+    const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
+
+    // Check if either student or teacher cells are not empty
+    if (studentValue !== '' || teacherValue !== '') {
+        const mark =
+  Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
+  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? true: false;
+  if (mark){studentsGrade= studentsGrade+parseFloat(theGrade)};
+    }
+});
+   studentsGrade= studentsGrade/totalGrades;
+   const tt=[studentsGrade];
+    gradeInput.value=JSON.stringify(tt);
+    gradeInput.dispatchEvent(new Event('change'));
+   
+  
+};
 var table=jspreadsheet(document.getElementById(uid_table), {
   data:data,
   colHeaders:{#Titles#},
@@ -190,7 +229,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
    //    hint_el.style.display = "none";
       };  
  
-         
+/*      
 prepareGrade[rqm]=function(){
  var studentsGrade=0, totalGrades=0; 
  var container = document.createElement('div');
@@ -231,7 +270,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
    
   
 };
-                  
+*/                  
 checkAnswer[rqm] = function(hint,islast) {
 // Get the data as a nested array
 const data = table.getData();
