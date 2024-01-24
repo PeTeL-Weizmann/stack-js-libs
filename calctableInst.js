@@ -169,7 +169,7 @@ nestedHeaders:nested,
    var isAttemptMode = window.location.href.indexOf('attempt.php') !== -1;
    if (isAttemptMode && readonly) cell.classList.add('readonly');                                    
    dataInput.value=JSON.stringify(instance.jspreadsheet.getData());
-   prepareGrade[{#rqm#}]]();
+    prepareGrade[{#rqm#}]();
     },    
   columnSorting:false,
 });
