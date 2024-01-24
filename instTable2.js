@@ -262,8 +262,13 @@ for (let i = 0; i < columnLength-3; i++) {
     table.options.columns[columnIndex+1].align ='left';
  columnIndex=columnIndex+2;
  
-}
- 
+};
+
+ nested.forEach(function (item) {
+        if (item.colspan) {
+            item.colspan *= 2;
+        }
+    }); 
 
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
