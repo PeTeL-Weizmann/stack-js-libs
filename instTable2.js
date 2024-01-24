@@ -33,6 +33,8 @@
   <div style="display:none;">\(x^2\)
  [[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
 var rqm={#rqm#};
+
+
 var last=false;
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
@@ -50,7 +52,17 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
  var dataInput = document.getElementById(ans2Ref);
  var gradeInput = document.getElementById(ans3Ref);
 
+var container = document.createElement('div');
+container.style.position = 'absolute';
+container.style.left = '-9999px';
 
+// Attach the container to the document body
+document.body.appendChild(container);
+
+// Initialize the jspreadsheet table in the container
+var teacherTable = jspreadsheet(container, {
+  data: ({#data#})
+});
 
 var data={#hintdata#};
 
@@ -192,19 +204,8 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
     
 prepareGrade[rqm]=function(){
  var studentsGrade=0, totalGrades=0; 
- var container = document.createElement('div');
-container.style.position = 'absolute';
-container.style.left = '-9999px';
-
-// Attach the container to the document body
-document.body.appendChild(container);
-
-// Initialize the jspreadsheet table in the container
-var teacherTable = jspreadsheet(container, {
-  data: ({#data#})
-});
-   const studentData = table.getData();
-const teacherData = teacherTable.getData();
+ const studentData = table.getData();
+ const teacherData = teacherTable.getData();
 cellsToGrade.forEach(({ row, col,theGrade }) => {
     totalGrades=totalGrades+parseFloat(theGrade);
     const studentCellIdent = jspreadsheet.getColumnName(col) + (row+1);
@@ -245,17 +246,6 @@ for (let i = 0; i < columnLength-3; i++) {
 }
  
 
-var container = document.createElement('div');
-container.style.position = 'absolute';
-container.style.left = '-9999px';
-
-// Attach the container to the document body
-document.body.appendChild(container);
-
-// Initialize the jspreadsheet table in the container
-var teacherTable = jspreadsheet(container, {
-  data: ({#data#})
-});
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
 const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
