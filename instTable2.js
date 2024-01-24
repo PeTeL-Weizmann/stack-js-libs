@@ -256,7 +256,7 @@ checkAnswer[rqm] = function(hint,islast) {
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
 var columnIndex=3;
-  table.nestedHeaders:[];
+table.options.nestedHeaders = [];
 // Insert columns between existing columns
 for (let i = 0; i < columnLength-3; i++) {
     table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:false}]);  // Insert 1 empty column after the current column
@@ -271,7 +271,9 @@ console.log('before',nested);
         }
     } 
 console.log('after',nested);
-table.nestedHeaders:nested;
+
+ // Set nestedHeaders back to the updated nested array
+  table.options.nestedHeaders = nested;
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
 const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
