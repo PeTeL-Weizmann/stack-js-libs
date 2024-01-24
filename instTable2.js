@@ -274,7 +274,7 @@ console.log('before',nested);
 console.log('after',nested);
 
  // Set nestedHeaders back to the updated nested array
-  table.options.nestedHeaders = nested;
+//  table.options.nestedHeaders = nested;
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
 const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
