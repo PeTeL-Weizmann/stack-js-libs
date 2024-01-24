@@ -263,12 +263,13 @@ for (let i = 0; i < columnLength-3; i++) {
  columnIndex=columnIndex+2;
  
 };
-
+console.log('before',nested);
  nested.forEach(function (item) {
         if (item.colspan) {
             item.colspan *= 2;
         }
     }); 
+console.log('after',nested);
 
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
