@@ -186,26 +186,12 @@ nestedHeaders:nested,
 });
 
 table.onafterchange = function (instance, cell, x, y, value) {
- console.log('entered after change ');
   if (readonly) {
     cell.classList.add('readonly');
   }
-  prepareGrade[{#rqm#}]();
 };
  
-      var btn = document.createElement("button");  //<button> element
-      var t = document.createTextNode("finish"); // Create a text node
-      btn.appendChild(t);   
-      
-   var hint_el= document.getElementById(uid_hint);
-       hint_el.appendChild(btn);
-       hint_el.style.display = "block";    
- 
-         btn.onclick = function(e){
-         e.preventDefault(); 
-         prepareGrade[{#rqm#}]();
-   //    hint_el.style.display = "none";
-      };  
+     
  
 // Define a function to observe changes in the table container
 function observeTableChanges() {
@@ -235,7 +221,6 @@ function observeTableChanges() {
 observeTableChanges();
                   
 prepareGrade[rqm]=function(){
-  console.log('entered prepared grade ');
  var studentsGrade=0, totalGrades=0; 
  const studentData = table.getData();
  const teacherData = teacherTable.getData();
