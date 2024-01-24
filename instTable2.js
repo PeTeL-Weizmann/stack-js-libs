@@ -185,8 +185,13 @@ nestedHeaders:nested,
   columnSorting:false,
 });
 
-table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}; prepareGrade[{#rqm#}]();};
-  
+table.onafterchange = function (instance, cell, x, y, value) {
+  if (readonly) {
+    cell.classList.add('readonly');
+  }
+  prepareGrade[{#rqm#}]();
+};
+ 
       var btn = document.createElement("BUTTON");  //<button> element
       var t = document.createTextNode("finish"); // Create a text node
       btn.appendChild(t);   
