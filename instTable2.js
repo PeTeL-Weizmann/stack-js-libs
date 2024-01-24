@@ -156,7 +156,7 @@ var toolbar=[
             k: 'background-color'
         },
     ];
-
+var observer;
 var table=jspreadsheet(document.getElementById(uid_table), {
   data:data,
   colHeaders:{#Titles#},
@@ -222,7 +222,7 @@ function observeTableChanges() {
   };
 
   // Create an observer instance linked to the callback function
-  var observer = new MutationObserver(callback);
+  observer = new MutationObserver(callback);
 
   // Options for the observer (attributes, childList, subtree)
   var config = { childList: true, subtree: true };
