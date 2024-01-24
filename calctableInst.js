@@ -32,6 +32,7 @@
    
   <div style="display:none;">\(x^2\)
  [[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
+var rqm={#rqm#};
 var last=false;
 var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
@@ -50,9 +51,7 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
  var gradeInput = document.getElementById(ans3Ref);
 
 
-//var zData=["","","","","","","","","","","","","","",""];
 
-//var data = [zData.slice(0,{#Titles#}.length)];
 var data={#hintdata#};
 
 var cellsToGrade = [];
@@ -165,11 +164,12 @@ var table=jspreadsheet(document.getElementById(uid_table), {
      ],
 nestedHeaders:nested,                                     
                  
-         toolbar:toolbar,
+  toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
    var isAttemptMode = window.location.href.indexOf('attempt.php') !== -1;
    if (isAttemptMode && readonly) cell.classList.add('readonly');                                    
    dataInput.value=JSON.stringify(instance.jspreadsheet.getData());
+   prepareGrade[rqm]();
     },    
   columnSorting:false,
 });
@@ -189,7 +189,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
          prepareGrade[{#rqm#}]();
    //    hint_el.style.display = "none";
       };  
- var rqm={#rqm#};
+ 
          
 prepareGrade[rqm]=function(){
  var studentsGrade=0, totalGrades=0; 
@@ -257,7 +257,7 @@ document.body.appendChild(container);
 var teacherTable = jspreadsheet(container, {
   data: ({#data#})
 });
-   const studentData = table.getData();
+const studentData = table.getData();
 const teacherData = teacherTable.getData();
 const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
 const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
