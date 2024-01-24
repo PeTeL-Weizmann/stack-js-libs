@@ -266,6 +266,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 };
                 
 checkAnswer[rqm] = function(hint,islast) {
+ observer.disconnect();
 // Get the data as a nested array
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
