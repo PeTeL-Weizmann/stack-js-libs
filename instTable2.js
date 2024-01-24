@@ -193,7 +193,7 @@ table.onafterchange = function (instance, cell, x, y, value) {
   prepareGrade[{#rqm#}]();
 };
  
-      var btn = document.createElement("BUTTON");  //<button> element
+      var btn = document.createElement("button");  //<button> element
       var t = document.createTextNode("finish"); // Create a text node
       btn.appendChild(t);   
       
@@ -207,7 +207,33 @@ table.onafterchange = function (instance, cell, x, y, value) {
    //    hint_el.style.display = "none";
       };  
  
-    
+// Define a function to observe changes in the table container
+function observeTableChanges() {
+  var targetNode = document.getElementById(uid_table);
+
+  // Callback function to be executed when changes are observed
+  var callback = function (mutationsList) {
+    for (var mutation of mutationsList) {
+      if (mutation.type === 'childList') {
+        // The DOM structure changed, trigger prepareGrade function
+        prepareGrade[{#rqm#}]();
+      }
+    }
+  };
+
+  // Create an observer instance linked to the callback function
+  var observer = new MutationObserver(callback);
+
+  // Options for the observer (attributes, childList, subtree)
+  var config = { childList: true, subtree: true };
+
+  // Start observing the target node for configured mutations
+  observer.observe(targetNode, config);
+}
+
+// Call the function to start observing changes
+observeTableChanges();
+                  
 prepareGrade[rqm]=function(){
   console.log('entered prepared grade ');
  var studentsGrade=0, totalGrades=0; 
