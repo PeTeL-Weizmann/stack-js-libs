@@ -264,11 +264,11 @@ for (let i = 0; i < columnLength-3; i++) {
  
 };
 console.log('before',nested);
- nested.forEach(function (item) {
-        if (item.colspan) {
-            item.colspan *= 2;
+ for (let i = 1; i < nested.length; i++) {
+        if (nested[i].colspan) {
+            nested[i].colspan *= 2;
         }
-    }); 
+    } 
 console.log('after',nested);
 
 const studentData = table.getData();
