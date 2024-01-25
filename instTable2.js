@@ -68,27 +68,25 @@ var data={#hintdata#};
 
 var cellsToGrade = [];
 
-var nested;
-const nst={#nested#};
-if (nst=== undefined) {nested=[]} else  {nested=JSON.parse(nst.replace(/'/g, '"'))};
+var nested, nested2;
+const nst = {#nested#};
 
-var nested2;
-
-// Check if 'nested' is defined and has at least 2 objects
-if (nested !== undefined && nested.length >= 2) {
-  // Create a new array based on the original 'nested'
-  nested2 = nested.map((item, index) => {
-    // Double the colspan starting from the second object
-    if (index >= 1 && item.colspan !== undefined) {
-      return { ...item, colspan: item.colspan * 2 };
-    }
-    return item;
-  });
-} else {
-  // Handle the case when 'nested' is not defined or has fewer than 2 objects
+if (nst === undefined) {
+  nested = [];
   nested2 = [];
-};
+} else {
+  nested = JSON.parse(nst.replace(/'/g, ''));
 
+  // Deep copy of nested to nested2
+  nested2 = JSON.parse(JSON.stringify(nested));
+
+  // Double the colspan values, excluding the first object
+  for (let i = 1; i < nested2.length; i++) {
+    if (nested2[i].colspan) {
+      nested2[i].colspan *= 2;
+    }
+  }
+};
 // Iterate through each row in the data
 for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
   const rowData = data[rowIndex];
