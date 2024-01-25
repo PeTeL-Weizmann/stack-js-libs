@@ -336,7 +336,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
         { type: 'text',   wordWrap:true  },
           
      ],
-     nestedHeaders:function(){ if (nst === undefined) { nested = [] } else { nested = JSON.parse(nst.replace(/'/g, '"'))} return nested};
+     nestedHeaders:function(){ if (nst === undefined) { nested = [] } else { nested = JSON.parse(nst.replace(/'/g, '"'))} return nested},
          toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
         cell.classList.add('readonly')
