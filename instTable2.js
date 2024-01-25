@@ -270,6 +270,7 @@ var columnIndex=3;
 for (let i = 0; i < columnLength-3; i++) {
     table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:false}]);  // Insert 1 empty column after the current column
     table.options.columns[columnIndex+1].align ='left';
+     table.options.columns[columnIndex+1].width =50;
  columnIndex=columnIndex+2;
  
 };
