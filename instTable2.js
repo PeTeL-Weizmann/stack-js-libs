@@ -292,7 +292,7 @@ settings.nestedHeaders = nested2;
 table.destroy();
 
 // Recreate the table with the updated settings
-table = jexcel(document.getElementById('spreadsheet'), settings);
+table = jspreadsheet(document.getElementById(uid_table), settings);
 
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
