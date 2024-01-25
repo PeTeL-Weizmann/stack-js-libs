@@ -347,7 +347,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 }        
   catch(err) {};
 table.deleteRow();
-   
+ console.log(nested);
   };
 
                                    
