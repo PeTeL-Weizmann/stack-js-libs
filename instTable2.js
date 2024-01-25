@@ -70,23 +70,16 @@ var cellsToGrade = [];
 
 var nested, nested2;
 const nst = {#nested#};
+    if (nst === undefined) {
+      nested = [];
+      nested2 = [];
+    } else {
+      nested = JSON.parse(nst.replace(/'/g, '"'));
+      nested2 = JSON.parse(nst.replace(/'/g, '"'));
+      // Double the colspan values, excluding the first object
+      for (let i = 1; i < nested2.length; i++) { if (nested2[i].colspan) {  nested2[i].colspan *= 2};  }
+         };
 
-if (nst === undefined) {
-  nested = [];
-  nested2 = [];
-} else {
-  nested = JSON.parse(nst.replace(/'/g, ''));
-
-  // Deep copy of nested to nested2
-  nested2 = JSON.parse(JSON.stringify(nested));
-
-  // Double the colspan values, excluding the first object
-  for (let i = 1; i < nested2.length; i++) {
-    if (nested2[i].colspan) {
-      nested2[i].colspan *= 2;
-    }
-  }
-};
 // Iterate through each row in the data
 for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
   const rowData = data[rowIndex];
