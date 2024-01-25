@@ -72,6 +72,23 @@ var nested;
 const nst={#nested#};
 if (nst=== undefined) {nested=[]} else  {nested=JSON.parse(nst.replace(/'/g, '"'))};
 
+var nested2;
+
+// Check if 'nested' is defined and has at least 2 objects
+if (nested !== undefined && nested.length >= 2) {
+  // Create a new array based on the original 'nested'
+  nested2 = nested.map((item, index) => {
+    // Double the colspan starting from the second object
+    if (index >= 1 && item.colspan !== undefined) {
+      return { ...item, colspan: item.colspan * 2 };
+    }
+    return item;
+  });
+} else {
+  // Handle the case when 'nested' is not defined or has fewer than 2 objects
+  nested2 = [];
+};
+
 // Iterate through each row in the data
 for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
   const rowData = data[rowIndex];
@@ -256,8 +273,7 @@ checkAnswer[rqm] = function(hint,islast) {
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
 var columnIndex=3;
-var nested2=nested;
-    nested=[];
+
    table.refresh();
 // Insert columns between existing columns
 for (let i = 0; i < columnLength-3; i++) {
@@ -266,15 +282,18 @@ for (let i = 0; i < columnLength-3; i++) {
  columnIndex=columnIndex+2;
  
 };
- for (let i = 1; i < nested2.length; i++) {
-        if (nested2[i].colspan) {
-            nested2[i].colspan *= 2;
-        }
-    } 
- nested=nested2;
-console.log('nested',nested,' nestedHeaders ',table.options.nestedHeaders);
+ 
+ var settings = table.getConfig();
 
- // Set nestedHeaders back to the updated nested array
+// Manipulate the nestedHeaders property in the settings
+settings.nestedHeaders = nested2;
+
+// Destroy the table
+table.destroy();
+
+// Recreate the table with the updated settings
+table = jexcel(document.getElementById('spreadsheet'), settings);
+
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
 const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
