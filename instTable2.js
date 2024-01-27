@@ -68,7 +68,7 @@ var data={#hintdata#};
 
 var cellsToGrade = [];
 
-var nested, nested2;
+var nested, nested2,nested3;
 const nst = {#nested#};
     if (nst === undefined) {
       nested = [];
@@ -76,6 +76,7 @@ const nst = {#nested#};
     } else {
       nested = JSON.parse(nst.replace(/'/g, '"'));
       nested2 = JSON.parse(nst.replace(/'/g, '"'));
+      nested3 = JSON.parse(nst.replace(/'/g, '"'));
       // Double the colspan values, excluding the first object
       for (let i = 1; i < nested2.length; i++) { if (nested2[i].colspan) {  nested2[i].colspan *= 2};  }
          };
@@ -336,7 +337,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
         { type: 'text',   wordWrap:true  },
           
      ],
-     nestedHeaders:function(){ var nested;if (nst === undefined) { nested = [] } else { nested = JSON.parse(nst.replace(/'/g, '"'))} return nested},
+     nestedHeaders:nested3,
          toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
         cell.classList.add('readonly')
