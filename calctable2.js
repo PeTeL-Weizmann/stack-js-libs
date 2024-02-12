@@ -142,7 +142,7 @@ nestedHeaders:nested,
     },    
   columnSorting:false,
 });
-
+   table.refresh();
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
   
       var btn = document.createElement("button");  //<button> element
