@@ -56,6 +56,17 @@ const nst={#nested#};
 if (nst=== undefined) {nested=[]} else  {nested=JSON.parse(nst.replace(/'/g, '"'))};
 var widths=[180,120,120];
 
+var loadData;
+const swh={#start_with_hints#};
+if (swh === undefined) {
+  loadData = data;
+} else if (swh== 1) {
+  loadData = {#hintdata#}
+  }
+  else {
+    loadData = data;
+  };
+
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
 var toolbar=[
         {
@@ -120,7 +131,7 @@ var toolbar=[
     ];
 
 var table=jspreadsheet(document.getElementById(uid_table), {
-  data:data,
+  data: loadData,
   colHeaders:{#Titles#},
   colWidths: widths,
   allowManualInsertColumn:0,             
