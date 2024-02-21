@@ -230,6 +230,7 @@ function observeTableChanges() {
 observeTableChanges();
                   
 prepareGrade[rqm]=function(){
+ var mark;
  var studentsGrade=0, totalGrades=0; 
  const studentData = table.getData();
  const teacherData = teacherTable.getData();
@@ -244,11 +245,15 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
 
     // Check if either student or teacher cells are not empty
-    if (studentValue !== '' || teacherValue !== '') {
-        const mark =
-  Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
-  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? true: false;
-  if (mark){studentsGrade= studentsGrade+parseFloat(theGrade)};
+   if (studentValue !== '' || teacherValue !== '') {
+   if (studentValue === 0 && teacherValue === 0) {mark=true}
+  else {
+  const absoluteDifference = Math.abs(parseFloat(studentValue) - parseFloat(teacherValue));
+  const ratio = absoluteDifference / Math.abs(parseFloat(teacherValue));
+  mark = ratio <= {#relativeErr#} ? true: false;
+}
+
+    if (mark){studentsGrade= studentsGrade+parseFloat(theGrade)};
     }
 });
    studentsGrade= studentsGrade/totalGrades;
@@ -262,6 +267,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 checkAnswer[rqm] = function(hint,islast) {
  observer.disconnect();
 // Get the data as a nested array
+ var mark;
 const data = table.getData();
 const columnLength = data[0].length;  // Assuming the first row has all columns
 var columnIndex=3;
@@ -304,11 +310,11 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 
     // Check if either student or teacher cells are not empty
    if (studentValue !== '' || teacherValue !== '') {
-    if (studentValue === 0 && teacherValue === 0) {const mark=correct}
+    if (studentValue === 0 && teacherValue === 0) {mark=correct}
   else {
   const absoluteDifference = Math.abs(parseFloat(studentValue) - parseFloat(teacherValue));
   const ratio = absoluteDifference / Math.abs(parseFloat(teacherValue));
-  const mark = ratio <= {#relativeErr#} ? correct: wrong;
+  mark = ratio <= {#relativeErr#} ? correct: wrong;
 }
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
