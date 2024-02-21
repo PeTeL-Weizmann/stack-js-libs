@@ -55,7 +55,7 @@ if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "
 var container = document.createElement('div');
 container.style.position = 'absolute';
 container.style.left = '-9999px';
-
+container.style.display='none';
 // Attach the container to the document body
 document.body.appendChild(container);
 
