@@ -246,7 +246,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 
     // Check if either student or teacher cells are not empty
    if (studentValue !== '' || teacherValue !== '') {
-   if (studentValue === 0 && teacherValue === 0) {mark=true}
+   if (studentValue == 0 && teacherValue == 0) {mark=true}
   else {
   const absoluteDifference = Math.abs(parseFloat(studentValue) - parseFloat(teacherValue));
   const ratio = absoluteDifference / Math.abs(parseFloat(teacherValue));
@@ -310,7 +310,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 
     // Check if either student or teacher cells are not empty
    if (studentValue !== '' || teacherValue !== '') {
-    if (studentValue === 0 && teacherValue === 0) {mark=correct}
+    if (studentValue == 0 && teacherValue == 0) {mark=correct}
   else {
   const absoluteDifference = Math.abs(parseFloat(studentValue) - parseFloat(teacherValue));
   const ratio = absoluteDifference / Math.abs(parseFloat(teacherValue));
