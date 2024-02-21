@@ -303,10 +303,13 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     const teacherValue = teacherCell ? teacherCell.innerHTML.trim() : '';
 
     // Check if either student or teacher cells are not empty
-    if (studentValue !== '' || teacherValue !== '') {
-        const mark =
-  Math.abs(parseFloat(studentValue) - parseFloat(teacherValue)) /
-  Math.abs(parseFloat(teacherValue)) <= {#relativeErr#}    ? correct  : wrong;
+   if (studentValue !== '' || teacherValue !== '') {
+    if (studentValue === 0 && teacherValue === 0) {const mark=correct}
+  else {
+  const absoluteDifference = Math.abs(parseFloat(studentValue) - parseFloat(teacherValue));
+  const ratio = absoluteDifference / Math.abs(parseFloat(teacherValue));
+  const mark = ratio <= {#relativeErr#} ? correct: wrong;
+}
         // Set the grade value in the grading column of the same row
         const gradeCellIdent = jspreadsheet.getColumnName(2*col-2) + (row+1);
         table.setValue(gradeCellIdent, mark, false);
