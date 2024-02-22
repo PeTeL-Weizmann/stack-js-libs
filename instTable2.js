@@ -68,6 +68,14 @@ var data={#hintdata#};
 
 var cellsToGrade = [];
 
+const mrgd={#merged#};
+var merged;
+ if (mrgd === undefined) {
+      merged = {}
+    } else {
+      merged = JSON.parse(mrgd.replace(/'/g, '"'))
+    };
+
 var nested, nested2,nested3;
 const nst = {#nested#};
     if (nst === undefined) {
@@ -184,7 +192,8 @@ var table=jspreadsheet(document.getElementById(uid_table), {
         { type: 'text',   wordWrap:true,readOnly:{#design#}==1?0:1,stripHTML:false},                                      
      
      ],
-nestedHeaders:nested,                                     
+nestedHeaders:nested, 
+ mergeCells:merged,
                  
   toolbar:toolbar,
   updateTable: function (instance, cell, col, row, val, label, cellName) {
@@ -349,6 +358,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
           
      ],
      nestedHeaders:nested3,
+     mergeCells:merged,
          toolbar:toolbar,
     updateTable: function (instance, cell, col, row, val, label, cellName) {
         cell.classList.add('readonly')
