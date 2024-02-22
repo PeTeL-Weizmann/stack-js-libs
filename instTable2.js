@@ -168,6 +168,7 @@ var toolbar=[
 var observer;
 var table=jspreadsheet(document.getElementById(uid_table), {
   data:data,
+  wordWrap:true,
   colHeaders:{#Titles#},
   colWidths: widths,
   allowManualInsertColumn:0,             
@@ -331,6 +332,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
      tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
     var table2=jspreadsheet(document.getElementById(uid_feedback), {
      data:({#data#}),
+     wordWrap:true,
      colHeaders:{#Titles#},
      colWidths: widths,
      allowManualInsertColumn:0,             
