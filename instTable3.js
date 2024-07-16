@@ -40,11 +40,11 @@ var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table=board.generateId();
 var uid_hint="hint"+board.generateId();
 var uid_feedback="feedback"+board.generateId();
-
+/*
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
 //try {tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);}catch(err) {};
-
+*/
 var readonly=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
