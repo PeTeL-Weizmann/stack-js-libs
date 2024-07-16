@@ -1,43 +1,43 @@
-
- 
-  
- [[iframe]]
+[[iframe]]
 <script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"></script>
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" />
 <script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"></script>
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" />
- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
-  <div style="display: flex; justify-content: center;" width="100%">
-     <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
-  </div>
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
+<div style="display:none;">\(x^2\)</div>
+ <div style="display: flex; justify-content: center;" width="100%">
+   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
+ </div>
  <div id="myView" style="display:none;" ></div>
-  <style>
-    .jexcel {
-    font-size:14 px;
-}
- </style>
-   [[javascript  input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' ]]
+                                 
+<script type="text/javascript">
  var checkAnswer=[];
  var prepareGrade=[];
  var S=function(value,n){
      var m=value.toExponential(n);
   return m;   
 };
+</script>
 
 
+  <style>
+    .jexcel {
+    font-size:14 px;
+}
+ </style>
+   
+[[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
 var rqm={#rqm#};
-
-
 var last=false;
-//var board = JXG.JSXGraph.initBoard(divid, {});
-//var uid_table=board.generateId();
-//var uid_hint="hint"+board.generateId();
-//var uid_feedback="feedback"+board.generateId();
-/*
+var board = JXG.JSXGraph.initBoard(divid, {});
+var uid_table=board.generateId();
+var uid_hint="hint"+board.generateId();
+var uid_feedback="feedback"+board.generateId();
+
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
 //try {tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);}catch(err) {};
-*/
+
 var readonly=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
@@ -167,7 +167,7 @@ var toolbar=[
         },
     ];
 var observer;
-var table=jspreadsheet(document.getElementById("spreadsheet"), {
+var table=jspreadsheet(document.getElementById(uid_table), {
   data:data,
   wordWrap:true,
   colHeaders:{#Titles#},
@@ -331,7 +331,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
     if (localStorage.getItem("final")=={#rqm#}) try {
-    // raed tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
+     tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
     var table2=jspreadsheet(document.getElementById(uid_feedback), {
      data:({#data#}),
      wordWrap:true,
@@ -363,11 +363,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
   catch(err) {};
 table.deleteRow();
   };
-
- [[/javascript]]                                    
-[[/iframe]]
-
+                                   
+[[/jsxgraph]]
 </div>
-
-
-  
+[[/iframe]]
