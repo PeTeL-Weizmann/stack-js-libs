@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" />
 <script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"></script>
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" />
-
  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
   <div style="display: flex; justify-content: center;" width="100%">
      <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
@@ -30,10 +29,10 @@ var rqm={#rqm#};
 
 
 var last=false;
-var board = JXG.JSXGraph.initBoard(divid, {});
-var uid_table=board.generateId();
-var uid_hint="hint"+board.generateId();
-var uid_feedback="feedback"+board.generateId();
+//var board = JXG.JSXGraph.initBoard(divid, {});
+//var uid_table=board.generateId();
+//var uid_hint="hint"+board.generateId();
+//var uid_feedback="feedback"+board.generateId();
 /*
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
@@ -168,7 +167,7 @@ var toolbar=[
         },
     ];
 var observer;
-var table=jspreadsheet(document.getElementById(uid_table), {
+var table=jspreadsheet(document.getElementById("spreadsheet"), {
   data:data,
   wordWrap:true,
   colHeaders:{#Titles#},
