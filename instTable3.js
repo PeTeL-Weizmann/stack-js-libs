@@ -1,7 +1,7 @@
 
  
   
- [[iframe input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' ]]
+ [[iframe]]
 <script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"></script>
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" />
 <script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"></script>
@@ -17,7 +17,7 @@
     font-size:14 px;
 }
  </style>
-  
+   [[javascript  input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' ]]
  var checkAnswer=[];
  var prepareGrade=[];
  var S=function(value,n){
@@ -365,7 +365,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
   };
 
-                                   
+ [[/javascript]]                                    
 [[/iframe]]
 
 </div>
