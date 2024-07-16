@@ -196,7 +196,7 @@ nestedHeaders:nested,
     },    
   columnSorting:false,
 });
-
+console.log(table);
 table.onafterchange = function (instance, cell, x, y, value) {
   if (readonly) {
     cell.classList.add('readonly');
