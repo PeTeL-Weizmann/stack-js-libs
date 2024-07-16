@@ -1,37 +1,31 @@
+
+ 
+  
+ [[iframe input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' ]]
 <script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"></script>
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" />
 <script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"></script>
 <link rel="stylesheet" href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" />
 
  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Material+Icons" />
-
- <div style="display:none;">\(x^2\)</div>
- <div style="display: flex; justify-content: center;" width="100%">
-   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
- </div>
+  <div style="display: flex; justify-content: center;" width="100%">
+     <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
+  </div>
  <div id="myView" style="display:none;" ></div>
-                                 
-<script type="text/javascript">
- var checkAnswer=[];
- var prepareGrade=[];
- var S=function(value,n){
-     var m=value.toExponential(n);
-  return m;   
-};
-</script>
-
-
   <style>
     .jexcel {
     font-size:14 px;
 }
  </style>
   
+ var checkAnswer=[];
+ var prepareGrade=[];
+ var S=function(value,n){
+     var m=value.toExponential(n);
+  return m;   
+};
 
-  
-   
-  <div style="display:none;">\(x^2\)
- [[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
+
 var rqm={#rqm#};
 
 
@@ -372,7 +366,7 @@ table.deleteRow();
   };
 
                                    
-[[/jsxgraph]]
+[[/iframe]]
 
 </div>
 
