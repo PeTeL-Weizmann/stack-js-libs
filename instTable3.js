@@ -296,8 +296,8 @@ table = jspreadsheet(document.getElementById(uid_table), settings);
 
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
-const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
-const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
+const correct='<span style="font-size: 1em; color:green;">✔</span>';
+const wrong='<span style="font-size: 1em; color:red;">❌</span>';   
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col,theGrade }) => {
@@ -329,8 +329,11 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
     if (localStorage.getItem("final")=={#rqm#}) try {
-     tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
-    var table2=jspreadsheet(document.getElementById(uid_feedback), {
+//todo    tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
+//    var table2=jspreadsheet(document.getElementById(uid_feedback), {
+      var table2=jspreadsheet(document.getElementById("feedback{#rqm#}"), {
+     
+     if table2=nul then break;
      data:({#data#}),
      wordWrap:true,
      colHeaders:{#Titles#},
@@ -364,4 +367,5 @@ table.deleteRow();
                                    
 [[/script]]
 </div>
+     <div id="feedback{#rqm#}" dir="ltr">
 [[/iframe]]
