@@ -38,7 +38,7 @@ var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table)
 
 var readonly=false;
 //hide or show the fields for design
-if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
+// to do if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
  var dataInput = document.getElementById(ans2Ref);
  var gradeInput = document.getElementById(ans3Ref);
