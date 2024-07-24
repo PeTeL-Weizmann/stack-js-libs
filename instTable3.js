@@ -25,24 +25,27 @@
  </style>
 
   
-  [[script input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref']]  
-var rqm={#rqm#};
+  [[script input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref']]
+    var dataInput = document.getElementById(ans2Ref);
+    var gradeInput = document.getElementById(ans3Ref);
+  [[/script]]
+
+  <script>
+ var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
-var uid_table={#rqm#};
+var uid_table="spreadsheet{#rqm#}";
 var uid_hint="hint{#rqm#}"
 var uid_feedback="feedback{#rqm#}"
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
-     tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
+    tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
 //try {tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);}catch(err) {};
 
 var readonly=false;
 //hide or show the fields for design
 // to do if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
- var dataInput = document.getElementById(ans2Ref);
- var gradeInput = document.getElementById(ans3Ref);
-
+ 
 var container = document.createElement('div');
 //container.style.position = 'absolute';
 //container.style.left = '-9999px';
@@ -364,7 +367,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
   };
                                    
-[[/script]]
+</script>
 </div>
      <div id="feedback{#rqm#}" dir="ltr">
 [[/iframe]]
