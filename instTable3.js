@@ -333,7 +333,6 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 //    var table2=jspreadsheet(document.getElementById(uid_feedback), {
       var table2=jspreadsheet(document.getElementById("feedback{#rqm#}"), {
      
-     if table2=nul then break;
      data:({#data#}),
      wordWrap:true,
      colHeaders:{#Titles#},
