@@ -1,4 +1,4 @@
-[[iframe input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref'  width="100%" height="7em"]]
+[[iframe   width="100%" height="7em"]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"/]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"/]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
@@ -23,7 +23,9 @@
     font-size:14 px;
 }
  </style>
- <script type="text/javascript">  
+
+  
+  [[script input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref']]  
 var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
@@ -360,6 +362,6 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
   };
                                    
-</script>
+[[/script]]
 </div>
 [[/iframe]]
