@@ -1,7 +1,7 @@
-[[iframe]]
+[[iframe input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref'  width="100%" height="7em"]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"/]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"/]]
-[[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css " type="text/css /]]
+[[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 
@@ -18,22 +18,18 @@
   return m;   
 };
 </script>
-
-
   <style>
     .jexcel {
     font-size:14 px;
 }
  </style>
-   
-[[jsxgraph input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref' width="0px" height="0px"]]
+ <script type="text/javascript">  
 var rqm={#rqm#};
 var last=false;
-var board = JXG.JSXGraph.initBoard(divid, {});
-var uid_table=board.generateId();
-var uid_hint="hint"+board.generateId();
-var uid_feedback="feedback"+board.generateId();
-
+// var board = JXG.JSXGraph.initBoard(divid, {});
+var uid_table={#rqm#};
+var uid_hint="hint{#rqm#}"
+var uid_feedback="feedback{#rqm#}"
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
 //try {tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);}catch(err) {};
@@ -364,6 +360,6 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
   };
                                    
-[[/jsxgraph]]
+</script>
 </div>
 [[/iframe]]
