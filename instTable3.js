@@ -4,44 +4,21 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
-<script>
-  var dataInput,gradeInput;
-</script>
+
+  
  
- [[script type="module"]]
-   import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-       var pr = stack_js.request_access_to_input("ans2", true);
-           pr.then((id) => {document.getElementById(id).type = 'input';dataInput=document.getElementById(id) });
- console.log(dataInput);
-console.log(pr);
-       pr = stack_js.request_access_to_input("ans3", true);
-       pr.then((id) => {document.getElementById(id).type = 'input';gradeInput=document.getElementById(id)});
-       console.log(gradeInput);
-[[/script]]
-   console.log(dataInput);
-<div style="display:none;">\(x^2\)</div>
+ 
+ <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
-<script type="text/javascript">
- var prepareGrade=[];
- var S=function(value,n){
-     var m=value.toExponential(n);
-  return m;   
-};
-</script>
-  <style>
-    .jexcel {
-    font-size:14 px;
-}
- </style>
+[[javascript input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref']]
+ var dataInput = document.getElementById(ans2Ref);
+ var gradeInput = document.getElementById(ans3Ref);
 
 
-
- 
-  <script>
  var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
@@ -378,7 +355,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
   };
                                    
-</script>
+[[/javascript]]
 </div>
      <div id="feedback{#rqm#}" dir="ltr">
 [[/iframe]]
