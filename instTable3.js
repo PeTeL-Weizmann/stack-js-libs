@@ -6,7 +6,7 @@
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 <script>
   var dataInput,gradeInput;
-<script>
+</script>
  
  [[script type="module"]]
    import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
