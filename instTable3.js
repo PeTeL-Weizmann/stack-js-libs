@@ -17,9 +17,9 @@
 [[javascript input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref']]
  var dataInput = document.getElementById(ans2Ref);
  var gradeInput = document.getElementById(ans3Ref);
-
-
- var rqm={#rqm#};
+[[/javascript]]
+ <script>
+  var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table="spreadsheet{#rqm#}";
@@ -355,7 +355,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
   };
                                    
-[[/javascript]]
+</script>
 </div>
-     <div id="feedback{#rqm#}" dir="ltr">
+     <div id="feedback{#rqm#}" dir="ltr"></div>
 [[/iframe]]
