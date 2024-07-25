@@ -14,7 +14,7 @@
        dataInput.then((id) => {document.getElementById(id).type = 'input';});
        gradeInput = stack_js.request_access_to_input("ans3", true);
        gradeInput.then((id) => {document.getElementById(id).type = 'input';});
-
+       console.log(dataInput);
 [[/script]]
 <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
