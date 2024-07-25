@@ -10,11 +10,12 @@
  
  [[script type="module"]]
    import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-       var promise = stack_js.request_access_to_input("ans2", true);
-           promise.then((id) => {document.getElementById(id).type = 'input';dataInput=document.getElementById(id) });
+       var pr = stack_js.request_access_to_input("ans2", true);
+           pr.then((id) => {document.getElementById(id).type = 'input';dataInput=document.getElementById(id) });
  console.log(dataInput);
-       promise = stack_js.request_access_to_input("ans3", true);
-       promise.then((id) => {document.getElementById(id).type = 'input';gradeInput=document.getElementById(id)});
+console.log(pr);
+       pr = stack_js.request_access_to_input("ans3", true);
+       pr.then((id) => {document.getElementById(id).type = 'input';gradeInput=document.getElementById(id)});
        console.log(gradeInput);
 [[/script]]
    console.log(dataInput);
