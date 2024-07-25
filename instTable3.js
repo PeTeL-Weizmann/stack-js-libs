@@ -7,9 +7,9 @@
 
  [[script type="module"]]
    import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-   var dataInput = stack_js.request_access_to_input("ans1", true);
+   var dataInput = stack_js.request_access_to_input("ans2", true);
        dataInput.then((id) => {document.getElementById(id).type = 'input';});
-   var gradeInput = stack_js.request_access_to_input("ans2", true);
+   var gradeInput = stack_js.request_access_to_input("ans3", true);
        gradeInput.then((id) => {document.getElementById(id).type = 'input';});
 
 [[/script]]
