@@ -4,12 +4,15 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
-
+<script>
+  var dataInput,gradeInput;
+<script>
+ 
  [[script type="module"]]
    import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-   var dataInput = stack_js.request_access_to_input("ans2", true);
+       dataInput = stack_js.request_access_to_input("ans2", true);
        dataInput.then((id) => {document.getElementById(id).type = 'input';});
-   var gradeInput = stack_js.request_access_to_input("ans3", true);
+       gradeInput = stack_js.request_access_to_input("ans3", true);
        gradeInput.then((id) => {document.getElementById(id).type = 'input';});
 
 [[/script]]
