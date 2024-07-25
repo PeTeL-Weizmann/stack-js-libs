@@ -10,12 +10,14 @@
  
  [[script type="module"]]
    import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-       dataInput = stack_js.request_access_to_input("ans2", true);
-       dataInput.then((id) => {document.getElementById(id).type = 'input';});
-       gradeInput = stack_js.request_access_to_input("ans3", true);
-       gradeInput.then((id) => {document.getElementById(id).type = 'input';});
-       console.log(dataInput);
+       var promise = stack_js.request_access_to_input("ans2", true);
+           promise.then((id) => {document.getElementById(id).type = 'input';dataInput=document.getElementById(id) });
+ console.log(dataInput);
+       promise = stack_js.request_access_to_input("ans3", true);
+       promise.then((id) => {document.getElementById(id).type = 'input';gradeInput=document.getElementById(id)});
+       console.log(gradeInput);
 [[/script]]
+   console.log(dataInput);
 <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
