@@ -6,7 +6,9 @@
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 
   
- 
+  <script>
+  var dataInput,gradeInput; 
+  </script>
  
  <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
@@ -15,10 +17,12 @@
  <div id="myView" style="display:none;" ></div>
                                  
 [[javascript input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref']]
- var dataInput = document.getElementById(ans2Ref);
- var gradeInput = document.getElementById(ans3Ref);
+  dataInput = document.getElementById(ans2Ref);
+  gradeInput = document.getElementById(ans3Ref);
+console.log(datainput);
 [[/javascript]]
- <script>
+ 
+  <script>
   var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
