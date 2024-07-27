@@ -7,7 +7,7 @@
 
  <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
-   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
+   <div id="spreadsheet" dir="ltr"   style="width:100%;  margin: auto;   height: 400px; border: 3px solid #73AD21;" ><div style="display:none;">\(x^2\)</div></div>
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
