@@ -1,4 +1,4 @@
-[[iframe   width="100%" height="7em"]]
+[[iframe   width="100%" height="60%"]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"/]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"/]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
@@ -224,7 +224,7 @@ function observeTableChanges() {
 // Call the function to start observing changes
 observeTableChanges();
                   
-prepareGrade[rqm]=function(){
+var prepareGrade[rqm]=function(){
  var mark;
  var studentsGrade=0, totalGrades=0; 
  const studentData = table.getData();
