@@ -5,25 +5,24 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 
-  
-  <script>
-  var dataInput,gradeInput; 
-  </script>
- 
  <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
-[[javascript input-ref-ans2='ans2Ref' input-ref-ans3='ans3Ref']]
-  dataInput = document.getElementById(ans2Ref);
-  gradeInput = document.getElementById(ans3Ref);
-console.log(datainput);
-[[/javascript]]
- 
-  <script>
-  var rqm={#rqm#};
+
+
+
+ [[script type="module"]]
+  import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
+  stack_js.request_access_to_input("ans2", true);
+  stack_js.request_access_to_input("ans3", true);
+ var dataInput,gradeInput; 
+  dataInput = document.getElementById("ans2");
+  gradeInput = document.getElementById("ans3");
+
+ var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table="spreadsheet{#rqm#}";
@@ -359,7 +358,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
 table.deleteRow();
   };
                                    
-</script>
+[[/script]]
 </div>
      <div id="feedback{#rqm#}" dir="ltr"></div>
 [[/iframe]]
