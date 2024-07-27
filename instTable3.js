@@ -1,20 +1,32 @@
-[[iframe width=100% height="100%" ]]
+[[iframe   width="100%" height="7em"]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"/]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"/]]
-[[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML"/]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 
+<div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
-   <div id="spreadsheet" dir="ltr">
+   <div id="spreadsheet" dir="ltr" ><div style="display:none;">\(x^2\)</div></div>
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
+<script type="text/javascript">
 
+ var S=function(value,n){
+     var m=value.toExponential(n);
+  return m;   
+};
+</script>
+  <style>
+    .jexcel {
+    font-size:14 px;
+}
+ </style>
 
+  
 
- [[script type="module"]]
+[[script type="module"]]
   import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
   stack_js.request_access_to_input("ans2", true);
   stack_js.request_access_to_input("ans3", true);
@@ -22,21 +34,23 @@
   dataInput = document.getElementById("ans2");
   gradeInput = document.getElementById("ans3");
 
- var rqm={#rqm#};
+var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
-var uid_table="spreadsheet{#rqm#}";
+var uid_table={#rqm#};
 var uid_hint="hint{#rqm#}"
 var uid_feedback="feedback{#rqm#}"
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
-    tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
+     tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
 //try {tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);}catch(err) {};
 
 var readonly=false;
 //hide or show the fields for design
-// to do if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
+if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
- 
+ var dataInput = document.getElementById(ans2Ref);
+ var gradeInput = document.getElementById(ans3Ref);
+
 var container = document.createElement('div');
 //container.style.position = 'absolute';
 //container.style.left = '-9999px';
@@ -290,8 +304,8 @@ table = jspreadsheet(document.getElementById(uid_table), settings);
 
 const studentData = table.getData();
 const teacherData = teacherTable.getData();
-const correct='<span style="font-size: 1em; color:green;">✔</span>';
-const wrong='<span style="font-size: 1em; color:red;">❌</span>';   
+const correct='<span style="font-size: 1em; color:green;"><i class="fa fa-check"></i></span>';
+const wrong='<span style="font-size: 1em; color:red;"><i class="fa fa-times"></i></span>';   
 
 // Use stored positions for grading
 cellsToGrade.forEach(({ row, col,theGrade }) => {
@@ -323,10 +337,8 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
     if (hint) localStorage.setItem("showhint",{#rqm#});
     if (islast)  localStorage.setItem("final",{#rqm#}); 
     if (localStorage.getItem("final")=={#rqm#}) try {
-//todo    tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
-//    var table2=jspreadsheet(document.getElementById(uid_feedback), {
-      var table2=jspreadsheet(document.getElementById("feedback{#rqm#}"), {
-     
+     tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
+    var table2=jspreadsheet(document.getElementById(uid_feedback), {
      data:({#data#}),
      wordWrap:true,
      colHeaders:{#Titles#},
@@ -360,5 +372,5 @@ table.deleteRow();
                                    
 [[/script]]
 </div>
-     <div id="feedback{#rqm#}" dir="ltr"></div>
+       <div id="feedback{#rqm#}" dir="ltr"></div>
 [[/iframe]]
