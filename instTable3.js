@@ -48,9 +48,6 @@ var readonly=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
- var dataInput = document.getElementById(ans2Ref);
- var gradeInput = document.getElementById(ans3Ref);
-
 var container = document.createElement('div');
 //container.style.position = 'absolute';
 //container.style.left = '-9999px';
