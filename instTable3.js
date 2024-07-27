@@ -371,7 +371,16 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
   catch(err) {};
 table.deleteRow();
   };
-                                   
+var answered=false;
+stack_js.get_content("content{#rqm#}").then((content) => {
+if (content !== null) {
+if  (!answered ) 
+{
+ answered=true;
+var M=JSON.parse(content);
+console.log(M);	
+if {M !=[]} {checkAnswer(M[0],M[1])} else {checkAnswer()};
+}}});                                 
 [[/script]]
 </div>
        <div id="feedback{#rqm#}" dir="ltr"></div>
