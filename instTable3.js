@@ -1,4 +1,6 @@
-[[iframe  width="{#width#}" height="{#height#}"]]
+<div style="width:{#width#};height:24em;" id="stack-iframe-holder-1">
+
+[[iframe]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/8146613d0a409575be7514c420a69d6e67416f4b/jexcel.js"/]]
 [[script src="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.js"/]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
@@ -29,6 +31,9 @@
   
 
 [[script type="module"]]
+ document.getElementById("stack-iframe-holder-1").style.height={#height#};
+ document.getElementById("stack-iframe-holder-1").style.width={#width#};
+
   import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
   stack_js.request_access_to_input("ans2", true);
   stack_js.request_access_to_input("ans3", true);
