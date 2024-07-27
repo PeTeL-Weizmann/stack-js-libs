@@ -379,7 +379,7 @@ if  (!answered )
  answered=true;
 var M=JSON.parse(content);
 console.log(M);	
-if {M !=[]} {checkAnswer(M[0],M[1])} else {checkAnswer()};
+if (M !=[]) {checkAnswer(M[0],M[1])} else {checkAnswer()};
 }}});                                 
 [[/script]]
 </div>
