@@ -6,9 +6,8 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 
- <div style="display:none;">\(x^2\)</div>
  <div style="display: flex; justify-content: center;" width="100%">
-   <div id="spreadsheet" dir="ltr"><div style="display:none;">\(x^2\)</div></div>
+   <div id="spreadsheet" dir="ltr">
  </div>
  <div id="myView" style="display:none;" ></div>
                                  
