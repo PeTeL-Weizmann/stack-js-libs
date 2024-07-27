@@ -206,7 +206,7 @@ function observeTableChanges() {
     for (var mutation of mutationsList) {
       if (mutation.type === 'childList') {
         // The DOM structure changed, trigger prepareGrade function
-        prepareGrade[{#rqm#}]();
+        prepareGrade();
       }
     }
   };
@@ -224,7 +224,7 @@ function observeTableChanges() {
 // Call the function to start observing changes
 observeTableChanges();
                   
-var prepareGrade[rqm]=function(){
+var prepareGrade=function(){
  var mark;
  var studentsGrade=0, totalGrades=0; 
  const studentData = table.getData();
