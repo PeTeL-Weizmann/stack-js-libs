@@ -35,7 +35,7 @@
   stack_js.request_access_to_input("ans3", true);
  var dataInput,gradeInput; 
   dataInput = document.getElementById("ans2");
-datainput.type = 'input';
+  dataInput.type = 'input';
   gradeInput = document.getElementById("ans3");
  gradeInput.type = 'input';
 
