@@ -111,7 +111,8 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
 };
 console.log('datainput before anything is:',dataInput.value);
 dataInput.dispatchEvent(new Event('change'));
-if (dataInput.value!='') {data = JSON.parse(dataInput.value);dataInput.dispatchEvent(new Event('change'));} else {dataInput.value=JSON.stringify(data);dataInput.dispatchEvent(new Event('change')); };
+if (dataInput.value!='') {data = JSON.parse(dataInput.value);dataInput.dispatchEvent(new Event('change'));console.log('input was not empty',dataInput.value,data)}   
+                    else {console.log('input is empty',dataInput.value,data);dataInput.value=JSON.stringify(data);dataInput.dispatchEvent(new Event('change')); };
 //gradeInput.value='';
 var widths=[150,100,100];
 for (let i=3;i<{#Titles#}.length;i++){widths[i]=100};
