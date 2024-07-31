@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-'New 8:44'
+'New 12:01'
 
 
  <div style="display: flex; justify-content: center;" width="100%">
@@ -338,41 +338,8 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
   
     readonly=true;
     table.insertRow();
-     table.refresh();
-    if (hint) localStorage.setItem("showhint",{#rqm#});
-    if (islast)  localStorage.setItem("final",{#rqm#}); 
-    if (localStorage.getItem("final")=={#rqm#}) try {
-     tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
-    var table2=jspreadsheet(document.getElementById(uid_feedback), {
-     data:({#data#}),
-     wordWrap:true,
-     colHeaders:{#Titles#},
-     colWidths: widths,
-     allowManualInsertColumn:0,             
-     allowInsertColumn:0,
-     allowDeleteColumn:0,
-     allowManualInsertRow:0,             
-     allowInsertRow:0,
-     allowDeleteRow:0,
-          
-     columns: [
-         { type: 'dropdown',   source:{#items#}},
-        { type: 'dropdown',   source:{#units#} },
-        { type: 'text',   wordWrap:true  },
-          
-     ],
-     nestedHeaders:nested3,
-     mergeCells:merged,
-         toolbar:toolbar,
-    updateTable: function (instance, cell, col, row, val, label, cellName) {
-        cell.classList.add('readonly')
-    }, 
-    columnSorting:false,
-});
-  
-}        
-  catch(err) {};
-table.deleteRow();
+    table.refresh();
+    table.deleteRow();
   };
 var answered=false;
 stack_js.get_content("content{#rqm#}").then((content) => {
