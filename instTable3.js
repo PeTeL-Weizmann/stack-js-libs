@@ -30,7 +30,7 @@
 [[script type="module"]]
 
   import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-  
+  stack_js.resize_containing_frame("{#width#}px", "{#height#}px");
 var promises = [
  /* These will resolve to identifiers of the input elements once they have been fully built and populated. */
  stack_js.request_access_to_input("ans2", true),
@@ -40,7 +40,6 @@ Promise.all(promises).then(([idForAns2, idForAns3]) => {
   /* This block only executes once those inputs are ready. */
   var dataInput = document.getElementById(idForAns2);
   var gradeInput = document.getElementById(idForAns3);
-stack_js.resize_containing_frame("{#width#}px", "{#height#}px");
  var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
