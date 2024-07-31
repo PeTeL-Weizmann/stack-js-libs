@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-'New 12:01'
+'New 12:10'
 
 
  <div style="display: flex; justify-content: center;" width="100%">
@@ -278,7 +278,7 @@ cellsToGrade.forEach(({ row, col,theGrade }) => {
   
 };
                 
-var checkAnswer= function(hint,islast) {
+var checkAnswer= function() {
  observer.disconnect();
 // Get the data as a nested array
  var mark;
@@ -346,15 +346,13 @@ stack_js.get_content("content{#rqm#}").then((content) => {
 if (content !== null) {
 if  (!answered ) 
 {
- answered=true;
-var M=JSON.parse(content);
-console.log(M);	
-if (M !=[]) {checkAnswer(M[0],M[1])} else {checkAnswer()};
+   answered=true;
+   checkAnswer();
 }}});   
  });
 [[/script]]
 </div>
-       <div id="feedback{#rqm#}" dir="ltr"></div>
+    
 [[/iframe]]
 <script>
    document.getElementById("stack-iframe-holder-1").style.height={#height#};
