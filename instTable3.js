@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-''
+'ver 0'
 
 
  <div style="display: flex; justify-content: center;" width="100%">
@@ -109,10 +109,9 @@ for (let rowIndex = 0; rowIndex < data.length; rowIndex++) {
     }
   }
 };
- console.log('datainput before anything is:',dataInput.value);
 dataInput.dispatchEvent(new Event('change'));
-if (dataInput.value!='') {data = JSON.parse(dataInput.value);dataInput.dispatchEvent(new Event('change'));console.log('input was not empty',dataInput.value,data)}   
-                    else {console.log('input is empty',dataInput.value,data);dataInput.value=JSON.stringify(data);dataInput.dispatchEvent(new Event('change')); };
+if (dataInput.value!='') {data = JSON.parse(dataInput.value);dataInput.dispatchEvent(new Event('change'));}   
+                    else {dataInput.value=JSON.stringify(data);dataInput.dispatchEvent(new Event('change')); };
   
 //gradeInput.value='';
 var widths=[150,100,100];
@@ -208,7 +207,7 @@ nestedHeaders:nested,
     },    
   columnSorting:false,
 });
-console.log(table);
+
 table.onafterchange = function (instance, cell, x, y, value) {
   if (readonly) {
     cell.classList.add('readonly');
