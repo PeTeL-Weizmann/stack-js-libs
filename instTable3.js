@@ -27,19 +27,19 @@
  </style>
 
   
-
 [[script type="module"]]
 
   import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-  stack_js.request_access_to_input("ans2", true);
-  stack_js.request_access_to_input("ans3", true);
- var dataInput,gradeInput; 
-  dataInput = document.getElementById("ans2");
-  dataInput.type = 'input';
-  dataInput.dispatchEvent(new Event('change'));
-  gradeInput = document.getElementById("ans3");
- gradeInput.type = 'input';
-gradeInput.dispatchEvent(new Event('change'));
+  
+var promises = [
+ /* These will resolve to identifiers of the input elements once they have been fully built and populated. */
+ stack_js.request_access_to_input("ans2", true),
+ stack_js.request_access_to_input("ans3", true)
+];
+Promise.all(promises).then(([idForAns2, idForAns3]) => {
+  /* This block only executes once those inputs are ready. */
+  var dataInput = document.getElementById(idForAns2);
+  var gradeInput = document.getElementById(idForAns3);
 
 var rqm={#rqm#};
 var last=false;
@@ -385,7 +385,8 @@ if  (!answered )
 var M=JSON.parse(content);
 console.log(M);	
 if (M !=[]) {checkAnswer(M[0],M[1])} else {checkAnswer()};
-}}});                                 
+}}});   
+ });
 [[/script]]
 </div>
        <div id="feedback{#rqm#}" dir="ltr"></div>
