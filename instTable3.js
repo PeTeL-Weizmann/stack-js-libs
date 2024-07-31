@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-'ver 0'
+'ver 1'
 
 
  <div style="display: flex; justify-content: center;" width="100%">
@@ -30,7 +30,7 @@
 [[script type="module"]]
 
   import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
-  
+ stack_js.resize_containing_frame({#width#}, {#height#}); 
 var promises = [
  /* These will resolve to identifiers of the input elements once they have been fully built and populated. */
  stack_js.request_access_to_input("ans2", true),
@@ -353,7 +353,3 @@ if  (!answered )
 </div>
     
 [[/iframe]]
-<script>
-   document.getElementById("stack-iframe-holder-1").style.height={#height#};
-   document.getElementById("stack-iframe-holder-1").style.width={#width#};
-  </script>
