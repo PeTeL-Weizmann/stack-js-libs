@@ -52,8 +52,6 @@ var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table)
 //try {tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);}catch(err) {};
 
 var readonly=false;
-//hide or show the fields for design
-if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
 var container = document.createElement('div');
 //container.style.position = 'absolute';
