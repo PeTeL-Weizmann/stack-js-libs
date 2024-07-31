@@ -353,7 +353,7 @@ if  (!answered )
 </div>
     
 [[/iframe]]
-<script>
+[[javascript]]
    document.getElementById("stack-iframe-holder-1").style.height={#height#};
    document.getElementById("stack-iframe-holder-1").style.width={#width#};
-  </script>
+[[/javascript]]
