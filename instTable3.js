@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-'ver 4'
+'ver 5'
 
 
  <div style="display: flex; justify-content: center;" width="100%">
@@ -40,8 +40,8 @@ Promise.all(promises).then(([idForAns2, idForAns3]) => {
   /* This block only executes once those inputs are ready. */
   var dataInput = document.getElementById(idForAns2);
   var gradeInput = document.getElementById(idForAns3);
-
-var rqm={#rqm#};
+stack_js.resize_containing_frame("{#width#}px", "{#height#}px");
+ var rqm={#rqm#};
 var last=false;
 // var board = JXG.JSXGraph.initBoard(divid, {});
 var uid_table={#rqm#};
@@ -351,10 +351,4 @@ if  (!answered )
  });
 [[/script]]
 </div>
-   document.getElementById("stack-iframe-holder-1").style.height={#height#};
-   document.getElementById("stack-iframe-holder-1").style.width={#width#};
 [[/iframe]]
-[[script]]
-   document.getElementById("stack-iframe-holder-1").style.height={#height#};
-   document.getElementById("stack-iframe-holder-1").style.width={#width#};
-[[/script]]
