@@ -209,7 +209,10 @@ if (content !== null) {
 if  (!answered ) 
 {
    answered=true;
-   checkAnswer();
+ var M=JSON.parse(content);
+ if (M==[]) {checkAnswer()}  else {checkAnswer(M[0],M[1])};
+  
+   
 }}});   
  });
 [[/script]]
