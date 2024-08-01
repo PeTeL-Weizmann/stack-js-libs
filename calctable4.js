@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-ver 0.1
+ver 0.2
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ></div>
  </div>
@@ -160,6 +160,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
      btn.disabled=true; 
+              console.log("show the button is ",showHint);
  if ( ({#hint_enable#}==1) || function(){return showHint} ) {hint_el.style.display = "block";btn.disabled = false}        
  var rqm={#rqm#};
   
