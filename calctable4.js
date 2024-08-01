@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-
+ver 0.1
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ></div>
  </div>
@@ -46,7 +46,7 @@ var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table)
 
 //try {tmp= document.getElementById("feedback"); tmp.setAttribute("id",uid_feedback);}catch(err) {};
 
-var readonly=false;
+var readonly=false,showHint=false;
 //hide or show the fields for design
 if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
@@ -149,7 +149,6 @@ nestedHeaders:nested,
 });
    table.refresh();
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
-  
       var btn = document.createElement("button");  //<button> element
       var t = document.createTextNode("hint"); // Create a text node
       btn.appendChild(t);   
@@ -161,44 +160,13 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
      btn.disabled=true; 
- //if ({#hint_enable#}!=1) {hint_el.style.display = "none"};
-if ( ({#hint_enable#}==1) || (localStorage.getItem("showhint")=={#rqm#}) ) {hint_el.style.display = "block";btn.disabled = false}        
+ if ( ({#hint_enable#}==1) || function(){return showHint} ) {hint_el.style.display = "block";btn.disabled = false}        
  var rqm={#rqm#};
   
-var  checkAnswer = function(hint,islast) {
+var  checkAnswer = function(hint) {
      readonly=true;
      table.insertRow();
-    if (hint) localStorage.setItem("showhint",{#rqm#});
-    if (islast)  localStorage.setItem("final",{#rqm#}); 
-    if (localStorage.getItem("final")=={#rqm#}) try {
-     tmp= document.getElementById("feedback{#rqm#}"); tmp.setAttribute("id",uid_feedback);
-    var table2=jspreadsheet(document.getElementById(uid_feedback), {
-     data:({#data#}),
-     colHeaders:{#Titles#},
-     colWidths: widths,
-     allowManualInsertColumn:0,             
-     allowInsertColumn:0,
-     allowDeleteColumn:0,
-     allowManualInsertRow:0,             
-     allowInsertRow:0,
-     allowDeleteRow:0,
-          
-     columns: [
-         { type: 'dropdown',   source:{#items#}},
-        { type: 'dropdown',   source:{#units#} },
-        { type: 'text',   wordWrap:true  },
-          
-     ],
-     nestedHeaders:nested,
-         toolbar:toolbar,
-    updateTable: function (instance, cell, col, row, val, label, cellName) {
-        cell.classList.add('readonly')
-    }, 
-    columnSorting:false,
-});
-  
-}        
-  catch(err) {};
+    showHint=hint;
      table.deleteRow();
 
    
@@ -210,7 +178,7 @@ if  (!answered )
 {
    answered=true;
  var M=JSON.parse(content);
- if (M==[]) {checkAnswer()}  else {checkAnswer(M[0],M[1])};
+ checkAnswer(M[0]);
   
    
 }}});   
