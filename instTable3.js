@@ -6,25 +6,11 @@
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
 
-
- <div style="display: flex; justify-content: center;" width="100%">
+ <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
+  <div style="display: flex; justify-content: center; width:100%; font-size:{@fontsize@}">
    <div id="spreadsheet" dir="ltr" >
+    <div id="myView" style="display:none;" ></div>
  </div>
- <div id="myView" style="display:none;" ></div>
-                                 
-<script type="text/javascript">
-
- var S=function(value,n){
-     var m=value.toExponential(n);
-  return m;   
-};
-</script>
-  <style>
-    .jexcel {
-    font-size:14 px;
-}
- </style>
-
   
 [[script type="module"]]
 
