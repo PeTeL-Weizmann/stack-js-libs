@@ -5,8 +5,10 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-ver 0.6
- <div style="display: flex; justify-content: center;" width="100%">
+ver 0.7
+ <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
+ 
+ <div style="display: flex; justify-content: center; width="100%"; font-size:20px">
    <div id="spreadsheet" dir="ltr" ></div>
    <div id="myView" style="display:none;" ></div>
  </div>
@@ -15,10 +17,10 @@ ver 0.6
 
   <style>
     .jexcel {
-    font-size:16 px;
+    font-size:5 px;
 }
  </style>
- <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
+
    
 [[script type="module"]]
 
