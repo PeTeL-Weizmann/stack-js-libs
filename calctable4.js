@@ -5,11 +5,12 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-ver 0.3
+ver 0.4
  <div style="display: flex; justify-content: center;" width="100%">
    <div id="spreadsheet" dir="ltr" ></div>
+   <div id="myView" style="display:none;" ></div>
  </div>
- <div id="myView" style="display:none;" ></div>
+
                                  
 
   <style>
@@ -48,7 +49,6 @@ var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table)
 
 var readonly=false,showHint=false;
 //hide or show the fields for design
-if ({#design#} == 1) { document.getElementById("data{#rqm#}" ).style.display = "block" }
 
 var zData=["","","","","","","","","","","","","","",""];
 
@@ -161,25 +161,24 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
        hint_el.appendChild(btn);
      btn.disabled=true; 
               console.log("show the button is ",showHint);
- if ( ({#hint_enable#}==1) ) {hint_el.style.display = "block";btn.disabled = false}        
- var rqm={#rqm#};
-  
+ if ( ({#hint_enable#}==1) || showHint) {hint_el.style.display = "block";btn.disabled = false;}        
+
 var  checkAnswer = function(hint) {
      readonly=true;
      table.insertRow();
     showHint=hint;
      table.deleteRow();
-
-   
+ 
   };
-var answered=false;
+
+ var answered=false;
 stack_js.get_content("contentCT{#rqm#}").then((content) => {
 if (content !== null) {
 if  (!answered ) 
 {
    answered=true;
  var M=JSON.parse(content);
- checkAnswer(M[0]);
+ checkAnswer(M[0]);console.log('content is ',M[0]);
   
    
 }}});   
