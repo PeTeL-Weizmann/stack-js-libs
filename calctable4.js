@@ -4,9 +4,9 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/e2314623eb24ac6307538026626463d67c90e562/jsuites.css" type="text/css" /]]
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
-[[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
-[[comment]] ver 1.8 [[/comment]]
- <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
+//[[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
+[[comment]] ver 1.9 [[/comment]]
+ <p style=display:anone>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
  
  <div style="display: flex; justify-content: center; width:100%; font-size:{@fontsize@}">
    <div id="spreadsheet" dir="ltr" ></div>
@@ -19,6 +19,21 @@
 
    
 [[script type="module"]]
+// Assuming MathJax is already loaded
+MathJax.Hub.Config({
+  jax: ['input/AsciiMath'],
+  extensions: ['asciimath2jax.js']
+});
+
+// Optional: Configure delimiters for AsciiMath
+MathJax.Hub.Config({
+  asciimath2jax: {
+    delimiters: [['`', '`']] // Example delimiters
+  }
+});
+
+// Trigger MathJax to process the page again
+MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 
   import {stack_js} from '[[cors src="stackjsiframe.js"/]]';
  stack_js.resize_containing_frame({#width#}, {#height#}); 
@@ -146,6 +161,7 @@ nestedHeaders:nested,
   columnSorting:false,
 });
    table.refresh();
+   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
       var btn = document.createElement("button");  //<button> element
       var t = document.createTextNode("hint"); // Create a text node
