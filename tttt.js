@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
- ver 1.11-2
+ ver 1.11-3
  <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
  
  <div style="display: flex; justify-content: center; width:100%; font-size:{@fontsize@}">
@@ -39,14 +39,15 @@ MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
  stack_js.resize_containing_frame({#width#}, {#height#}); 
 var promises = [
  /* These will resolve to identifiers of the input elements once they have been fully built and populated. */
- stack_js.request_access_to_input("ans2", true),stack_js.request_access_to_input("counter", true)
+ stack_js.request_access_to_input("ans2", true),
+ stack_js.request_access_to_input("counter", true)
  
 ];
 Promise.all(promises).then(([idForAns2,idForCounter]) => {
   /* This block only executes once those inputs are ready. */
   var dataInput = document.getElementById(idForAns2);
   var count=document.getElementById(idForCounter);
-  
+  console.log('the counter variable',count);
 
  //function for the table 
  var S=function(value,n){return value.toExponential(n)};
@@ -176,7 +177,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
      btn.disabled=true; 
-              showHint=(JSON.parse(count.value))[0];
+           //   showHint=(JSON.parse(count.value))[0];
               console.log("show the button is ",showHint);
 
  if ( ({#hint_enable#}==1) || showHint) {hint_el.style.display = "block";btn.disabled = false;}        
