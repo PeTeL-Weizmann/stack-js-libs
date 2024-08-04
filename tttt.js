@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
- ver 1.11-3
+ ver 1.11-4
  <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
  
  <div style="display: flex; justify-content: center; width:100%; font-size:{@fontsize@}">
@@ -47,6 +47,7 @@ Promise.all(promises).then(([idForAns2,idForCounter]) => {
   /* This block only executes once those inputs are ready. */
   var dataInput = document.getElementById(idForAns2);
   var count=document.getElementById(idForCounter);
+ count.type='input'; 
   console.log('the counter variable',count);
 
  //function for the table 
@@ -69,7 +70,7 @@ var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data);dataInput.dispatchEvent(new Event('change'));};
-if (count.value=''){count.value=JSON.stringify('[]');count.dispatchEvent(new Event('change'));} 
+if (count.value==''){count.value=JSON.stringify([0]);count.dispatchEvent(new Event('change'));} 
  
 var nested;
 const nst={#nested#};
@@ -166,42 +167,37 @@ nestedHeaders:nested,
    table.refresh();
    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
+     
+      //create the hint button
       var btn = document.createElement("button");  //<button> element
       var t = document.createTextNode("hint"); // Create a text node
       btn.appendChild(t);   
       btn.onclick = function(e){
          e.preventDefault(); 
          table.setData({#hintdata#});
-       
       };  
+
+              
    var hint_el= document.getElementById(uid_hint);
        hint_el.appendChild(btn);
      btn.disabled=true; 
-           //   showHint=(JSON.parse(count.value))[0];
+               console.log("show the button is ",count.value);
+              let value=count.value;
+            showHint=(value[0]==3);
               console.log("show the button is ",showHint);
 
  if ( ({#hint_enable#}==1) || showHint) {hint_el.style.display = "block";btn.disabled = false;}        
 
-var  checkAnswer = function(hint) {
-     readonly=true;
-     table.insertRow();
-    showHint=hint;
-     table.deleteRow();
- 
-  };
 
- var answered=false;
+
+ 
 stack_js.get_content("contentCT{#rqm#}").then((content) => {
 if (content !== null) {
-if  (!answered ) 
-{
-   answered=true;
  var M=JSON.parse(content);
-  if (M[0]) {count.value=JSON.srtingify(M); count.dispatchEvent(new Event('change'))};
- checkAnswer(M[0]);console.log('content is ',M[0]);
+  if (M[0]==2) {count.value=JSON.srtingify(M); count.dispatchEvent(new Event('change'))};
+     console.log('content is ',M[0]);
   
-   
-}}});   
+}});   
  });
 [[/script]]
 </div>
