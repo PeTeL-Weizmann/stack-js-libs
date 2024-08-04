@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
- ver 1.11-6
+ ver 1.11-7
  <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
  
  <div style="display: flex; justify-content: center; width:100%; font-size:{@fontsize@}">
@@ -70,9 +70,6 @@ var zData=["","","","","","","","","","","","","","",""];
 
 var data = [zData.slice(0,{#Titles#}.length)];
 if (dataInput.value!=( dataInput.value != '')) {data = JSON.parse(dataInput.value)} else {dataInput.value=JSON.stringify(data);dataInput.dispatchEvent(new Event('change'));};
-console.log('count.value before',count.value);
- if (count.value==''){count.value=JSON.stringify([1]);count.dispatchEvent(new Event('change'));} 
- console.log('count.value after',count.value);
 var nested;
 const nst={#nested#};
 if (nst=== undefined) {nested=[]} else  {nested=JSON.parse(nst.replace(/'/g, '"'))};
@@ -183,7 +180,7 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
        hint_el.appendChild(btn);
      btn.disabled=true; 
                console.log("show the button is ",count.value);
-              let value=count.value;
+              let value=JSON.parse(count.value);
             showHint=(value[0]==3);
               console.log("show the button is ",showHint);
 
@@ -194,9 +191,9 @@ table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.
  
 stack_js.get_content("contentCT{#rqm#}").then((content) => {
 if (content !== null) {
- var M=JSON.parse(content);
-  if (M[0]==2) {count.value=JSON.srtingify(M); count.dispatchEvent(new Event('change'))};
-     console.log('content is ',M[0]);
+   console.log('count.value before',count.value);
+   count.value=JSON.srtingify([3]); count.dispatchEvent(new Event('change'));
+     console.log('counter value is now ',count.value]);
   
 }});   
  });
