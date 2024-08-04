@@ -5,19 +5,15 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
- ver 1.11-11
- <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
+ <p> ver 1.11-12</p>
+  <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
  
  <div style="display: flex; justify-content: center; width:100%; font-size:{@fontsize@}">
   <div id="myView" style="display:none;" ></div>
+  <p></p>
   <div id="spreadsheet" dir="ltr" ></div>
   </div>
 
-                                 
-
- 
-
-   
 [[script type="module"]]
 // Assuming MathJax is already loaded
 MathJax.Hub.Config({
@@ -165,11 +161,7 @@ nestedHeaders:nested,
    table.refresh();
    MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
 table.onbeforechange= function(instance, cell, x, y, value){if (readonly) {cell.classList.add('readonly')}};
-     
-   
-
-
- 
+              
 stack_js.get_content("contentCT{#rqm#}").then((content) => {
  console.log(' the content in the span is ',content);
 if (content !== null) {
@@ -189,18 +181,19 @@ if (content !== null) {
       };  
 
               
-   var hint_el= document.getElementById(uid_hint);
-       hint_el.appendChild(btn);
-     btn.disabled=true; 
-               console.log("the count value is ",count.value);
-            try {               
-                 let value=JSON.parse(count.value);
-                  showHint=(value[0]==3);
-                  console.log("show the button is ",showHint);
-                 if ( ({#hint_enable#}==1) || showHint) {hint_el.style.display = "block";btn.disabled = false;}        
-              }
-
-              catch(err) {console.log("nothing in yet");}
+   var hint_el = document.getElementById(uid_hint);
+   hint_el.appendChild(btn);
+   btn.disabled = true;
+   try {
+     let value = JSON.parse(count.value);
+     showHint = (value[0] == 3);
+     if (({#hint_enable #} == 1) || showHint) {
+       hint_el.style.display = "block";
+       btn.disabled = false;
+     }
+   } catch (err) {
+     console.log("nothing in yet");
+   }
  });
 [[/script]]
 </div>
