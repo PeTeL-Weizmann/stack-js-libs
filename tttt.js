@@ -5,7 +5,7 @@
 [[style href="https://rawcdn.githack.com/raedshorrosh/calc/3070ff0e73239c4e5cef044d4cb3a84dd4925fa2/jexcel.css" type="text/css" /]]
 [[style href="https://fonts.googleapis.com/css?family=Material+Icons" type="text/css" /]]
 [[script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML" /]]
- ver 1.11-7
+ ver 1.11-8
  <p style=display:none>`x^2`,`x/y`, \(\small C_6H_{12}O_{6(s)}\)</p>
  
  <div style="display: flex; justify-content: center; width:100%; font-size:{@fontsize@}">
@@ -57,7 +57,7 @@ Promise.all(promises).then(([idForAns2,idForCounter]) => {
 var last=false;
 var uid_table={#rqm#};
 var uid_hint="hint{#rqm#}"
-var uid_feedback="feedback{#rqm#}"
+var uid_feedback="feedback{#rqm#}";
 var tmp=document.getElementById("spreadsheet"); tmp.setAttribute("id",uid_table);
      tmp= document.getElementById("myView"); tmp.setAttribute("id",uid_hint);
 
@@ -76,7 +76,7 @@ if (nst=== undefined) {nested=[]} else  {nested=JSON.parse(nst.replace(/'/g, '"'
 var widths=[180,120,120];
 
 
-for (let i=3;i<{#Titles#}.length;i++){widths[i]=120};
+for (let i=3;i!={#Titles#}.length;i++){widths[i]=120};
 var toolbar=[
         {
             type: 'i',
@@ -193,7 +193,7 @@ stack_js.get_content("contentCT{#rqm#}").then((content) => {
 if (content !== null) {
    console.log('count.value before',count.value);
    count.value=JSON.srtingify([3]); count.dispatchEvent(new Event('change'));
-     console.log('counter value is now ',count.value]);
+     console.log('counter value is now ',count.value);
   
 }});   
  });
