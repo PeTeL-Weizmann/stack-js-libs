@@ -195,9 +195,9 @@ var table=jspreadsheet(document.getElementById(uid_table), {
   allowDeleteRow:{#design#}==1?1:0,              
             
     columns: [
-        { type: 'dropdown',   source:{#items#},readOnly:{#design#}==1?0:1,stripHTML:false },
-        { type: 'dropdown',   source:{#units#},readOnly:{#design#}==1?0:1,stripHTML:false  },
-        { type: 'text',   wordWrap:true,readOnly:0,stripHTML:false},                                      
+        { type: 'dropdown',   source:{#items#},readOnly:{#design#}==1?0:1,stripHTML:true },
+        { type: 'dropdown',   source:{#units#},readOnly:{#design#}==1?0:1,stripHTML:true  },
+        { type: 'text',   wordWrap:true,readOnly:0,stripHTML:true},                                      
      
      ],
 nestedHeaders:nested, 
@@ -296,7 +296,7 @@ var columnIndex=3;
    table.refresh();
 // Insert columns between existing columns
 for (let i = 0; i < columnLength-3; i++) {
-    table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:false}]);  // Insert 1 empty column after the current column
+    table.insertColumn(1, columnIndex, false,[{title:" ",stripHTML:true}]);  // Insert 1 empty column after the current column
     table.options.columns[columnIndex+1].align ='left';
      table.options.columns[columnIndex+1].width =30;
  columnIndex=columnIndex+2;
