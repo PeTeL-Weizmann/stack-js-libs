@@ -11,9 +11,9 @@
    <div id="spreadsheet" dir="ltr" >
     <div id="myView" style="display:none;" ></div>
  </div>
- <scrip>
+ <script>
   //function for the table 
-    S=function(value,n){return value.toExponential(n)};
+   var S=function(value,n){return value.toExponential(n)};
 </script>
  
 [[script type="module"]]
