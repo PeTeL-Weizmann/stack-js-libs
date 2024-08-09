@@ -11,7 +11,11 @@
    <div id="spreadsheet" dir="ltr" >
     <div id="myView" style="display:none;" ></div>
  </div>
-  
+ <scrip>
+  //function for the table 
+    S=function(value,n){return value.toExponential(n)};
+</script>
+ 
 [[script type="module"]]
 // Assuming MathJax is already loaded
 MathJax.Hub.Config({
@@ -42,7 +46,7 @@ Promise.all(promises).then(([idForAns2, idForAns3]) => {
   var gradeInput = document.getElementById(idForAns3);
 
  //function for the table 
- var S=function(value,n){return value.toExponential(n)};
+// var S=function(value,n){return value.toExponential(n)};
   
    
 var rqm={#rqm#};
